@@ -8558,3 +8558,93 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+
+        .expandable-list {
+            list-style-type: none;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .expandable-list li {
+            display: none;
+        }
+
+        .expandable-list.expanded li {
+            display: block;
+        }
+        #editorToggle {
+            cursor: pointer;
+            font-size: 28px;
+            background-color: #3d5a80;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        #journalToggle {
+            cursor: pointer;
+            font-size: 28px;
+            background-color: #98c1d9;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        #confToggle {
+            cursor: pointer;
+            font-size: 28px;
+            background-color: #707070;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        #tpcToggle {
+            cursor: pointer;
+            font-size: 28px;
+            background-color: #ee6c4d;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        #tutorToggle {
+            cursor: pointer;
+            font-size: 28px;
+            background-color: #293241;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        #volunToggle {
+            cursor: pointer;
+            font-size: 28px;
+            background-color: #3d5a80;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        #extraToggle {
+            cursor: pointer;
+            font-size: 28px;
+            background-color: #98c1d9;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }

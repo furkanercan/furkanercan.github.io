@@ -30,6 +30,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--<link rel="stylesheet" href="css/academicons.min.css"/>-->
     <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+
+    <style>
+
+    </style>
+
   </head>
   <body>
 
@@ -43,6 +48,7 @@
 					<li><a href="index.html">Home</a></li>
 					<li><a href="about.html">About</a></li>
 					<li><a href="publications.html">Publications</a></li>
+					<li><a href="projects.html">Software</a></li>
 					<li class="colorlib-active"><a href="activities.html">Activities</a></li>
 					<li><a href="awards.html">Awards</a></li>
 					<!--<li><a href="#">Contact</a></li>-->
@@ -68,18 +74,24 @@
 			<section class="ftco-section-2">
 				<div class="photography">
 					<div class="yes-gutters">
-						<!--<h2>Reviewer Activities</h2>-->
-						<!--<div class="pubs">-->
 						<br/>
-						<h3>Editorship</h3>
-						<ul>
-						<li>Associate Editor  | <a href="https://www.comsoc.org/publications/journals/ieee-comml/ieee-communications-letters-editorial-board" target="_blank">IEEE Communications Letters</a></li>	
-						<li>Lead Guest Editor  | <a href="https://www.mdpi.com/journal/sensors/special_issues/4NT956M0IM" target="_blank">VLSI Architectures for Wireless Communications and Digital Signal Processing</a></li>	
+						
+
+						<h3 id="editorToggle" class="journalToggle">
+						    <span id="editorTriangle">▶</span> Editorship
+						</h3>
+						<ul class="expandable-list" id="editorList">
+						    <li>Associate Editor  | <a href="https://www.comsoc.org/publications/journals/ieee-comml/ieee-communications-letters-editorial-board" target="_blank">IEEE Communications Letters</a></li>    
+						    <li>Lead Guest Editor  | <a href="https://www.mdpi.com/journal/sensors/special_issues/4NT956M0IM" target="_blank">VLSI Architectures for Wireless Communications and Digital Signal Processing</a></li>
+						    <!-- Add your other list items here -->
 						</ul>
 
 						<hr/>
-						<h3>Journal Reviewer</h3>
-						<ul>
+						<h3 id="journalToggle" class="journalToggle">
+						    <span id="journalTriangle">▶</span>
+						    Journal Reviewer
+						</h3>
+						<ul class="expandable-list" id="journalList">
 						<li> IEEE Transactions on Communications </li>
 						<li> IEEE Transactions on Signal Processing </li>
 						<li> IEEE Transactions on Vehicular Technology </li>
@@ -91,6 +103,7 @@
 						<li> IEEE Access </li>
 						<li> IEEE Communications Letters </li>
 						<li> IEEE Communications Magazine </li>
+						<li> IEEE Industrial Electronics Magazine </li>
 						<li> IEEE Open Journal of the Communications Society </li>
 						<li> IEEE Systems Journal </li>
 						<li> Canadian Journal of Electrical and Computer Engineering </li>
@@ -109,54 +122,62 @@
 						<li> MDPI Sensors</li>
 						<li> PLOS ONE</li>
 						</ul>
+
+
+
 						<!--</div>-->
 						<hr/>
-						<h3>Conference Reviewer</h3>
-						<!--<div class="pubs">-->
+						<h3 id="confToggle" class="confToggle">
+						    <span id="confTriangle">▶</span>
+						    Conference Reviewer
+						</h3>
+						
 						<style>
-    ul {
-        list-style: none;
-        padding: 0;
-    }
+						    ul {
+						        list-style: none;
+						        padding: 0;
+						    }
 
 
-    .date {
-        display: inline-block;
-        width: 100px; /* Adjust the width based on your preference */
-    }
+						    .date {
+						        display: inline-block;
+						        width: 100px; /* Adjust the width based on your preference */
+						    }
 
-    .event {
-        display: inline-block;
-        margin-left: 20px; /* Adjust the margin based on your preference */
-    }
+						    .event {
+						        display: inline-block;
+						        margin-left: 20px; /* Adjust the margin based on your preference */
+						    }
 
-    .tpcname {
-        display: inline-block;
-        margin-left: 20px; /* Adjust the margin based on your preference */
-    }
+						    .tpcname {
+						        display: inline-block;
+						        margin-left: 20px; /* Adjust the margin based on your preference */
+						    }
 
-    .tpcwhat {
-        display: inline-block;
-        margin-left: 20px; /* Adjust the margin based on your preference */
-    }
-</style>
+						    .tpcwhat {
+						        display: inline-block;
+						        margin-left: 20px; /* Adjust the margin based on your preference */
+						    }
+						</style>
 
-<ul>
-    <li><span class="date">2024</span>  <span class="event">IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)</span></li>
-    <li><span class="date">2017-2024</span>  <span class="event">IEEE Wireless Communications and Networking Conference (WCNC)</span></li>
-    <li><span class="date">2022-2023</span>  <span class="event">IEEE Vehicular Technology Conference 2023 - Spring</span></li>
-    <li><span class="date">2022</span>  <span class="event">IEEE GLOBECOM 2022</span></li>
-    <li><span class="date">2019</span>  <span class="event">IEEE International Conference on Communications (ICC)</span></li>
-    <li><span class="date">2019</span>  <span class="event">IEEE/CIC International Conference on Communications in China (ICCC)</span></li>
-    <li><span class="date">2018</span>  <span class="event">International Symposium on Turbo Codes & Iterative Information Processing (ISTC)</span></li>
-    <li><span class="date">2017</span>  <span class="event">IEEE International Symposium on Information Theory (ISIT)</span></li>
-</ul>
+						<ul class="expandable-list" id="confList">
+						    <li><span class="date">2024</span>  <span class="event">IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)</span></li>
+						    <li><span class="date">2017-2024</span>  <span class="event">IEEE Wireless Communications and Networking Conference (WCNC)</span></li>
+						    <li><span class="date">2022-2023</span>  <span class="event">IEEE Vehicular Technology Conference 2023 - Spring</span></li>
+						    <li><span class="date">2022</span>  <span class="event">IEEE GLOBECOM 2022</span></li>
+						    <li><span class="date">2019</span>  <span class="event">IEEE International Conference on Communications (ICC)</span></li>
+						    <li><span class="date">2019</span>  <span class="event">IEEE/CIC International Conference on Communications in China (ICCC)</span></li>
+						    <li><span class="date">2018</span>  <span class="event">International Symposium on Turbo Codes & Iterative Information Processing (ISTC)</span></li>
+						    <li><span class="date">2017</span>  <span class="event">IEEE International Symposium on Information Theory (ISIT)</span></li>
+						</ul>
 
 						<!--</div>-->
 						<hr/>
-						<h3>TPC Duties</h3>
-						<!--<div class="pubs">-->
-						<ul>
+						<h3 id="tpcToggle" class="tpcToggle">
+						    <span id="tpcTriangle">▶</span>
+						    TPC Duties
+						</h3>
+						<ul class="expandable-list" id="tpcList">
 				    <li><span class="tpcdate">IEEE VTC Spring</span> <span class="date">2023</span> <span class="tpcwhat">ML and AI for Communications Track</span></li>
 				    <li><span class="tpcdate">IEEE VTC Spring</span> <span class="date">2023</span>  <span class="tpcwhat">Transmission and Reception Techniques</span></li>
 				    <li><span class="tpcdate">IEEE INFOCOM</span> <span class="date">2023</span>  <span class="tpcwhat">5G and Beyond Wireless Security Track</span></li>
@@ -167,9 +188,11 @@
 
 						<!--</div>-->
 						<hr/>
-						<h3>Teaching Assistant</h3>
-						<!--<div class="pubs">-->
-						<ul>
+						<h3 id="tutorToggle" class="tutorToggle">
+						    <span id="tutorTriangle">▶</span>
+						    Tutoring
+						</h3>
+						<ul class="expandable-list" id="tutorList">
 					    <li><span class="date">2017 - 2020</span>  <span class="activity">Computer Organization (McGill | ECSE 234)</span></li>
 					    <li><span class="date">2019 - 2020</span>  <span class="activity">Digital Logic (McGill | ECSE 222)</span></li>
 					    <li><span class="date">2018 - 2019</span>  <span class="activity">Digital Systems (McGill | ECSE 325)</span></li>
@@ -184,10 +207,11 @@
 
 						<!--</div>-->
 						<hr/>
-						<h3>Professional Volunteering & Leadership</h3>
-						<!--<div class="pubs">-->
-
-						<ul>
+						<h3 id="volunToggle" class="volunToggle">
+						    <span id="volunTriangle">▶</span>
+						    Professional Volunteering & Leadership
+						</h3>
+						<ul class="expandable-list" id="volunList">
 				    <li><span class="date">2023</span>  <span class="activity">Industry Forum and Panels Co-Chair of <a href="https://fnwf2023.ieee.org/" target="_blank">Future Networks World Forum 2023</a></span></li>
 				    <li><span class="date">2022</span>  <span class="activity">5G and Beyond Wireless Security Chair of <a href="https://globecom2022.ieee-globecom.org/" target="_blank">IEEE GLOBECOM 2022</a></span></li>
 				    <li><span class="date">2022</span>  <span class="activity">Academia & Industry Demonstrations Chair of <a href="https://fnwf.ieee.org/" target="_blank">IEEE Future Networks World Forum 2022</a></span></li>
@@ -209,15 +233,83 @@
 
 						<!--</div>-->
 						<hr/>
-						<h3>Extracurricular Activities</h3>
-						<!--<div class="pubs">-->
-						<ul>
+						<h3 id="extraToggle" class="extraToggle">
+						    <span id="extraTriangle">▶</span>
+						    Extracurricular Activities
+						</h3>
+						<ul class="expandable-list" id="extraList">
 						<li> Nature and Nightscape Photography (<a href="https://500px.com/furkanercan" target="_blank">500px Gallery</i></a>) </li>
 						<li> Amateur Native American Flute player and an honorary member of <a href="http://www.cascadiaflutecircle.org/someMembers.html" target="_blank">Cascadia Flute Circle</a> in Oregon, USA. </li>
-						<li> Literary Writing - published in <a href="https://www.barnesandnoble.com/w/an-anthology-of-contemporary-love-poems-ed-coet/1105798938" target="_blank">"An Anthology of Contemporary Love Poems"</a>, The Blue Fog Journal (2010) </li>
+						<li> Literary Writing - published in <a href="https://www.lulu.com/shop/rohitash-chandra-and-ed-coet/an-anthology-of-contemporary-love-poems/paperback/product-11923128.html" target="_blank">"An Anthology of Contemporary Love Poems"</a>, The Blue Fog Journal (2010) </li>
 						<li> Hiking, jogging, yoga, swimming, meditation, skiing </li>
 						
 						</ul>
+
+						<script>
+						    var journalToggle = document.getElementById('journalToggle');
+						    var journalTriangle = document.getElementById('journalTriangle');
+						    var journalList = document.getElementById('journalList');
+
+						    journalToggle.addEventListener('click', function () {
+						        journalList.classList.toggle('expanded');
+						        journalTriangle.textContent = journalList.classList.contains('expanded') ? '▼' : '▶';
+						    });
+
+						    var editorToggle = document.getElementById('editorToggle');
+						    var editorTriangle = document.getElementById('editorTriangle');
+						    var editorList = document.getElementById('editorList');
+
+						    editorToggle.addEventListener('click', function () {
+						        editorList.classList.toggle('expanded');
+						        editorTriangle.textContent = editorList.classList.contains('expanded') ? '▼' : '▶';
+						    });
+
+						    var confToggle = document.getElementById('confToggle');
+						    var confTriangle = document.getElementById('confTriangle');
+						    var confList = document.getElementById('confList');
+
+						    confToggle.addEventListener('click', function () {
+						        confList.classList.toggle('expanded');
+						        confTriangle.textContent = confList.classList.contains('expanded') ? '▼' : '▶';
+						    });
+
+						    var tpcToggle = document.getElementById('tpcToggle');
+						    var tpcTriangle = document.getElementById('tpcTriangle');
+						    var tpcList = document.getElementById('tpcList');
+
+						    tpcToggle.addEventListener('click', function () {
+						        tpcList.classList.toggle('expanded');
+						        tpcTriangle.textContent = tpcList.classList.contains('expanded') ? '▼' : '▶';
+						    });
+
+						    var tutorToggle = document.getElementById('tutorToggle');
+						    var tutorTriangle = document.getElementById('tutorTriangle');
+						    var tutorList = document.getElementById('tutorList');
+
+						    tutorToggle.addEventListener('click', function () {
+						        tutorList.classList.toggle('expanded');
+						        tutorTriangle.textContent = tutorList.classList.contains('expanded') ? '▼' : '▶';
+						    });
+
+						    var volunToggle = document.getElementById('volunToggle');
+						    var volunTriangle = document.getElementById('volunTriangle');
+						    var volunList = document.getElementById('volunList');
+
+						    volunToggle.addEventListener('click', function () {
+						        volunList.classList.toggle('expanded');
+						        volunTriangle.textContent = volunList.classList.contains('expanded') ? '▼' : '▶';
+						    });
+
+						    var extraToggle = document.getElementById('extraToggle');
+						    var extraTriangle = document.getElementById('extraTriangle');
+						    var extraList = document.getElementById('extraList');
+
+						    extraToggle.addEventListener('click', function () {
+						        extraList.classList.toggle('expanded');
+						        extraTriangle.textContent = extraList.classList.contains('expanded') ? '▼' : '▶';
+						    });
+						</script>
+
 						<!--</div>-->
 					</div>
 				</div>
