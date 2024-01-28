@@ -29,6 +29,128 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--<link rel="stylesheet" href="css/academicons.min.css"/>-->
     <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+
+    <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .timeline-container {
+      position: relative;
+      max-width: 800px;
+      margin: 50px auto;
+    }
+
+    .timeline-item-left {
+      position: relative;
+      max-width: 400px; /* Set a max-width for the timeline items */
+      margin: 0 auto;
+      margin-right: -410px; /* Shift the timeline item to the left by 200px */
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+
+    .timeline-item-right {
+      position: relative;
+      max-width: 400px; /* Set a max-width for the timeline items */
+      margin: 0 auto;
+      margin-left: 290px; /* Shift the timeline item to the left by 200px */
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+
+    .timeline-item-left::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 00%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      background-color: #3498db;
+      border-radius: 50%;
+      border: 2px solid #fff;
+    }
+    
+    .timeline-item-right::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 100%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      background-color: #3498db;
+      border-radius: 50%;
+      border: 2px solid #fff;
+    }
+
+    .timeline-date {
+      font-size: 14px;
+      color: #777;
+    }
+
+    .timeline-content {
+      margin-top: 10px;
+    }
+
+    .timeline-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .timeline-description {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .expanded-content {
+      display: none;
+      max-width: 600px; /* Set a max-width for the expanded content */
+      margin-top: 15px;
+    }
+
+    .expanded-content p {
+      font-size: 16px;
+      color: #555;
+    }
+
+    /* New styles for the vertical timeline layout */
+    .timeline-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 4px;
+      height: 100%;
+      background-color: #3498db;
+      transform: translateX(-50%);
+    }
+
+    .icon-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px; /* Adjust the margin as needed */
+    }
+
+    .icon {
+      width: 15%; /* Adjust the width of each icon container */
+      margin-right: 50px; /* Adjust the margin between icons */
+    }
+  </style>
   </head>
   <body>
 	<div id="colorlib-page">
@@ -69,22 +191,179 @@
 				<div class="photograhy">
 					<div class="row yes-gutters">
 						<div class="desc">
-							<h2 class="subheading">Hello, I'm</h2>
-							<h1 class="mb-4">Furkan Ercan.</h1>
-							<p class="mb-4" style="font-size:16px">I hold a B.Sc. degree in Electrical and Electronics Engineering, and an M.Sc. degree in Sustainable Environment and Energy Systems, both from <a href="https://ncc.metu.edu.tr/" target="_blank"> Middle East Technical University (METU), Northern Cyprus Campus </a>. My B.Sc./M.Sc. advisor was <a href="http://users.metu.edu.tr/amuhtar/" target="_blank">Prof. Dr. Ali Muhtaroğlu</a>. I have received my Ph.D. degree in Electrical and Computer Engineering at <a href="https://mcgill.ca/" target="_blank"> McGill University</a>. My Ph.D. advisor was <a href="https://scholar.google.ca/citations?hl=en&user=xSvOcF8AAAAJ" target="_blank"> Prof. Warren J. Gross </a>.</p>
-              
-              <p class="mb-4" style="font-size:16px"> I am currently affiliated as a Research Scientist at Intel Corporation, working at Connected Systems Lab. Previously, I was a Postdoctoral Associate at the <a href="https://wisecircuits.bu.edu/" target="_blank">Wireless Integrated Systems and Extreme Circuits (WISE-Circuits)</a> lab, working with <a href="https://www.bu.edu/systems/profile/rabia-tugce-yazicigil/" target="_blank">Prof. Rabia Tuğçe Yazıcıgil</a> (Boston University), in collaboration with <a href="https://en.wikipedia.org/wiki/Muriel_M%C3%A9dard" target="_blank">Prof. Muriel Médard</a> (MIT)</a> and <a href="https://www.maynoothuniversity.ie/people/ken-duffy" target="_blank">Prof. Ken Duffy</a> (Maynooth University)</a>.
+							<h2 class="subheading">Hello, I'm Furkan Ercan,</h2>
+							<h1 class="mb-4">and these are what I've been up to.</h1>
+							
+                <div class="timeline-container">
 
-              <p class="mb-4" style="font-size:16px"> Among my research portfolio, I work on <a href="https://www.granddecoder.mit.edu/" target="_blank">Guessing Random Additive Noise Decoding</a>, or <b>GRAND</b> in short, which is a recent universal decoding algorithm that works with any existing channel coding scheme on the planet. Its capacity-achieving properties and super-lightweight processing make it an attractive solution to use cases in beyond 5G communications. I specialize on software algorithm development, VLSI implementations and physical layer cybersecurity solutions within the GRAND framework. In my Ph.D., I specialized on <a href="https://en.wikipedia.org/wiki/Polar_code_(coding_theory)" target="_blank">Polar Codes</a>, a channel coding scheme of the <b>5G wireless communication standard</b>. I also take joy in trying to explain how decoding algorithms work in theory.</p>
+                  <div class="timeline-item-left" onclick="toggleExpand('am_2023_comml')">
+                    <div class="timeline-date">January 2023 - Present</div>
+                    <div class="timeline-content">
+                      <div class="timeline-title">Associate Editor</div>
+                      <div class="timeline-description" style="font-weight: bold; color: #000099;">IEEE Communications Letters</div>
+                      <div class="expanded-content" id="am_2023_comml">
+                      <p><strong>Manuscript Review:</strong> Assessing channel coding manuscripts for IEEE Communications Letters, ensuring technical precision and editorial compliance.</p>
+                      <p><strong>Peer Review Coordination:</strong> Managing the peer review process, selecting reviewers, and providing feedback to enhance the quality of published content in channel coding.</p>
+                      <div class="icon-container">
+                        <div class="icon"><img src="images/icons/people.png" width="60" height="60"></div>
+                        <div class="icon"><img src="images/icons/paper.png" width="60" height="60"></div>
+                        <div class="icon"><img src="images/icons/presentation.png" width="60" height="60"></div>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
 
-              <p class="mb-4" style="font-size:16px">From 2020 to 2021, I have worked as a 5G Physical Layer Algorithm Developer at <a href="http://www.octasic.com/" target="_blank">Octasic Inc</a>. I was involved in the Algorithms Development team, where I work on design and optimization of 5G wireless protocol systems. </p> 
+                  <div class="timeline-item-right" onclick="toggleExpand('im_2024_intel')">
+                    <div class="timeline-date">December 2022 - Present</div>
+                    <div class="timeline-content">
+                      <div class="timeline-title">Research Scientist / Engineer</div>
+                      <div class="timeline-description" style="font-weight: bold; color: #000099;">Intel Labs & PSG - Intel Corporation</div>
+                    </div>
+                    <div class="expanded-content" id="im_2024_intel">
+                      <p><strong>Lead Algorithm Development</strong> for reconfigurable space-based communications.</p>
+                      <p><strong>Error-Correcting Code Design</strong> for enhanced communication standards.</p>
+                      <p><strong>RTL Design Expertise</strong> in VHDL/Verilog for RTL design and MATLAB/Simulink for modeling.</p>
+                      <p><strong>Validation Checks and Coordination</strong> for holistic development.</p>
+                      <p><strong>Wireless Communication Patents</strong> in advanced wireless communication techniques.</p>
+                      <div class="icon-container">
+                        <div class="icon"><img src="images/icons/matlab.png" width="60" height="60"></div>
+                        <div class="icon"><img src="images/icons/simulink.png" width="60" height="60"></div>
+                        <div class="icon"><img src="images/icons/asic.jpg" width="60" height="60"></div>
+                        <div class="icon"><img src="images/icons/python.webp" width="60" height="60"></div>
+                      </div>
+                    </div>
+                  </div>
 
-              <p class="mb-4" style="font-size:16px">Currently, I serve as an Associate Editor for <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4234" target="_blank">IEEE Communications Letters</a>, and as the Lead Guest Editor for the MDPI Special Issue on <a href="https://www.mdpi.com/journal/sensors/special_issues/4NT956M0IM" target="_blank">"VLSI Architectures for Wireless Communications and Digital Signal Processing"</a>. Beyond the editorship duties, I actively serve as a reviewer for numerous prestigious IEEE and other journals, and take role in the technical organization of leading conferences in the fields of Communications, Signal Processing and Hardware Implementations.</p> 
+                  <!-- Academic Milestone 2 -->
+                  <div class="timeline-item-left" onclick="toggleExpand('am_2021_bu')">
+                    <div class="timeline-date">November 2021 - December 2022</div>
+                    <div class="timeline-content">
+                      <div class="timeline-title">Postdoctoral Associate</div>
+                      <div class="timeline-description" style="font-weight: bold; color: #CC0000;">Boston University</div>
+                    </div>
+                    <div class="expanded-content" id="am_2021_bu">
+                      <p><strong>Algorithm Leadership:</strong> Led the creation of advanced algorithms, software, and hardware for next-gen universal decoding.</p>
+                      <p><strong>GRAND Framework Engineering:</strong> Engineered a dynamic C++ framework for the GRAND algorithm family, enabling versatile configurations. Served as a foundation for design, analysis, testing, and optimization.</p>
+                      <p><strong>Innovative Security Algorithms:</strong> Pioneered software-based security algorithms for complex channel conditions, using novel in-decoder methods.</p>
+                      <p><strong>Microchip Optimization Expertise:</strong> Provided expertise in optimizing resources and conducting pre-silicon validation for ultra low-energy universal decoder microchips.</p>
+                      <div class="icon-container">
+                        <!-- <div class="icon"><img src="images/icons/c.jpeg" width="60" height="60"></div> -->
+                        <div class="icon"><img src="images/icons/cpp.jpg" width="60" height="60"></div>
+                        <div class="icon"><img src="images/icons/asic.jpg" width="60" height="60"></div>
+                        <div class="icon"><img src="images/icons/teach.png" width="60" height="60"></div>
+                      </div>
+                    </div>
+                  </div>
 
-              <!-- From 2011 to 2012, I worked at <a href="https://www.intel.com/content/www/us/en/research/overview.html" target="_blank">Intel Labs</a> in OR, USA as a graduate research intern, where I created a system-level dynamic energy management policy using Intel server architectures.</p>  -->
-              <!-- In a nutshell, it involves development of Matlab reference models to optimized embedded C/ASM DSP implementations. I am involed in the development and optimization of 5G polar codes and experience on various 5G channels such as PDCCH, PBCH and PUCCH. I also work on 5G LDPC decoding.</p> -->
+                  <!-- Industrial Milestone 1 -->
+                  <div class="timeline-item-right" onclick="toggleExpand('im_2020_octasic')">
+                    <div class="timeline-date">June 2020 - August 2021</div>
+                    <div class="timeline-content">
+                      <div class="timeline-title">5G Algorithm Developer</div>
+                      <div class="timeline-description" style="font-weight: bold; color: #CC9900;">Octasic Inc. - Canada</div>
+                    </div>
+                    <div class="expanded-content" id="im_2020_octasic">
+                      <p><strong>5G PHY Systems Design:</strong> Led design and optimization of 5G PHY Wireless Protocol Systems, from MATLAB models to embedded C/ASM DSP implementations.</p>
+                      <p><strong>MATLAB/C Co-Development:</strong> Executed MATLAB/C co-development for proprietary wireless chips, enhancing seamless development and testbenching.</p>
+                      <p><strong>Optimization Leadership:</strong> Spearheaded optimization of the 5G polar decoder, implementing enhancements for increased flexibility and speed.</p>
+                      <p><strong>Expertise in 5G PHY Components:</strong> Engaged with critical 5G PHY components and LDPC codes.</p>
+                      <p><strong>Proactive Problem-Solving:</strong> Demonstrated rapid learning, proactive initiative-taking, and efficient debugging in adapting to new challenges.</p>
+                      <div class="icon-container">
+                        <div class="icon"><img src="images/icons/c.jpeg" width="60" height="60"></div>
+                        <div class="icon"><img src="images/icons/cpp.jpg" width="60" height="60"></div>
+                        <div class="icon"><img src="images/icons/matlab.png" width="60" height="60"></div>
+                        <div class="icon"><img src="images/icons/atlassian.png" width="60" height="60"></div>
+                      </div>
+                    </div>
+                  </div>
 
-              <!-- <p class="mb-4" style="font-size:16px"> From 2011 to 2012, I worked at <a href="https://www.intel.com/content/www/us/en/research/overview.html" target="_blank">Intel Labs</a> in OR, USA as a graduate research intern, where I created a system-level dynamic energy management policy using Intel server architectures.</p> -->
+                  <!-- Academic Milestone 2 -->
+                  <div class="timeline-item-left" onclick="toggleExpand('am_2020_mcgill')">
+                    <div class="timeline-date">2015 - 2020</div>
+                    <div class="timeline-content">
+                      <div class="timeline-title">Ph.D.</div>
+                      <div class="timeline-description" style="font-weight: bold; color: #CC0000;">McGill University</div>
+                    </div>
+                    <div class="expanded-content" id="am_2020_mcgill">
+                      <p><strong>C++ Framework Pioneer</strong> for polar code decoders, featuring meticulously designed bit-exact versions with quantization for streamlined hardware development and testing.</p>
+                      <p><strong>Advanced Hardware Architect</strong> for various polar decoder architectures, consistently achieving remarkable performance metrics in throughput, latency, area/energy efficiency, and error correction capabilities.</p>
+                      <p><strong>Educational Contribution</strong> in shaping and delivering coursework, notably contributing to subjects like Computer Organization, Digital System Design, and Digital Logic, enriching the educational experience for students.</p>
+
+                      <div class="icon-container">
+                        <div class="icon"><img src="images/icons/cpp.jpg" width="60" height="60"></div>
+                        <div class="icon"><img src="images/icons/asic.jpg" width="60" height="60"></div>
+                        <div class="icon"><img src="images/icons/teach.png" width="60" height="60"></div>
+                        <div class="icon"><img src="images/icons/gitlab.png" width="60" height="60"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item-left" onclick="toggleExpand('am_2015_metu')">
+                    <div class="timeline-date">2012 - 2015</div>
+                    <div class="timeline-content">
+                      <div class="timeline-title">M.Sc.</div>
+                      <div class="timeline-description" style="font-weight: bold; color: #CC0000;">Middle East Technical University</div>
+                    </div>
+                    <div class="expanded-content" id="am_2015_metu">
+                      <p><strong>ASIC Development & Tapeout:</strong> Led the complete lifecycle of ASIC development, overseeing the chip tapeout process for advanced arithmetic design units. Achieved successful implementation and optimization, contributing to cutting-edge hardware solutions.</p>
+                      <p><strong>Coursework Design Lead:</strong> Spearheaded the design and execution of coursework in Digital Logic, Electronics, Computer Architecture, and VLSI Design. Ensured engaging and comprehensive learning experiences for students across diverse subjects.</p>
+                      <div class="icon-container">
+                        <div class="icon"><img src="images/icons/asic.jpg" width="60" height="60"></div>
+                        <div class="icon"><img src="images/icons/matlab.png" width="60" height="60"></div>
+                        <div class="icon"><img src="images/icons/cadence.jpg" width="60" height="60"></div>
+                        <div class="icon"><img src="images/icons/teach.png" width="60" height="60"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item-right" onclick="toggleExpand('im_2011_intel')">
+                    <div class="timeline-date">July 2011 - July 2012</div>
+                    <div class="timeline-content">
+                      <div class="timeline-title">Graduate Intern</div>
+                      <div class="timeline-description" style="font-weight: bold; color: #000099;">Intel Labs - Hillsboro, OR, USA</div>
+                    </div>
+                    <div class="expanded-content" id="im_2011_intel">
+                      <p><strong>Energy-Aware Policies:</strong> Developed and implemented energy-efficient policies on Nehalem architecture, optimizing for CPUs and RAMs.</p>
+                      <p><strong>Intel Architecture Analysis:</strong> Analyzed cutting-edge Intel server and PC architectures using the SPEC CPU benchmark.</p>
+                      <div class="icon-container">
+                        <div class="icon"><img src="images/icons/redhat.jpeg" width="60" height="60"></div>
+                        <div class="icon"><img src="images/icons/shell.png" width="60" height="60"></div>
+                        <div class="icon"><img src="images/icons/server.jpg" width="60" height="60"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item-left" onclick="toggleExpand('am_2011_metu')">
+                    <div class="timeline-date">2006 - 2011</div>
+                    <div class="timeline-content">
+                      <div class="timeline-title">B.Sc.</div>
+                      <div class="timeline-description" style="font-weight: bold; color: #CC0000;">Middle East Technical University</div>
+                    </div>
+                    <div class="expanded-content" id="am_2011_metu">
+                      <p><strong>1st Rank in Department of Electrical Engineering</strong> with Dean's Honor List.</p>
+                      <p><strong>Specialization on:</strong> Computer Architecture, Digital Systems, ASIC Design.</p>
+                      <div class="icon-container">
+                        <div class="icon"><img src="images/icons/c.jpeg" width="60" height="60"></div>
+                        <div class="icon"><img src="images/icons/matlab.png" width="60" height="60"></div>
+                        <div class="icon"><img src="images/icons/teach.png" width="60" height="60"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <script>
+                  function toggleExpand(elementId) {
+                    var element = document.getElementById(elementId);
+                    if (element.style.display === "none" || element.style.display === "") {
+                      element.style.display = "block";
+                    } else {
+                      element.style.display = "none";
+                    }
+                  }
+                </script>
+
+
               <p class="mb-4" style="font-size:16px"> More information is available on <a href="Resume_Aug23.pdf" target="_blank">this short CV</a> (as of August 2023) and following links: </p>
 							<ul class="ftco-social mt-3">
                 <li class="ftco-animate"><a href="https://www.linkedin.com/in/furkanercan/" target="_blank"><span class="fa fa-linkedin-square"></span></a></li>
