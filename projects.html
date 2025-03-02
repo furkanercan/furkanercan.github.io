@@ -47,14 +47,14 @@
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
-			<img src="images/author3.png" width="200" alt="Furkan">
+			<img src="images/author3.png" width="200" alt="Furkan" class="profile-img" style="transition: transform 0.3s ease;">
 			<h1 id="colorlib-logo"><a href="index.html">furkan ercan<span>.</span></a></h1>
 			<nav id="colorlib-main-menu" role="navigation">
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="about.html">About</a></li>
 					<li><a href="publications.html">Publications</a></li>
-                    <li class="colorlib-active"><a href="projects.html">Software</a></li>
+                    <li class="colorlib-active"><a href="projects.html">Projects</a></li>
 					<li><a href="activities.html">Activities</a></li>
 					<li><a href="awards.html">Awards</a></li>
 					<!--<li><a href="#">Contact</a></li>-->
@@ -79,86 +79,209 @@
 		</aside> <!-- END COLORLIB-ASIDE -->
 		<div id="colorlib-main">
 			<main class="container mt-4">
+                <!-- Add CSS for image standardization -->
+                <style>
+                    .card-img-top {
+                        height: 400px;          /* Fixed height */
+                        width: 100%;            /* Full width */
+                        object-fit: cover;      /* Maintain aspect ratio and cover area */
+                        object-position: center; /* Center the image */
+                    }
+                    
+                    /* Optional: Add transition for smooth loading */
+                    .card-img-top {
+                        transition: transform 0.3s ease;
+                    }
+                    
+                    /* Optional: Add hover effect */
+                    .card:hover .card-img-top {
+                        transform: scale(1.05);
+                    }
+                    
+                    /* Ensure card bodies have consistent height */
+                    .card-body {
+                        min-height: 250px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                    }
+                    .profile-img {
+                        border-radius: 50%;
+                        transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    }
+                    
+                    .profile-img:hover {
+                        transform: scale(1.05);
+                        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                        cursor: pointer;
+                    }
+                </style>
 
-        <!-- Category: Category 1 -->
-        <div class="category">
-            <h2 class="category-title" style="background-color: #FFD1DC; color: #333; padding: 10px;">Polar Codes for 5G Wireless Communications, and Beyond</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <!-- Project Item 1 -->
-                <div class="col-12 col-md-4 project-item">
-                    <div class="card h-100">
-                        <img src="images/polarbear.gif" class="card-img-top" alt="POCO Image">
-                        <div class="card-body">
-                            <h5 class="card-title">POCO: A Fast SC Polar Decoder</h5>
-                            <p class="card-text">This is a standalone SC decoder in Python encapsulating various fast decoding algorithms.</p>
-                            <p>Numerous different approaches are available under a single repository. See README for details.</p>
-                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#category1_project1Modal">View Details</a>
+                <!-- Introduction Section -->
+                <div class="section-intro text-center mb-5 animate-on-scroll">
+                    <h1>Research & Development Projects</h1>
+                    <p class="lead">Exploring the intersection of communications, security, and artificial intelligence</p>
+                </div>
+
+                <!-- Satellite Communications Category -->
+                <div class="category mb-5 animate-on-scroll">
+                    <h2 class="category-title" style="background-color: #E6E6FA; color: #333; padding: 10px;">
+                        <i class="fa fa-globe"></i> Reconfigurable Satellite Communications
+                    </h2>
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <!-- Space-BACN Project -->
+                        <div class="col-12 col-md-6 project-item">
+                            <div class="card h-100">
+                                <img src="images/space-bacn.avif" class="card-img-top" alt="Space-BACN" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#spaceBacnModal">
+                                <div class="card-body">
+                                    <h5 class="card-title">Space-BACN: Space-Based Adaptive Communications Node</h5>
+                                    <p class="card-text">Development of reconfigurable optical communications terminals for low Earth orbit (LEO) satellite constellations, enabling seamless inter-satellite and ground-to-satellite communications.</p>
+                                    <div class="tech-stack">
+                                        <span class="badge bg-primary">FPGA</span>
+                                        <span class="badge bg-secondary">ASIC</span>
+                                        <span class="badge bg-info">SystemVerilog</span>
+                                        <span class="badge bg-warning">Optical Communications</span>
+                                        <span class="badge bg-success">System Architecture</span>
+                                        <span class="badge bg-danger">MATLAB</span>
+                                        <span class="badge bg-primary">Simulink</span>
+                                    </div>
+                                    <a href="#" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#spaceBacnModal">Learn More</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project Item 2 -->
-                <div class="col-12 col-md-4 project-item">
-                    <div class="card h-100">
-                        <img src="images/foxy.gif" class="card-img-top" alt="POCO-Flip Image">
-                        <div class="card-body">
-                            <h5 class="card-title">POCO-Flip: Fast SC-Flip Polar Decoding Algorithm Family</h5>
-                            <p class="card-text">Coming Soon: This is a standalone SC-Flip decoder in Python encapsulating various flavors, including advanced Dynamic SC-Flip.</p>
-                            <p>See README for details.</p>
-                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#category1_project2Modal">View Details</a>
+                <!-- 5G Communications Category -->
+                <div class="category mb-5 animate-on-scroll">
+                    <h2 class="category-title" style="background-color: #FFD1DC; color: #333; padding: 10px;">
+                        <i class="fa fa-signal"></i> 5G and Beyond Communications
+                    </h2>
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <!-- Polar Codes Project -->
+                        <div class="col-12 col-md-6 project-item">
+                            <div class="card h-100">
+                                <img src="images/polarbear.gif" class="card-img-top" alt="Polar Codes">
+                                <div class="card-body">
+                                    <h5 class="card-title">POCO: A Fast SC Polar Decoder</h5>
+                                    <p class="card-text">Open-source implementation of efficient decoding algorithms for 5G NR polar codes, including SC, SSC, and various Fast-SSC flavors with configurable parameters.</p>
+                                    <div class="tech-stack">
+                                        <span class="badge bg-primary">Python</span>
+                                    </div>
+                                    <a href="#" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#polarCodesModal">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 project-item">
+                            <div class="card h-100">
+                                <img src="images/radio.png" class="card-img-top" alt="Polar Codes">
+                                <div class="card-body">
+                                    <h5 class="card-title">5G PHY Development for Tactical Communications</h5>
+                                    <p class="card-text">Development of Software-Defined Radio (SDR) solutions for tactical 5G communications at Octasic, focusing on flexible PHY layer implementation and optimization for military-grade requirements.</p>
+                                    <div class="tech-stack">
+                                        <span class="badge bg-primary">SDR</span>
+                                        <span class="badge bg-secondary">C++</span>
+                                        <span class="badge bg-info">DSP</span>
+                                        <span class="badge bg-warning">5G NR</span>
+                                        <span class="badge bg-success">MATLAB</span>
+                                    </div>
+                                    <a href="#" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#tacticalCommsModal">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ML Competition Project -->
+                        <div class="col-12 col-md-6 project-item">
+                            <div class="card h-100">
+                                <img src="images/foxy.gif" class="card-img-top" alt="ML Competition">
+                                <div class="card-body">
+                                    <h5 class="card-title">Machine Learning Competition for 5G</h5>
+                                    <p class="card-text">Created and hosted a Kaggle competition focused on 5G control channel transmission challenges, providing researchers with real-world data for ML applications in wireless communications.</p>
+                                    <div class="tech-stack">
+                                        <span class="badge bg-primary">PyTorch</span>
+                                        <span class="badge bg-secondary">TensorFlow</span>
+                                        <span class="badge bg-success">Keras</span>
+                                        <span class="badge bg-info">Kaggle</span>
+                                        <span class="badge bg-warning">5G NR</span>
+                                    </div>
+                                    <a href="#" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#mlCompModal">Learn More</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project Item 3 -->
-<!--                 <div class="col-12 col-md-4 project-item">
-                    <div class="card h-100">
-                        <img src="images/grandchip.png" class="card-img-top" alt="Category 1 - Project 3 Image">
-                        <div class="card-body">
-                            <h5 class="card-title">SC-List Decoding</h5>
-                            <p class="card-text">Details for Project 3. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            <p>Share insights about the creative process, inspirations, and any unique aspects of Project 3 in this section.</p>
-                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#category1_project3Modal">View Details</a>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- Project Item 4 -->
-<!--                 <div class="col-12 col-md-4 project-item">
-                    <div class="card h-100">
-                        <img src="images/author3.png" class="card-img-top" alt="Category 1 - Project 4 Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Fast Dynamic SC-Flip Decoding</h5>
-                            <p class="card-text">Details for Project 3. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            <p>Share insights about the creative process, inspirations, and any unique aspects of Project 3 in this section.</p>
-                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#category1_project4Modal">View Details</a>
-                        </div>
-                    </div>
-                </div> -->
-
-            </div>
-        </div>
-
-        <!-- Category: Category 2 -->
-        <div class="category">
-            <h2 class="category-title" style="background-color: #B0E57C; color: #333; padding: 10px;">Universal Decoding Towards 6G Communications</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <!-- Project Item 4 -->
-                <div class="col-12 col-md-4 project-item">
-                    <div class="card h-100">
-                        <img src="images/tech2.gif" class="card-img-top" alt="Category 2 - Project 4 Image">
-                        <div class="card-body">
-                            <h5 class="card-title">GRAND</h5>
-                            <p class="card-text">Coming soon</p>
-                            <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#category2_project4Modal">View Details</a>
+                <!-- Universal Decoding Category -->
+                <div class="category mb-5 animate-on-scroll">
+                    <h2 class="category-title" style="background-color: #B0E57C; color: #333; padding: 10px;">
+                        <i class="fa fa-microchip"></i> Universal Decoding Research
+                    </h2>
+                    <div class="row row-cols-1 row-cols-md-2 g-4">
+                        <div class="col-12 col-md-6 project-item">
+                            <div class="card h-100">
+                                <img src="images/tech2.gif" class="card-img-top" alt="Universal Decoding">
+                                <div class="card-body">
+                                    <h5 class="card-title">Universal Decoding - From Theory to Practice</h5>
+                                    <p class="card-text">Hardware implementation and analysis of universal decoding algorithms for next-generation wireless systems.</p>
+                                    <div class="tech-stack">
+                                        <span class="badge bg-primary">VHDL</span>
+                                        <span class="badge bg-secondary">SystemVerilog</span>
+                                        <span class="badge bg-success">Python</span>
+                                    </div>
+                                    <a href="#" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#universalDecodingModal">Learn More</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-            </div>
-        </div>
+                <!-- Security & AI Category -->
+                <div class="category mb-5 animate-on-scroll">
+                    <h2 class="category-title" style="background-color: #AEC6CF; color: #333; padding: 10px;">
+                        <i class="fa fa-shield"></i> Security & AI Applications
+                    </h2>
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <!-- Security Project -->
+                        <div class="col-12 col-md-6 project-item">
+                            <div class="card h-100">
+                                <img src="images/phy-security.jpg" class="card-img-top" alt="Physical Layer Security">
+                                <div class="card-body">
+                                    <h5 class="card-title">Physical Layer Security as a FEC feature</h5>
+                                    <p class="card-text">Novel approaches to integrate security features directly into the Forward Error Correction layer, developed during research at Boston University/MIT to combat jamming attacks.</p>
+                                    <div class="tech-stack">
+                                        <span class="badge bg-primary">C++</span>
+                                        <span class="badge bg-secondary">Python</span>
+                                        <span class="badge bg-success">MATLAB</span>
+                                        <span class="badge bg-info">FEC</span>
+                                        <span class="badge bg-warning">Security</span>
+                                    </div>
+                                    <a href="#" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#securityModal">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
 
-    </main>
+                        <!-- LLM Project -->
+                        <div class="col-12 col-md-6 project-item">
+                            <div class="card h-100">
+                                <img src="images/llm.png" class="card-img-top" alt="LLM Chatbots">
+                                <div class="card-body">
+                                    <h5 class="card-title">Personalized LLM-based Chatbots</h5>
+                                    <p class="card-text">Development of customized chatbot solutions using Large Language Models at FluentForce AI, focusing on B2B applications and enterprise-grade AI implementations.</p>
+                                    <div class="tech-stack">
+                                        <span class="badge bg-primary">Python</span>
+                                        <span class="badge bg-secondary">LangChain</span>
+                                        <span class="badge bg-success">OpenAI API</span>
+                                        <span class="badge bg-info">Vector DBs</span>
+                                        <span class="badge bg-warning">RAG</span>
+                                    </div>
+                                    <a href="#" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#llmModal">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
 
     <div class="modal fade" id="category1_project1Modal" tabindex="-1" aria-labelledby="category1_project1ModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -181,6 +304,411 @@
                     <p></p>
                     <p><a href="https://github.com/furkanercan/POCO" target="_blank">Take me to the repository</a></p>
 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Space-BACN Modal -->
+    <div class="modal fade" id="spaceBacnModal" tabindex="-1" aria-labelledby="spaceBacnModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="spaceBacnModalLabel">Space-BACN: Space-Based Adaptive Communications Node</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/space-bacn.avif" class="img-fluid rounded" alt="Space-BACN">
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-primary">Project Overview</h6>
+                            <p>Participated in the Space-BACN project during my tenure at Intel Labs/Altera.</p>
+
+                            <p>Development of next-generation optical communications terminals for LEO satellite constellations.</p>
+                            
+                            <h6 class="text-primary mt-4">Key Contributions</h6>
+                            <ul>
+                                <li>Designed and implemented reconfigurable hardware architecture</li>
+                                <li>Developed FPGA-based signal processing modules</li>
+                                <li>Created ASIC implementation for power efficiency</li>
+                                <li>Optimized system performance</li>
+                            </ul>
+
+                            <h6 class="text-primary mt-4">Technologies Used</h6>
+                            <div class="tech-stack">
+                                <span class="badge bg-primary">FPGA</span>
+                                <span class="badge bg-secondary">ASIC</span>
+                                <span class="badge bg-info">SystemVerilog</span>
+                                <span class="badge bg-warning">Optical Communications</span>
+                                <span class="badge bg-success">System Architecture</span>
+                                <span class="badge bg-danger">MATLAB</span>
+                                <span class="badge bg-dark">Simulink</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h6 class="text-primary">Technical Details</h6>
+                        <p>The Space-BACN project focuses on creating interoperable optical communications terminals that can:</p>
+                        <ul>
+                            <li>Support multiple optical waveforms through reconfigurable hardware</li>
+                            <li>Achieve high-speed data transfer rates (100+ Gbps)</li>
+                            <li>Operate efficiently in space environments</li>
+                            <li>Enable cross-constellation communication</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-4">
+                        <h6 class="text-primary">Impact & Results</h6>
+                        <p>This project contributes to:</p>
+                        <ul>
+                            <li>Enhanced satellite constellation connectivity</li>
+                            <li>Reduced communication latency</li>
+                            <li>Improved space-to-ground data transfer</li>
+                            <li>Advanced optical communication standards</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <!-- Add any additional buttons like "View Documentation" if needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tactical Communications Modal -->
+    <div class="modal fade" id="tacticalCommsModal" tabindex="-1" aria-labelledby="tacticalCommsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tacticalCommsModalLabel">5G PHY Development for Tactical Communications</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/avogif.gif" class="img-fluid rounded" alt="Tactical Communications">
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-primary">Project Overview</h6>
+                            <p>Led the development and optimization of critical 5G physical layer components at Octasic, focusing on performance enhancement for tactical communications applications.</p>
+                            
+                            <h6 class="text-primary mt-4">Key Achievements</h6>
+                            <ul>
+                                <li>Achieved 2000x reduction in channel latency through strategic algorithm and SDR optimizations</li>
+                                <li>Reduced memory usage of LDPC decoders by 20%</li>
+                                <li>Led development of complete polar encoder/decoder chain</li>
+                                <li>Enhanced data transmission speeds for both uplink and downlink channels</li>
+                            </ul>
+
+                            <h6 class="text-primary mt-4">Technologies Used</h6>
+                            <div class="tech-stack">
+                                <span class="badge bg-primary">SDR</span>
+                                <span class="badge bg-secondary">C++</span>
+                                <span class="badge bg-info">DSP</span>
+                                <span class="badge bg-warning">5G NR</span>
+                                <span class="badge bg-success">MATLAB</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h6 class="text-primary">Technical Components</h6>
+                        <p>Optimized critical 5G PHY components including:</p>
+                        <ul>
+                            <li>Physical Downlink Control Channel (PDCCH)</li>
+                            <li>Physical Broadcast Channel (PBCH)</li>
+                            <li>Physical Uplink Control Channel (PUCCH)</li>
+                            <li>LDPC Decoders with optimized memory usage</li>
+                            <li>Polar encoder/decoder chain for enhanced transmission</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-4">
+                        <h6 class="text-primary">Impact & Results</h6>
+                        <p>The optimizations resulted in:</p>
+                        <ul>
+                            <li>Dramatically reduced channel latency (2000x improvement)</li>
+                            <li>Enhanced memory efficiency in LDPC decoders</li>
+                            <li>Improved data transmission speeds</li>
+                            <li>More efficient embedded platform performance</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ML Competition Modal -->
+    <div class="modal fade" id="mlCompModal" tabindex="-1" aria-labelledby="mlCompModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mlCompModalLabel">Machine Learning Competition for 5G</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/foxy.gif" class="img-fluid rounded" alt="ML Competition">
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-primary">Project Overview</h6>
+                            <p>Created and hosted a Kaggle competition focused on 5G control channel transmission challenges, providing researchers with real-world data for ML applications in wireless communications.</p>
+                            
+                            <h6 class="text-primary mt-4">Dataset Features</h6>
+                            <ul>
+                                <li>Comprehensive 5G control channel transmission data</li>
+                                <li>Real-world scenarios and challenges</li>
+                                <li>Structured for ML model development</li>
+                                <li>Suitable for various ML approaches</li>
+                            </ul>
+
+                            <h6 class="text-primary mt-4">Technologies Used</h6>
+                            <div class="tech-stack">
+                                <span class="badge bg-primary">PyTorch</span>
+                                <span class="badge bg-secondary">TensorFlow</span>
+                                <span class="badge bg-success">Keras</span>
+                                <span class="badge bg-info">Kaggle</span>
+                                <span class="badge bg-warning">5G NR</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h6 class="text-primary">Competition Details</h6>
+                        <p>The competition challenges participants to:</p>
+                        <ul>
+                            <li>Develop ML models for 5G control channel optimization</li>
+                            <li>Improve transmission efficiency and reliability</li>
+                            <li>Address real-world wireless communication challenges</li>
+                            <li>Benchmark different ML approaches</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-4">
+                        <h6 class="text-primary">Resources</h6>
+                        <p>Available resources include:</p>
+                        <ul>
+                            <li>Complete dataset on Kaggle</li>
+                            <li>Detailed documentation and guidelines</li>
+                            <li>Baseline models and examples</li>
+                            <li>Performance evaluation metrics</li>
+                        </ul>
+                        <p class="mt-3">
+                            <a href="https://www.kaggle.com/datasets/furkanercan88/5g-control-channel-transmission-dataset" target="_blank" class="btn btn-primary">
+                                View on Kaggle <i class="fa fa-external-link"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Polar Codes Modal -->
+    <div class="modal fade" id="polarCodesModal" tabindex="-1" aria-labelledby="polarCodesModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="polarCodesModalLabel">POCO: A Fast SC Polar Decoder</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/polarbear.gif" class="img-fluid rounded" alt="Polar Codes">
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-primary">Project Overview</h6>
+                            <p>POCO is an open-source implementation of efficient polar decoders, designed for both research and practical applications in 5G NR systems.</p>
+                            
+                            <h6 class="text-primary mt-4">Key Features</h6>
+                            <ul>
+                                <li>Support for multiple decoding algorithms (SC, SSC, Fast-SSC)</li>
+                                <li>Configurable size parameters for enabled fast nodes</li>
+                                <li>Fixed-point arithmetic support</li>
+                                <li>Performance plotting capabilities</li>
+                                <li>Various configuration files with citation information</li>
+                            </ul>
+
+                            <h6 class="text-primary mt-4">Technologies Used</h6>
+                            <div class="tech-stack">
+                                <span class="badge bg-primary">Python</span>
+                                <span class="badge bg-secondary">C++</span>
+                                <span class="badge bg-success">MATLAB</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h6 class="text-primary">Technical Details</h6>
+                        <p>Supported Algorithms:</p>
+                        <ul>
+                            <li>Successive Cancellation (SC)</li>
+                            <li>Simplified Successive Cancellation (SSC)</li>
+                            <li>Multiple variants of Fast-SSC</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-4">
+                        <h6 class="text-primary">License & Usage</h6>
+                        <p>Copyright (c) 2024 Furkan Ercan. MIT License.</p>
+                        <p>This software is publicly available to use and modify. Using the citation information available in the prepared configuration files is recommended when publishing results with this software.</p>
+                        <p class="mt-3">
+                            <a href="https://github.com/furkanercan/POCO" target="_blank" class="btn btn-primary">
+                                View on GitHub <i class="fa fa-github"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Security Modal -->
+    <div class="modal fade" id="securityModal" tabindex="-1" aria-labelledby="securityModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="securityModalLabel">Physical Layer Security as a FEC feature</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/phy-security.jpg" class="img-fluid rounded" alt="Physical Layer Security">
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-primary">Project Overview</h6>
+                            <p>Research conducted at Boston University/MIT focused on developing innovative security frameworks at the physical layer, specifically targeting resilience against jamming attacks.</p>
+                            
+                            <h6 class="text-primary mt-4">Key Contributions</h6>
+                            <ul>
+                                <li>Developed software frameworks for anti-jamming security</li>
+                                <li>Integrated security features into FEC layer</li>
+                                <li>Created resilient communication systems</li>
+                                <li>Published findings in IEEE Communications Letters</li>
+                            </ul>
+
+                            <h6 class="text-primary mt-4">Technologies Used</h6>
+                            <div class="tech-stack">
+                                <span class="badge bg-primary">C++</span>
+                                <span class="badge bg-secondary">Python</span>
+                                <span class="badge bg-success">MATLAB</span>
+                                <span class="badge bg-info">FEC</span>
+                                <span class="badge bg-warning">Security</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h6 class="text-primary">Technical Details</h6>
+                        <p>The research focused on:</p>
+                        <ul>
+                            <li>Novel security integration with FEC mechanisms</li>
+                            <li>Anti-jamming techniques at the physical layer</li>
+                            <li>Performance analysis under various attack scenarios</li>
+                            <li>Practical implementation considerations</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-4">
+                        <h6 class="text-primary">Publications</h6>
+                        <p>Research findings published in:</p>
+                        <ul>
+                            <li>
+                                <a href="https://ieeexplore.ieee.org/document/10279273" target="_blank">
+                                    IEEE ICC 2023 - "GRAND-EDGE: A Universal, Jamming-Resilient Algorithm with Error-and-Erasure Decoding"
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://ieeexplore.ieee.org/document/10279273" target="_blank">
+                                    IEEE GLOBECOM 2022 - "A General Security Approach for Soft-information Decoding against Smart Bursty Jammers"
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LLM Modal -->
+    <div class="modal fade" id="llmModal" tabindex="-1" aria-labelledby="llmModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="llmModalLabel">Enterprise AI Solutions at FluentForce AI</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/llm.png" class="img-fluid rounded" alt="LLM Chatbots">
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-primary">Leadership Role</h6>
+                            <p>As Co-founder and Technical Lead at FluentForce AI, leading the development of enterprise-grade AI solutions for business clients.</p>
+                            
+                            <h6 class="text-primary mt-4">Key Responsibilities</h6>
+                            <ul>
+                                <li>Architecting scalable AI solutions for enterprise clients</li>
+                                <li>Managing technical development team and roadmap</li>
+                                <li>Implementing secure and efficient LLM integrations</li>
+                                <li>Developing custom RAG pipelines for specific business needs</li>
+                            </ul>
+
+                            <h6 class="text-primary mt-4">Technologies Used</h6>
+                            <div class="tech-stack">
+                                <span class="badge bg-primary">Python</span>
+                                <span class="badge bg-secondary">LangChain</span>
+                                <span class="badge bg-success">OpenAI API</span>
+                                <span class="badge bg-info">Vector DBs</span>
+                                <span class="badge bg-warning">RAG</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h6 class="text-primary">Technical Solutions</h6>
+                        <p>Our AI implementations include:</p>
+                        <ul>
+                            <li>Custom-trained language models for specific business domains</li>
+                            <li>Retrieval-Augmented Generation (RAG) systems for accurate responses</li>
+                            <li>Secure data handling and privacy-preserving AI architectures</li>
+                            <li>Scalable infrastructure for enterprise deployment</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-4">
+                        <h6 class="text-primary">Business Impact</h6>
+                        <p>Delivering value through:</p>
+                        <ul>
+                            <li>Automated customer service solutions</li>
+                            <li>Knowledge management and retrieval systems</li>
+                            <li>Process automation and efficiency improvements</li>
+                            <li>Data-driven business intelligence</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

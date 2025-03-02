@@ -171,6 +171,17 @@
     .ftco-social li {
       margin-bottom: 10px; /* Add margin between each social link */
     }
+
+    .profile-img {
+      border-radius: 50%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .profile-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      cursor: pointer;
+  }
     
 /*    #pdf-container {
       width: 100%;
@@ -186,14 +197,14 @@
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
-			<img src="images/author3.png" width="200" alt="Furkan">
+			<img src="images/author3.png" width="200" alt="Furkan" class="profile-img" style="transition: transform 0.3s ease;">
 			<h1 id="colorlib-logo"><a href="index.html">furkan ercan<span>.</span></a></h1>
 			<nav id="colorlib-main-menu" role="navigation">
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li class="colorlib-active"><a href="about.html">About</a></li>
 					<li><a href="publications.html">Publications</a></li>
-          <li><a href="projects.html">Software</a></li>
+          <li><a href="projects.html">Projects</a></li>
 					<li><a href="activities.html">Activities</a></li>
 					<li><a href="awards.html">Awards</a></li>
 					<!--<li><a href="#">Contact</a></li>-->
