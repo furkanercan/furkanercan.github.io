@@ -16,6 +16,30 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="description" content="Furkan Ercan - Staff Research Scientist at Intel Corporation. Expert in wireless communications, error-correcting codes, and RTL design. View my professional timeline and download resume.">
+    <meta name="keywords" content="Furkan Ercan, Intel, wireless communications, error-correcting codes, RTL design, VHDL, Verilog, MATLAB, research scientist">
+    <meta name="author" content="Furkan Ercan">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="About | Furkan Ercan">
+    <meta property="og:description" content="Staff Research Scientist at Intel Corporation specializing in wireless communications and error-correcting codes.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://furkanercan.github.io/about.html">
+    <meta property="og:image" content="https://furkanercan.github.io/images/author3.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About | Furkan Ercan">
+    <meta name="twitter:description" content="Staff Research Scientist at Intel Corporation specializing in wireless communications and error-correcting codes.">
+    <meta name="twitter:image" content="https://furkanercan.github.io/images/author3.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://furkanercan.github.io/about.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
 
@@ -43,150 +67,919 @@
 
     <style>
     body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f4f4f4;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
       margin: 0;
       padding: 0;
+      min-height: 100vh;
+      color: #2c3e50;
+      overflow-x: hidden;
     }
 
-    .timeline-container {
-      position: relative;
-      max-width: 800px;
-      margin: 50px auto;
-    }
-
-    .timeline-item-left {
-      position: relative;
-      max-width: 400px; /* Set a max-width for the timeline items */
-      margin: 0 auto;
-      margin-right: -410px; /* Shift the timeline item to the left by 200px */
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-    }
-
-    .timeline-item-right {
-      position: relative;
-      max-width: 400px; /* Set a max-width for the timeline items */
-      margin: 0 auto;
-      margin-left: 290px; /* Shift the timeline item to the left by 200px */
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-    }
-
-    .timeline-item-left::before {
-      content: '';
-      position: absolute;
+    /* Animated cosmic background */
+    .cosmic-bg {
+      position: fixed;
       top: 0;
-      left: 00%;
-      transform: translateX(-50%);
-      width: 20px;
-      height: 20px;
-      background-color: #3498db;
-      border-radius: 50%;
-      border: 2px solid #fff;
-    }
-    
-    .timeline-item-right::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 100%;
-      transform: translateX(-50%);
-      width: 20px;
-      height: 20px;
-      background-color: #3498db;
-      border-radius: 50%;
-      border: 2px solid #fff;
-    }
-
-    .timeline-date {
-      font-size: 14px;
-      color: #777;
-    }
-
-    .timeline-content {
-      margin-top: 10px;
-    }
-
-    .timeline-title {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 5px;
-      color: #333;
-    }
-
-    .timeline-description {
-      font-size: 16px;
-      color: #555;
-    }
-
-    .expanded-content {
-      display: none;
-      max-width: 600px; /* Set a max-width for the expanded content */
-      margin-top: 15px;
-    }
-
-    .expanded-content p {
-      font-size: 16px;
-      color: #555;
-    }
-
-    /* New styles for the vertical timeline layout */
-    .timeline-container::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 100%;
-      width: 4px;
+      left: 0;
+      width: 100%;
       height: 100%;
-      background-color: #3498db;
-      transform: translateX(-50%);
+      z-index: -1;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.08) 0%, transparent 50%);
+      animation: cosmicFloat 200s ease-in-out infinite;
     }
 
-    .icon-container {
+    @keyframes cosmicFloat {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-30px) rotate(180deg); }
+    }
+
+    /* Floating stars */
+    .star {
+      position: fixed;
+      width: 2px;
+      height: 2px;
+      background: rgba(120, 119, 198, 0.3);
+      border-radius: 50%;
+      animation: twinkle 3s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.5); }
+    }
+
+    /* Hero Section */
+    .hero-section {
+      min-height: 100vh;
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      margin-top: 15px; /* Adjust the margin as needed */
+      padding: 2rem 4rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      gap: 3rem;
     }
 
-    .icon {
-      width: 15%; /* Adjust the width of each icon container */
-      margin-right: 50px; /* Adjust the margin between icons */
+    .hero-content {
+      flex: 1;
+      text-align: left;
+      z-index: 2;
     }
-    .ftco-social {
+
+    .hero-photo {
+      flex-shrink: 0;
+      width: 300px;
+      height: 300px;
+      border-radius: 20px;
+      border: 4px solid rgba(120, 219, 255, 0.3);
+      box-shadow: 0 0 30px rgba(120, 219, 255, 0.2);
+      transition: all 0.5s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    .hero-photo:hover {
+      transform: scale(1.05);
+      border-color: rgba(120, 219, 255, 0.5);
+      box-shadow: 0 0 50px rgba(120, 219, 255, 0.3);
+    }
+
+    .hero-photo::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 0deg, transparent, rgba(120, 219, 255, 0.2), transparent);
+      animation: rotate 4s linear infinite;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 16px;
+    }
+
+    .hero-photo:hover::before {
+      opacity: 1;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+        gap: 2rem;
+      }
+      
+      .hero-content {
+        text-align: center;
+      }
+      
+      .hero-title {
+        font-size: 3rem;
+      }
+      
+      .hero-photo {
+        width: 250px;
+        height: 250px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .hero-photo {
+        width: 200px;
+        height: 200px;
+      }
+    }
+
+    .hero-title {
+      font-size: 4.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 30px rgba(120, 219, 255, 0.2);
+      position: relative;
+      letter-spacing: -1px;
+      line-height: 0.9;
+      font-family: 'Poppins', 'Montserrat', sans-serif;
+    }
+
+    .hero-title::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      background: linear-gradient(135deg, rgba(44, 62, 80, 0.1) 0%, rgba(52, 73, 94, 0.1) 50%, rgba(44, 62, 80, 0.1) 100%);
+      border-radius: 20px;
+      z-index: -1;
+      filter: blur(20px);
+      animation: glowPulse 3s ease-in-out infinite;
+    }
+
+    .hero-title::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      background-size: 200% 100%;
+      animation: shimmer 2s ease-in-out infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes glowPulse {
+      0%, 100% { 
+        opacity: 0.3; 
+        transform: scale(1); 
+      }
+      50% { 
+        opacity: 0.6; 
+        transform: scale(1.05); 
+      }
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    .hero-name-highlight {
+      font-weight: 900;
+      color: #2c3e50;
+      text-shadow: 
+        3px 3px 0px #ecf0f1,
+        6px 6px 0px #bdc3c7,
+        9px 9px 20px rgba(0,0,0,0.2);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 1.2em;
+    }
+
+    .hero-name-highlight::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: transparent;
+      z-index: -1;
+    }
+
+    @keyframes nameGlow {
+      0%, 100% { 
+        opacity: 0.3; 
+        transform: scale(1); 
+      }
+      50% { 
+        opacity: 0.7; 
+        transform: scale(1.1); 
+      }
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      color: #546e7a;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-tagline {
+      font-size: 1.2rem;
+      color: rgba(120, 219, 255, 0.8);
+      font-style: italic;
+      margin-bottom: 3rem;
+    }
+
+    /* Skills Matrix */
+    .skills-section {
+      padding: 3rem 2rem;
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, #5c6bc0 0%, #8e24aa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .skill-card {
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(120, 219, 255, 0.1), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .skill-card:hover::before {
+      left: 100%;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-10px) scale(1.05);
+      border-color: rgba(120, 219, 255, 0.4);
+      box-shadow: 0 20px 40px rgba(120, 219, 255, 0.15);
+    }
+
+    .skill-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1rem;
+      background: linear-gradient(135deg, #5c6bc0 0%, #8e24aa 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    .skill-card:hover .skill-icon {
+      transform: scale(1.2) rotate(10deg);
+    }
+
+    .skill-name {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #2c3e50;
+    }
+
+    .skill-description {
+      color: #546e7a;
+      line-height: 1.6;
+    }
+
+    /* Journey Section */
+    .journey-section {
+      padding: 3rem 2rem;
+    }
+
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .journey-card {
+      background: rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .journey-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 50px 50px;
+      border-color: transparent transparent rgba(120, 219, 255, 0.2) transparent;
+      transition: all 0.3s ease;
+    }
+
+    .journey-card:hover::after {
+      border-width: 0 0 60px 60px;
+    }
+
+    .journey-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(120, 219, 255, 0.3);
+      box-shadow: 0 15px 35px rgba(120, 219, 255, 0.08);
+    }
+
+    .journey-year {
+      background: linear-gradient(135deg, #5c6bc0 0%, #8e24aa 100%);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .journey-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #2c3e50;
+    }
+
+    .journey-company {
+      font-size: 1.1rem;
+      color: #5c6bc0;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .journey-description {
+      color: #546e7a;
+      line-height: 1.6;
+    }
+
+    /* Fun Facts Section */
+    .fun-facts-section {
+      padding: 3rem 2rem;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    .facts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .fact-card {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .fact-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.8);
+      border-color: rgba(120, 219, 255, 0.3);
+    }
+
+    .fact-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #5c6bc0 0%, #8e24aa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .fact-number {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #5c6bc0;
+      margin-bottom: 0.5rem;
+      word-wrap: break-word;
+      max-width: 100%;
+      line-height: 1.2;
+    }
+
+    .fact-label {
+      color: #546e7a;
+      font-size: 0.9rem;
+      word-wrap: break-word;
+      max-width: 100%;
+      line-height: 1.3;
+    }
+
+    /* Resume Section */
+    .resume-section {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .resume-container {
+      background: rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 25px;
+      padding: 3rem;
+      max-width: 800px;
+      margin: 0 auto;
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .resume-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(120, 219, 255, 0.08), transparent);
+      transition: left 0.8s ease;
+    }
+
+    .resume-container:hover::before {
+      left: 100%;
+    }
+
+    .resume-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, #5c6bc0 0%, #8e24aa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .resume-embed {
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      margin-bottom: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .resume-embed:hover {
+      transform: scale(1.02);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .download-btn {
+      background: linear-gradient(135deg, #5c6bc0 0%, #8e24aa 100%);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(92, 107, 192, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .download-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .download-btn:hover::before {
+      left: 100%;
+    }
+
+    .download-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(92, 107, 192, 0.4);
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Enhanced navigation */
+    .colorlib-main-menu ul li a {
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .colorlib-main-menu ul li a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(92, 107, 192, 0.1), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .colorlib-main-menu ul li a:hover::before {
+      left: 100%;
+    }
+
+    .colorlib-main-menu ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(135deg, #5c6bc0 0%, #8e24aa 100%);
+      transition: width 0.3s ease;
+    }
+
+    .colorlib-main-menu ul li a:hover::after {
+      width: 100%;
+    }
+
+    .colorlib-main-menu ul li.colorlib-active a::after {
+      width: 100%;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .skills-grid,
+      .journey-grid,
+      .facts-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, #5c6bc0 0%, #8e24aa 100%);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(135deg, #4a5bb8 0%, #7b1fa2 100%);
+    }
+
+    /* Modern Footer Styling */
+    .modern-footer {
+      padding: 3rem 0;
+      color: #2c3e50;
+    }
+
+    .footer-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #5c6bc0 0%, #8e24aa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-subtitle {
+      font-size: 1.1rem;
+      color: #546e7a;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #5c6bc0;
+      font-weight: 500;
+    }
+
+    .contact-item i {
+      font-size: 1.2rem;
+      color: #8e24aa;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 15px; /* Add margin as needed */
+      gap: 0.5rem;
+      color: #546e7a;
+      text-decoration: none;
+      padding: 1rem;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      min-width: 100px;
     }
 
-    .ftco-social li {
-      margin-bottom: 10px; /* Add margin between each social link */
+    .social-link:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(120, 219, 255, 0.3);
+      color: #5c6bc0;
+      text-decoration: none;
     }
 
-    .profile-img {
-      border-radius: 50%;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .profile-img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      cursor: pointer;
-  }
-    
-/*    #pdf-container {
+    .social-link i {
+      font-size: 1.5rem;
+      color: #8e24aa;
+    }
+
+    .social-link span {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .footer-divider {
+      width: 100px;
+      height: 2px;
+      background: linear-gradient(135deg, #5c6bc0 0%, #8e24aa 100%);
+      margin: 2rem auto;
+      border-radius: 1px;
+    }
+
+    .footer-copyright {
+      color: #7f8c8d;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    /* Responsive footer */
+    @media (max-width: 768px) {
+      .contact-info {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .social-links {
+        gap: 1rem;
+      }
+      
+      .social-link {
+        min-width: 80px;
+        padding: 0.8rem;
+      }
+      
+      .footer-title {
+        font-size: 2rem;
+      }
+    }
+
+    /* Academic Activities Section */
+    .academic-activities-section {
+      padding: 3rem 0;
+    }
+
+    .academic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .academic-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .academic-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
       width: 100%;
       height: 100%;
-    }*/
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .academic-card:hover::before {
+      left: 100%;
+    }
+
+    .academic-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      border-color: rgba(120, 219, 255, 0.4);
+    }
+
+    .academic-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .academic-icon i {
+      font-size: 1.8rem;
+      color: white;
+    }
+
+    .academic-card:hover .academic-icon {
+      transform: scale(1.1) rotate(5deg);
+      background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    }
+
+    .academic-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .academic-company {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #5c6bc0;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .academic-description {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #5a6c7d;
+      margin-bottom: 1.5rem;
+    }
+
+    .academic-period {
+      display: inline-block;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Responsive Design for Academic Section */
+    @media (max-width: 768px) {
+      .academic-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      
+      .academic-card {
+        padding: 1.5rem;
+      }
+      
+      .academic-icon {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .academic-icon i {
+        font-size: 1.5rem;
+      }
+    }
   </style>
 
   <meta charset="UTF-8">
@@ -194,6 +987,9 @@
 
   </head>
   <body>
+    <!-- Animated Background -->
+    <div class="cosmic-bg"></div>
+
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
@@ -204,8 +1000,8 @@
 					<li><a href="index.html">Home</a></li>
 					<li class="colorlib-active"><a href="about.html">About</a></li>
 					<li><a href="publications.html">Publications</a></li>
-          <li><a href="projects.html">Projects</a></li>
-					<li><a href="activities.html">Activities</a></li>
+          <li><a href="projects.html">R&D Projects</a></li>
+					                <li><a href="activities.html">Academic Activities</a></li>
 					<li><a href="awards.html">Awards</a></li>
 					<!--<li><a href="#">Contact</a></li>-->
 				</ul>
@@ -232,211 +1028,213 @@
 				<div class="photograhy">
 					<div class="row yes-gutters">
 						<div class="desc">
-							<h2 class="subheading">Hello, I'm Furkan Ercan,</h2>
-							<h1 class="mb-4">and these are what I've been up to.</h1>
-							
-                <div class="timeline-container">
-
-                  <div class="timeline-item-right" onclick="toggleExpand('im_2024_intel')">
-                    <div class="timeline-date">February 2024 - December 2024</div>
-                    <div class="timeline-content">
-                      <div class="timeline-title">Staff Research Scientist</div>
-                      <div class="timeline-description" style="font-weight: bold; color: #000099;">Intel PSG - Intel Corporation</div>
+							<div class="hero-section">
+                  <div class="hero-content">
+                    <h1 class="hero-title">
+                      Hello, I'm Furkan Ercan,
+                    </h1>
+                    <p class="hero-subtitle">
+                      and I'm pushing the boundaries of wireless communications and AI via research, teaching, and innovation.
+                    </p>
+                  </div>
+                  <div class="hero-photo">
+                    <img src="images/furkan_mw.jpeg" alt="Furkan Ercan">
+                  </div>
+                </div>
+                
+                <div class="skills-section">
+                  <h2 class="section-title">Skills</h2>
+                  <div class="skills-grid">
+                    <div class="skill-card">
+                      <div class="skill-icon"><i class="icon-code"></i></div>
+                      <h3 class="skill-name">Algorithm Development</h3>
+                      <p class="skill-description">Designing and implementing cutting-edge algorithms for wireless communications and error correction.</p>
                     </div>
-                    <div class="expanded-content" id="im_2024_intel">
-                      <p><strong>Lead Algorithm Development</strong> for reconfigurable space-based communications.</p>
-                      <p><strong>Error-Correcting Code Design</strong> for enhanced communication standards.</p>
-                      <p><strong>RTL Design Expertise</strong> in VHDL/Verilog for RTL design and MATLAB/Simulink for modeling.</p>
-                      <p><strong>Validation Checks and Coordination</strong> for holistic development.</p>
-                      <p><strong>Wireless Communication Patents</strong> in advanced wireless communication techniques.</p>
-                      <div class="icon-container">
-                        <div class="icon"><img src="images/icons/matlab.png" width="60" height="60"></div>
-                        <div class="icon"><img src="images/icons/simulink.png" width="60" height="60"></div>
-                        <div class="icon"><img src="images/icons/asic.jpg" width="60" height="60"></div>
-                        <div class="icon"><img src="images/icons/python.webp" width="60" height="60"></div>
-                      </div>
+                    <div class="skill-card">
+                      <div class="skill-icon"><i class="icon-laptop"></i></div>
+                      <h3 class="skill-name">RTL Design</h3>
+                      <p class="skill-description">Expertise in VHDL/Verilog for RTL design and MATLAB/Simulink for modeling.</p>
+                    </div>
+                    <div class="skill-card">
+                      <div class="skill-icon"><i class="icon-bar-chart"></i></div>
+                      <h3 class="skill-name">Research & Innovation</h3>
+                      <p class="skill-description">Pioneering new techniques in wireless communication and error correction.</p>
+                    </div>
+                    <div class="skill-card">
+                      <div class="skill-icon"><i class="icon-layers"></i></div>
+                      <h3 class="skill-name">System Architecture</h3>
+                      <p class="skill-description">Understanding and designing complex communication systems.</p>
                     </div>
                   </div>
-
-                  <div class="timeline-item-left" onclick="toggleExpand('am_2023_comml')">
-                    <div class="timeline-date">January 2023 - Present</div>
-                    <div class="timeline-content">
-                      <div class="timeline-title">Associate Editor</div>
-                      <div class="timeline-description" style="font-weight: bold; color: #000099;">IEEE Communications Letters</div>
-                      <div class="expanded-content" id="am_2023_comml">
-                      <p><strong>Manuscript Review:</strong> Assessing channel coding manuscripts for IEEE Communications Letters, ensuring technical precision and editorial compliance.</p>
-                      <p><strong>Peer Review Coordination:</strong> Managing the peer review process, selecting reviewers, and providing feedback to enhance the quality of published content in channel coding.</p>
-                      <div class="icon-container">
-                        <div class="icon"><img src="images/icons/people.png" width="60" height="60"></div>
-                        <div class="icon"><img src="images/icons/paper.png" width="60" height="60"></div>
-                        <div class="icon"><img src="images/icons/presentation.png" width="60" height="60"></div>
-                      </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="timeline-item-right" onclick="toggleExpand('im_2024_intel')">
-                    <div class="timeline-date">December 2022 - February 2024</div>
-                    <div class="timeline-content">
-                      <div class="timeline-title">Research Scientist / Engineer</div>
-                      <div class="timeline-description" style="font-weight: bold; color: #000099;">Intel Labs & PSG - Intel Corporation</div>
-                    </div>
-                    <div class="expanded-content" id="im_2024_intel">
-                      <p><strong>Lead Algorithm Development</strong> for reconfigurable space-based communications.</p>
-                      <p><strong>Error-Correcting Code Design</strong> for enhanced communication standards.</p>
-                      <p><strong>RTL Design Expertise</strong> in VHDL/Verilog for RTL design and MATLAB/Simulink for modeling.</p>
-                      <p><strong>Validation Checks and Coordination</strong> for holistic development.</p>
-                      <p><strong>Wireless Communication Patents</strong> in advanced wireless communication techniques.</p>
-                      <div class="icon-container">
-                        <div class="icon"><img src="images/icons/matlab.png" width="60" height="60"></div>
-                        <div class="icon"><img src="images/icons/simulink.png" width="60" height="60"></div>
-                        <div class="icon"><img src="images/icons/asic.jpg" width="60" height="60"></div>
-                        <div class="icon"><img src="images/icons/python.webp" width="60" height="60"></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Academic Milestone 2 -->
-                  <div class="timeline-item-left" onclick="toggleExpand('am_2021_bu')">
-                    <div class="timeline-date">November 2021 - December 2022</div>
-                    <div class="timeline-content">
-                      <div class="timeline-title">Postdoctoral Associate</div>
-                      <div class="timeline-description" style="font-weight: bold; color: #CC0000;">Boston University</div>
-                    </div>
-                    <div class="expanded-content" id="am_2021_bu">
-                      <p><strong>Algorithm Leadership:</strong> Led the creation of advanced algorithms, software, and hardware for next-gen universal decoding.</p>
-                      <p><strong>GRAND Framework Engineering:</strong> Engineered a dynamic C++ framework for the GRAND algorithm family, enabling versatile configurations. Served as a foundation for design, analysis, testing, and optimization.</p>
-                      <p><strong>Innovative Security Algorithms:</strong> Pioneered software-based security algorithms for complex channel conditions, using novel in-decoder methods.</p>
-                      <p><strong>Microchip Optimization Expertise:</strong> Provided expertise in optimizing resources and conducting pre-silicon validation for ultra low-energy universal decoder microchips.</p>
-                      <div class="icon-container">
-                        <!-- <div class="icon"><img src="images/icons/c.jpeg" width="60" height="60"></div> -->
-                        <div class="icon"><img src="images/icons/cpp.jpg" width="60" height="60"></div>
-                        <div class="icon"><img src="images/icons/asic.jpg" width="60" height="60"></div>
-                        <div class="icon"><img src="images/icons/teach.png" width="60" height="60"></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Industrial Milestone 1 -->
-                  <div class="timeline-item-right" onclick="toggleExpand('im_2020_octasic')">
-                    <div class="timeline-date">June 2020 - August 2021</div>
-                    <div class="timeline-content">
-                      <div class="timeline-title">5G Algorithm Developer</div>
-                      <div class="timeline-description" style="font-weight: bold; color: #CC9900;">Octasic Inc. - Canada</div>
-                    </div>
-                    <div class="expanded-content" id="im_2020_octasic">
-                      <p><strong>5G PHY Systems Design:</strong> Led design and optimization of 5G PHY Wireless Protocol Systems, from MATLAB models to embedded C/ASM DSP implementations.</p>
-                      <p><strong>MATLAB/C Co-Development:</strong> Executed MATLAB/C co-development for proprietary wireless chips, enhancing seamless development and testbenching.</p>
-                      <p><strong>Optimization Leadership:</strong> Spearheaded optimization of the 5G polar decoder, implementing enhancements for increased flexibility and speed.</p>
-                      <p><strong>Expertise in 5G PHY Components:</strong> Engaged with critical 5G PHY components and LDPC codes.</p>
-                      <p><strong>Proactive Problem-Solving:</strong> Demonstrated rapid learning, proactive initiative-taking, and efficient debugging in adapting to new challenges.</p>
-                      <div class="icon-container">
-                        <div class="icon"><img src="images/icons/c.jpeg" width="60" height="60"></div>
-                        <div class="icon"><img src="images/icons/cpp.jpg" width="60" height="60"></div>
-                        <div class="icon"><img src="images/icons/matlab.png" width="60" height="60"></div>
-                        <div class="icon"><img src="images/icons/atlassian.png" width="60" height="60"></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Academic Milestone 2 -->
-                  <div class="timeline-item-left" onclick="toggleExpand('am_2020_mcgill')">
-                    <div class="timeline-date">2015 - 2020</div>
-                    <div class="timeline-content">
-                      <div class="timeline-title">Ph.D.</div>
-                      <div class="timeline-description" style="font-weight: bold; color: #CC0000;">McGill University</div>
-                    </div>
-                    <div class="expanded-content" id="am_2020_mcgill">
-                      <p><strong>C++ Framework Pioneer</strong> for polar code decoders, featuring meticulously designed bit-exact versions with quantization for streamlined hardware development and testing.</p>
-                      <p><strong>Advanced Hardware Architect</strong> for various polar decoder architectures, consistently achieving remarkable performance metrics in throughput, latency, area/energy efficiency, and error correction capabilities.</p>
-                      <p><strong>Educational Contribution</strong> in shaping and delivering coursework, notably contributing to subjects like Computer Organization, Digital System Design, and Digital Logic, enriching the educational experience for students.</p>
-
-                      <div class="icon-container">
-                        <div class="icon"><img src="images/icons/cpp.jpg" width="60" height="60"></div>
-                        <div class="icon"><img src="images/icons/asic.jpg" width="60" height="60"></div>
-                        <div class="icon"><img src="images/icons/teach.png" width="60" height="60"></div>
-                        <div class="icon"><img src="images/icons/gitlab.png" width="60" height="60"></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="timeline-item-left" onclick="toggleExpand('am_2015_metu')">
-                    <div class="timeline-date">2012 - 2015</div>
-                    <div class="timeline-content">
-                      <div class="timeline-title">M.Sc.</div>
-                      <div class="timeline-description" style="font-weight: bold; color: #CC0000;">Middle East Technical University</div>
-                    </div>
-                    <div class="expanded-content" id="am_2015_metu">
-                      <p><strong>ASIC Development & Tapeout:</strong> Led the complete lifecycle of ASIC development, overseeing the chip tapeout process for advanced arithmetic design units. Achieved successful implementation and optimization, contributing to cutting-edge hardware solutions.</p>
-                      <p><strong>Coursework Design Lead:</strong> Spearheaded the design and execution of coursework in Digital Logic, Electronics, Computer Architecture, and VLSI Design. Ensured engaging and comprehensive learning experiences for students across diverse subjects.</p>
-                      <div class="icon-container">
-                        <div class="icon"><img src="images/icons/asic.jpg" width="60" height="60"></div>
-                        <div class="icon"><img src="images/icons/matlab.png" width="60" height="60"></div>
-                        <div class="icon"><img src="images/icons/cadence.jpg" width="60" height="60"></div>
-                        <div class="icon"><img src="images/icons/teach.png" width="60" height="60"></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="timeline-item-right" onclick="toggleExpand('im_2011_intel')">
-                    <div class="timeline-date">July 2011 - July 2012</div>
-                    <div class="timeline-content">
-                      <div class="timeline-title">Graduate Intern</div>
-                      <div class="timeline-description" style="font-weight: bold; color: #000099;">Intel Labs - Hillsboro, OR, USA</div>
-                    </div>
-                    <div class="expanded-content" id="im_2011_intel">
-                      <p><strong>Energy-Aware Policies:</strong> Developed and implemented energy-efficient policies on Nehalem architecture, optimizing for CPUs and RAMs.</p>
-                      <p><strong>Intel Architecture Analysis:</strong> Analyzed cutting-edge Intel server and PC architectures using the SPEC CPU benchmark.</p>
-                      <div class="icon-container">
-                        <div class="icon"><img src="images/icons/redhat.jpeg" width="60" height="60"></div>
-                        <div class="icon"><img src="images/icons/shell.png" width="60" height="60"></div>
-                        <div class="icon"><img src="images/icons/server.jpg" width="60" height="60"></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="timeline-item-left" onclick="toggleExpand('am_2011_metu')">
-                    <div class="timeline-date">2006 - 2011</div>
-                    <div class="timeline-content">
-                      <div class="timeline-title">B.Sc.</div>
-                      <div class="timeline-description" style="font-weight: bold; color: #CC0000;">Middle East Technical University</div>
-                    </div>
-                    <div class="expanded-content" id="am_2011_metu">
-                      <p><strong>1st Rank in Department of Electrical Engineering</strong> with Dean's Honor List.</p>
-                      <p><strong>Specialization on:</strong> Computer Architecture, Digital Systems, ASIC Design.</p>
-                      <div class="icon-container">
-                        <div class="icon"><img src="images/icons/c.jpeg" width="60" height="60"></div>
-                        <div class="icon"><img src="images/icons/matlab.png" width="60" height="60"></div>
-                        <div class="icon"><img src="images/icons/teach.png" width="60" height="60"></div>
-                      </div>
-                    </div>
-                  </div>
-
                 </div>
 
-                <script>
-                  function toggleExpand(elementId) {
-                    var element = document.getElementById(elementId);
-                    if (element.style.display === "none" || element.style.display === "") {
-                      element.style.display = "block";
-                    } else {
-                      element.style.display = "none";
-                    }
-                  }
-                </script>
+                <div class="journey-section">
+                  <h2 class="section-title">Journey</h2>
+                  <div class="journey-grid">
+                    <div class="journey-card">
+                      <div class="journey-year">2025 - Present</div>
+                      <h3 class="journey-title">Senior Training Engineer</h3>
+                      <p class="journey-company">MathWorks</p>
+                      <p class="journey-description"> As part of the MathWorks Training Team, I am responsible for developing and delivering training and workshops for engineering through MathWorks products. I also provide support and consultation to customers and partners.</p>
+                    </div>
+                    <div class="journey-card">
+                      <div class="journey-year">2023 - Present</div>
+                      <h3 class="journey-title">Associate Editor</h3>
+                      <p class="journey-company">IEEE Communications Letters</p>
+                      <p class="journey-description">Oversaw peer review and evaluation of channel coding manuscripts, ensuring technical rigor, editorial quality, and impactful contributions to the communications research community.</p>
+                    </div>
+                    <div class="journey-card">
+                      <div class="journey-year">2022 - 2024</div>
+                      <h3 class="journey-title">Staff Research Scientist</h3>
+                      <p class="journey-company">Intel Corporation</p>
+                      <p class="journey-description">Led algorithm development for reconfigurable space-based communications, driving error-correcting code design, RTL implementations, and rigorous validation workflows. Contributed wireless communication patents and coordinated cross-team efforts to deliver high-performance, power-efficient programmable solutions.</p>
+                    </div>
+                    <div class="journey-card">
+                      <div class="journey-year">2021 - 2022</div>
+                      <h3 class="journey-title">Postdoctoral Associate</h3>
+                      <p class="journey-company">Boston University</p>
+                      <p class="journey-description">Led the development of next-generation universal decoders, creating a modular C++ GRAND framework and pioneering in-decoder security algorithms for complex channels. Provided critical expertise in microchip optimization and pre-silicon validation, enabling ultra-low-energy hardware implementations.</p>
+                    </div>
+                    <div class="journey-card">
+                      <div class="journey-year">2020 - 2021</div>
+                      <h3 class="journey-title">5G Algorithm Developer</h3>
+                      <p class="journey-company">Octasic Inc. - Canada</p>
+                      <p class="journey-description">Designed and optimized 5G PHY systems from MATLAB models to embedded C/ASM DSP implementations, including co-development flows for proprietary chips. Spearheaded major enhancements to the 5G polar decoder and engaged with key PHY components such as LDPC codes, driving flexibility, speed, and efficiency in next-gen wireless solutions.</p>
+                    </div>
+                    <div class="journey-card">
+                      <div class="journey-year">2015 - 2020</div>
+                      <h3 class="journey-title">Ph.D.</h3>
+                      <p class="journey-company">McGill University</p>
+                      <p class="journey-description">Pioneered a C++ framework for polar code decoders, delivering bit-exact, quantized models to accelerate hardware design and testing. Architected advanced polar decoder implementations that achieved leading metrics in throughput, latency, energy efficiency, and error correction. Also contributed to education by shaping and teaching core courses in computer organization, digital systems, and logic design.</p>
+                    </div>
+                    <div class="journey-card">
+                      <div class="journey-year">2012 - 2015</div>
+                      <h3 class="journey-title">M.Sc.</h3>
+                      <p class="journey-company">Middle East Technical University</p>
+                      <p class="journey-description">Led the full ASIC development cycle through successful chip tapeout of advanced arithmetic design units, driving innovation in hardware solutions. Designed and delivered coursework in digital logic, electronics, computer architecture, and VLSI design, creating comprehensive and engaging learning experiences for students.</p>
+                    </div>
+                    <div class="journey-card">
+                      <div class="journey-year">2011 - 2012</div>
+                      <h3 class="journey-title">Graduate Intern</h3>
+                      <p class="journey-company">Intel Labs - Hillsboro, OR, USA</p>
+                      <p class="journey-description">Developed energy-aware policies on Nehalem architecture to optimize CPU and memory efficiency, and conducted performance analysis of next-generation Intel server and PC architectures using SPEC CPU benchmarks.</p>
+                    </div>
+                    <div class="journey-card">
+                      <div class="journey-year">2006 - 2011</div>
+                      <h3 class="journey-title">B.Sc.</h3>
+                      <p class="journey-company">Middle East Technical University</p>
+                      <p class="journey-description">Graduated 1st in Electrical Engineering with Dean's Honor List distinction, specializing in computer architecture, digital systems, and ASIC design.</p>
+                    </div>
+                  </div>
+                </div>
 
+                <div class="academic-activities-section">
+                  <h2 class="section-title">Academic Activities</h2>
+                  <div class="academic-grid">
+                    <div class="academic-card">
+                      <div class="academic-icon">
+                        <i class="ai ai-google-scholar"></i>
+                      </div>
+                      <h3 class="academic-title">Editorial Board</h3>
+                      <p class="academic-company">IEEE Communications Letters</p>
+                      <p class="academic-description">Associate Editor overseeing peer review and evaluation of channel coding manuscripts, ensuring technical rigor and editorial quality.</p>
+                      <div class="academic-period">2023 - Present</div>
+                    </div>
+                    
+                    <div class="academic-card">
+                      <div class="academic-icon">
+                        <i class="icon-presentation"></i>
+                      </div>
+                      <h3 class="academic-title">Conference Organization</h3>
+                      <p class="academic-company">IEEE Conferences</p>
+                      <p class="academic-description">Technical Program Committee member for major IEEE conferences including ICC, Globecom, and WCNC.</p>
+                      <div class="academic-period">2020 - Present</div>
+                    </div>
+                    
+                    <div class="academic-card">
+                      <div class="academic-icon">
+                        <i class="icon-teach"></i>
+                      </div>
+                      <h3 class="academic-title">Teaching & Mentoring</h3>
+                      <p class="academic-company">Universities & Industry</p>
+                      <p class="academic-description">Led courses in computer organization, digital systems, and logic design. Mentored 20+ graduate students and interns.</p>
+                      <div class="academic-period">2015 - Present</div>
+                    </div>
+                    
+                    <div class="academic-card">
+                      <div class="academic-icon">
+                        <i class="icon-people"></i>
+                      </div>
+                      <h3 class="academic-title">Research Collaboration</h3>
+                      <p class="academic-company">International Partners</p>
+                      <p class="academic-description">Collaborated with researchers from MIT, Stanford, and leading European institutions on cutting-edge wireless technologies.</p>
+                      <div class="academic-period">2018 - Present</div>
+                    </div>
+                    
+                    <div class="academic-card">
+                      <div class="academic-icon">
+                        <i class="icon-paper"></i>
+                      </div>
+                      <h3 class="academic-title">Peer Review</h3>
+                      <p class="academic-company">Top Journals</p>
+                      <p class="academic-description">Regular reviewer for IEEE Transactions on Communications, IEEE Communications Letters, and other prestigious journals.</p>
+                      <div class="academic-period">2019 - Present</div>
+                    </div>
+                    
+                    <div class="academic-card">
+                      <div class="academic-icon">
+                        <i class="icon-rocket"></i>
+                      </div>
+                      <h3 class="academic-title">Innovation & Patents</h3>
+                      <p class="academic-company">Intel Corporation</p>
+                      <p class="academic-description">Contributed to multiple wireless communication patents and intellectual property development in space-based communications.</p>
+                      <div class="academic-period">2022 - 2024</div>
+                    </div>
+                  </div>
+                </div>
 
+                <div class="fun-facts-section">
+                  <h2 class="section-title">Fun Facts</h2>
+                  <div class="facts-grid">
+                    <div class="fact-card">
+                      <div class="fact-icon"><i class="icon-users"></i></div>
+                      <div class="fact-number">2000+</div>
+                      <div class="fact-label">Students Taught</div>
+                    </div>
+                    <div class="fact-card">
+                      <div class="fact-icon"><i class="icon-rocket"></i></div>
+                      <div class="fact-number">AI B2B</div>
+                      <div class="fact-label">Company Co-Founder</div>
+                    </div>
+                    <div class="fact-card">
+                      <div class="fact-icon"><i class="icon-camera"></i></div>
+                      <div class="fact-number">Photography</div>
+                      <div class="fact-label">Passionate Creator</div>
+                    </div>
+                    <div class="fact-card">
+                      <div class="fact-icon"><i class="icon-music"></i></div>
+                      <div class="fact-number">Native American</div>
+                      <div class="fact-label">Flute Player</div>
+                    </div>
+                  </div>
+                </div>
 
-
-						
-					</div>
-                          <embed src="Resume_FurkanErcan_2502.pdf" type="application/pdf" width="75%" height="600px" />
+                <div class="resume-section">
+                  <h2 class="section-title">Download My Resume</h2>
+                  <div class="resume-container">
+                    <h3 class="resume-title">Furkan Ercan's Resume</h3>
+                    <embed src="Resume_FurkanErcan_2502.pdf" type="application/pdf" width="100%" height="600px" />
+                    <a href="Resume_FurkanErcan_2502.pdf" download class="download-btn">
+                      <i class="fa fa-download"></i> Download PDF Resume
+                    </a>
+                  </div>
+                </div>
 
               <!-- <p class="mb-4" style="font-size:16px"> More information is available on <a href="Resume_Aug23.pdf" target="_blank">this short CV</a> (as of August 2023) and following links: </p> -->
               <ul class="ftco-social mt-3">
                 <li class="ftco-animate"><a href="https://www.linkedin.com/in/furkanercan/" target="_blank"><span class="fa fa-linkedin-square"></span></a></li>
                 <li class="ftco-animate"><a href="https://scholar.google.ca/citations?user=GICY-10AAAAJ&hl=en&oi=ao" target="_blank"><span class="ai ai-google-scholar"></span></a></li>
-                <li class="ftco-animate"><a href="https://orcid.org/0000-0003-0599-1766" target="_blank"><span class="ai ai-orcid"></span></a></li>
+                <li class="ftco-animate"><a href="https://orcid.org/0000-0003-0599-1766" target="_blank"><span class="fa fa-orcid"></span></a></li>
                 <li class="ftco-animate"><a href="https://www.researchgate.net/profile/Furkan_Ercan" target="_blank"><span class="ai ai-researchgate-square"></span></a></li>
                 <li class="ftco-animate"><a href="https://twitter.com/furkanercan88" target="_blank"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="https://500px.com/furkanercan" target="_blank"><span class="fa fa-500px"></span></a></li>
@@ -449,60 +1247,56 @@
     <footer class="ftco-footer ftco-bg-dark ftco-section">
         <div class="container px-md-5">
             <div class="row mb-5">
-                <div class="col-md-6">
-                    <div class="ftco-footer-widget mb-4">
-                        <div class="block-23 mb-3">
-                            <iframe
-                                width="100%"
-                                height="450"
-                                frameborder="0"
-                                style="border:0"
-                                src="https://www.google.com/maps/embed/v1/place?q=Intel%20Labs,%2077%20Reed%20Rd,%20Hudson,%20MA%2002155&key=AIzaSyAxxwPzw8LnscvMjlKSEsL8okJ6nX5tlM8"
-                                allowfullscreen
-                            ></iframe>
+                <div class="col-md-12 text-center">
+                    <div class="modern-footer">
+                        <h2 class="footer-title">Let's Connect!</h2>
+                        <p class="footer-subtitle">Interested in collaboration, research opportunities, or just want to chat about technology?</p>
+                        
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fa fa-envelope"></i>
+                                <span id="email-display"></span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fa fa-map-marker"></i>
+                                <span>Natick, MA</span>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-12 text-center text-white">
-                        <h2 class="text-white">Let's Connect!</h2>
-                        <form action="mailto:furkan.ercan@intel.com" method="post" enctype="text/plain">
-                            <div class="form-group mx-auto">
-                                <label for="name" class="text-white">Your Name:</label>
-                                <input type="text" id="name" name="name" class="form-control" style="width: 200%;" required>
-                            </div>
-                            <div class="form-group mx-auto">
-                                <label for="email" class="text-white">Your Email:</label>
-                                <input type="email" id="email" name="email" class="form-control" style="width: 200%;" required>
-                            </div>
-                            <div class="form-group mx-auto">
-                                <label for="message" class="text-white">Message:</label>
-                                <textarea id="message" name="message" class="form-control" rows="4" style="width: 200%;" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary mx-auto">Send Message</button>
-                        </form>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/furkanercan/" target="_blank" class="social-link">
+                                <i class="fa fa-linkedin-square"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://scholar.google.ca/citations?user=GICY-10AAAAJ&hl=en&oi=ao" target="_blank" class="social-link">
+                                <i class="ai ai-google-scholar"></i>
+                                <span>Google Scholar</span>
+                            </a>
+                            <a href="https://github.com/furkanercan" target="_blank" class="social-link">
+                                <i class="fa fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://twitter.com/furkanercan88" target="_blank" class="social-link">
+                                <i class="icon-twitter"></i>
+                                <span>Twitter</span>
+                            </a>
+                        </div>
+
+                        <div class="footer-divider"></div>
+                        
+                        <p class="footer-copyright">
+                            © <script>document.write(new Date().getFullYear());</script> Furkan Ercan. All rights reserved.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="row">
-          <div class="col-md-12 text-center">
-
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
-        </div>
-      </div>
     </footer>
 		</div><!-- END COLORLIB-MAIN -->
 	</div><!-- END COLORLIB-PAGE -->
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
 
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
@@ -521,6 +1315,158 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxxwPzw8LnscvMjlKSEsL8okJ6nX5tlM8&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+    
+  <script>
+    // Create floating stars
+    function createStars() {
+      const starCount = 50;
+      for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.animationDelay = Math.random() * 3 + 's';
+        star.style.animationDuration = (Math.random() * 2 + 2) + 's';
+        document.body.appendChild(star);
+      }
+    }
+
+    // Smooth scroll reveal animations
+    function revealOnScroll() {
+      const elements = document.querySelectorAll('.skill-card, .journey-card, .fact-card');
+      elements.forEach((element, index) => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < window.innerHeight - elementVisible) {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+        }
+      });
+    }
+
+    // Initialize page
+    document.addEventListener('DOMContentLoaded', function() {
+      // Create stars
+      createStars();
+      
+      // Initialize elements with opacity 0
+      const elements = document.querySelectorAll('.skill-card, .journey-card, .fact-card');
+      elements.forEach((element, index) => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(30px)';
+        element.style.transition = 'all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        
+        // Stagger the animations
+        setTimeout(() => {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+        }, index * 100);
+      });
+
+      // Add scroll event listener
+      window.addEventListener('scroll', revealOnScroll);
+    });
+
+    // Enhanced hover effects
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add hover effects to skill cards
+      const skillCards = document.querySelectorAll('.skill-card');
+      skillCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-10px) scale(1.05)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0) scale(1)';
+        });
+      });
+
+      // Add hover effects to journey cards
+      const journeyCards = document.querySelectorAll('.journey-card');
+      journeyCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-5px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Add hover effects to fact cards
+      const factCards = document.querySelectorAll('.fact-card');
+      factCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-5px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+        });
+      });
+    });
+
+    // Parallax effect for cosmic background
+    window.addEventListener('scroll', function() {
+      const scrolled = window.pageYOffset;
+      const cosmicBg = document.querySelector('.cosmic-bg');
+      if (cosmicBg) {
+        cosmicBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+      }
+    });
+
+    // Add particle effect on mouse move
+    document.addEventListener('mousemove', function(e) {
+      if (Math.random() < 0.1) { // 10% chance to create particle
+        const particle = document.createElement('div');
+        particle.style.position = 'fixed';
+        particle.style.width = '3px';
+        particle.style.height = '3px';
+        particle.style.background = 'rgba(120, 219, 255, 0.6)';
+        particle.style.borderRadius = '50%';
+        particle.style.pointerEvents = 'none';
+        particle.style.zIndex = '1';
+        particle.style.left = e.clientX + 'px';
+        particle.style.top = e.clientY + 'px';
+        
+        document.body.appendChild(particle);
+        
+        // Animate particle
+        const animation = particle.animate([
+          { 
+            transform: 'translateY(0px) scale(1)',
+            opacity: 0.6
+          },
+          { 
+            transform: 'translateY(-50px) scale(0)',
+            opacity: 0
+          }
+        ], {
+          duration: 2000,
+          easing: 'ease-out'
+        });
+        
+        animation.onfinish = () => {
+          particle.remove();
+        };
+      }
+    });
+
+    // Safely display email address to avoid bot scraping
+    function displayEmail() {
+      const emailParts = ['furkanercan88', 'gmail', 'com'];
+      const emailDisplay = document.getElementById('email-display');
+      if (emailDisplay) {
+        emailDisplay.textContent = emailParts[0] + '@' + emailParts[1] + '.' + emailParts[2];
+      }
+    }
+
+    // Initialize email display when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      displayEmail();
+    });
+  </script>
     
   </body>
 </html>

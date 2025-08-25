@@ -18,6 +18,30 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="description" content="Furkan Ercan, Ph.D. - Staff Research Scientist at Intel Corporation specializing in wireless communications, satellite communications, and error-correcting codes. View my latest research and achievements.">
+    <meta name="keywords" content="Furkan Ercan, Intel, wireless communications, satellite communications, error-correcting codes, research scientist, PhD, 5G, 6G">
+    <meta name="author" content="Furkan Ercan">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Furkan Ercan, Ph.D. - Research Scientist">
+    <meta property="og:description" content="Staff Research Scientist at Intel Corporation specializing in wireless communications and satellite communications.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://furkanercan.github.io/">
+    <meta property="og:image" content="https://furkanercan.github.io/images/author3.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Furkan Ercan, Ph.D. - Research Scientist">
+    <meta name="twitter:description" content="Staff Research Scientist at Intel Corporation specializing in wireless communications and satellite communications.">
+    <meta name="twitter:image" content="https://furkanercan.github.io/images/author3.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://furkanercan.github.io/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
 
@@ -45,6 +69,16 @@
     <!--<link rel="stylesheet" href="css/academicons.min.css"/>-->
     <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
     <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+
         .profile-img {
             border-radius: 50%;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -54,6 +88,357 @@
             transform: scale(1.05);
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             cursor: pointer;
+        }
+
+        /* Enhanced styling for better visual appeal */
+        .hero-wrap {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-wrap::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(227, 242, 253, 0.9) 0%, rgba(243, 229, 245, 0.9) 100%);
+            z-index: 1;
+        }
+
+        .hero-wrap .text {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-wrap h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(120, 219, 255, 0.2);
+        }
+
+        .hero-wrap h2 {
+            color: #2c3e50;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .btn-custom {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Enhanced blog entry styling */
+        .blog-entry {
+            transition: all 0.3s ease;
+            border-radius: 15px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-entry:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: rgba(120, 219, 255, 0.4);
+        }
+
+        .blog-entry .img {
+            transition: transform 0.3s ease;
+        }
+
+        .blog-entry:hover .img {
+            transform: scale(1.05);
+        }
+
+        .blog-entry .text {
+            padding: 20px;
+        }
+
+        .blog-entry .category {
+            color: #5c6bc0;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .blog-entry h3 {
+            color: #333;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .blog-entry:hover h3 {
+            color: #667eea;
+        }
+
+        /* Enhanced section headings */
+        .ftco-section h2 {
+            color: #2c3e50;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .ftco-section h3 {
+            color: #34495e;
+            font-weight: 600;
+        }
+
+        .ftco-section p {
+            color: #5a6c7d;
+            line-height: 1.6;
+        }
+
+        /* Smooth transitions */
+        * {
+            transition: all 0.3s ease;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+          width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+          background: rgba(255, 255, 255, 0.2);
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background: linear-gradient(135deg, #5c6bc0 0%, #8e24aa 100%);
+          border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+          background: linear-gradient(135deg, #4a5bb8 0%, #7b1fa2 100%);
+        }
+
+        /* Modern Footer Styling */
+        .modern-footer {
+          padding: 3rem 0;
+          color: #2c3e50;
+        }
+
+        .footer-title {
+          font-size: 2.5rem;
+          font-weight: 700;
+          margin-bottom: 1rem;
+          background: linear-gradient(135deg, #5c6bc0 0%, #8e24aa 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        .footer-subtitle {
+          font-size: 1.1rem;
+          color: #546e7a;
+          margin-bottom: 2rem;
+          max-width: 600px;
+          margin-left: auto;
+          margin-right: auto;
+          line-height: 1.6;
+        }
+
+        .contact-info {
+          display: flex;
+          justify-content: center;
+          gap: 3rem;
+          margin-bottom: 2rem;
+          flex-wrap: wrap;
+        }
+
+        .contact-item {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          color: #5c6bc0;
+          font-weight: 500;
+        }
+
+        .contact-item i {
+          font-size: 1.2rem;
+          color: #8e24aa;
+        }
+
+        .social-links {
+          display: flex;
+          justify-content: center;
+          gap: 2rem;
+          margin-bottom: 2rem;
+          flex-wrap: wrap;
+        }
+
+        .social-link {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+          color: #546e7a;
+          text-decoration: none;
+          padding: 1rem;
+          border-radius: 15px;
+          transition: all 0.3s ease;
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          min-width: 100px;
+        }
+
+        .social-link:hover {
+          transform: translateY(-5px);
+          background: rgba(255, 255, 255, 0.2);
+          border-color: rgba(120, 219, 255, 0.3);
+          color: #5c6bc0;
+          text-decoration: none;
+        }
+
+        .social-link i {
+          font-size: 1.5rem;
+          color: #8e24aa;
+        }
+
+        .social-link span {
+          font-size: 0.9rem;
+          font-weight: 500;
+        }
+
+        .footer-divider {
+          width: 100px;
+          height: 2px;
+          background: linear-gradient(135deg, #5c6bc0 0%, #8e24aa 100%);
+          margin: 2rem auto;
+          border-radius: 1px;
+        }
+
+        .footer-copyright {
+          color: #7f8c8d;
+          font-size: 0.9rem;
+          margin: 0;
+        }
+
+        /* Responsive footer */
+        @media (max-width: 768px) {
+          .contact-info {
+            flex-direction: column;
+            gap: 1rem;
+          }
+          
+          .social-links {
+            gap: 1rem;
+          }
+          
+          .social-link {
+            min-width: 80px;
+            padding: 0.8rem;
+          }
+          
+          .footer-title {
+            font-size: 2rem;
+          }
+        }
+
+        /* Enhanced loader styling */
+        .enhanced-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .enhanced-loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loader-content {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .loader-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(120, 219, 255, 0.3);
+            border-top: 4px solid #5c6bc0;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loader-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .loader-subtext {
+            font-size: 0.9rem;
+            color: #5a6c7d;
+        }
+
+        /* Scroll to top button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .scroll-to-top.show {
+            display: flex;
         }
     </style>
   </head>
@@ -69,8 +454,8 @@
 					<li class="colorlib-active"><a href="index.html">Home</a></li>
 					<li><a href="about.html">About</a></li>
 					<li><a href="publications.html">Publications</a></li>
-					<li><a href="projects.html">Projects</a></li>
-					<li><a href="activities.html">Activities</a></li>
+					<li><a href="projects.html">R&D Projects</a></li>
+					                <li><a href="activities.html">Academic Activities</a></li>
 					<li><a href="awards.html">Awards</a></li>
 					<!--<li><a href="#">Contact</a></li>-->
 				</ul>
@@ -104,9 +489,11 @@
 							<h1 class="mb-4">Furkan.</h1>
 
 							
+							<p class="mb-4">I am an Senior Training Engineer at <a href="https://www.mathworks.com" target="_blank">MathWorks</a>, enabling worldwide success for engineers and companies in the fields of communication technologies and AI. Previously, I held roles as a Staff Research Scientist at <a href="https://www.intel.com" target="_blank">Intel</a>, a Postdoctoral Associate at <a href="https://wisecircuits.bu.edu/" target="_blank">Boston University</a> and <a href="https://www.rle.mit.edu/ncrcg/" target="_blank">MIT</a>, and a 5G PHY Developer at <a href="http://www.octasic.com/" target="_blank">Octasic Inc</a>. I earned my Ph.D. from <a href="http://www.isip.ece.mcgill.ca/index.html" target="_blank">McGill University</a>.
+
 							<!-- <p class="mb-4">I am a Research Scientist at <a href="https://www.intel.com/" target="_blank">Intel</a>, working on advanced wireless and optical technologies for satellite communications. I obtained my Ph.D. from <a href="http://www.isip.ece.mcgill.ca/index.html" target="_blank">McGill University<a/>. </p> -->
 
-							<p class="mb-4">I am an experienced Research Scientist specializing in wireless and optical communication technologies, with a strong focus on satellite communications. Previously, I held roles as a Staff Research Scientist at <a href="https://www.intel.com" target="_blank">Intel</a>, a Postdoctoral Associate at <a href="https://wisecircuits.bu.edu/" target="_blank">Boston University</a> and <a href="https://www.rle.mit.edu/ncrcg/" target="_blank">MIT</a>, and a 5G PHY Developer at <a href="http://www.octasic.com/" target="_blank">Octasic Inc</a>. I earned my Ph.D. from <a href="http://www.isip.ece.mcgill.ca/index.html" target="_blank">McGill University</a>.</p>
+							<!-- <p class="mb-4">I am an experienced Research Scientist specializing in wireless and optical communication technologies, with a strong focus on satellite communications. Previously, I held roles as a Staff Research Scientist at <a href="https://www.intel.com" target="_blank">Intel</a>, a Postdoctoral Associate at <a href="https://wisecircuits.bu.edu/" target="_blank">Boston University</a> and <a href="https://www.rle.mit.edu/ncrcg/" target="_blank">MIT</a>, and a 5G PHY Developer at <a href="http://www.octasic.com/" target="_blank">Octasic Inc</a>. I earned my Ph.D. from <a href="http://www.isip.ece.mcgill.ca/index.html" target="_blank">McGill University</a>.</p> -->
 
 
 							<!-- <p class="mb-4">I am a Staff Research Scientist at <a href="https://www.intel.com" target="_blank">Intel</a>, working on advanced wireless and optical technologies for satellite communications. Previously, I took roles as a Postdoctocal Associate (<a href="https://wisecircuits.bu.edu/" target="_blank">Boston University</a> /<a href="https://www.rle.mit.edu/ncrcg/" target="_blank">MIT</a>), and as a 5G PHY Developer (<a href="http://www.octasic.com/" target="_blank">Octasic Inc</a>). I obtained my Ph.D. from <a href="http://www.isip.ece.mcgill.ca/index.html" target="_blank">McGill University<a/>. </p> -->
@@ -135,6 +522,29 @@
           </div>
         </div>
     		<div class="row">
+
+				<div class="col-md-4">
+    				<div class="blog-entry ftco-animate">
+							<a class="img img-2" style="background-image: url(images/mw.png);"></a>
+							<div class="text text-2 pt-2 mt-3">
+								<span class="category mb-3 d-block">August 2025</span>
+	              <h3 class="mb-4"> New Role at MathWorks </h3>
+	              <p class="mb-4"> Focusing on enabling worldwide success for engineers and companies in the fields of communication technologies and AI.</p>
+	            </div>
+						</div>
+    			</div>
+
+				<div class="col-md-4">
+    				<div class="blog-entry ftco-animate">
+							<a class="img img-2" style="background-image: url(images/patent.jpg);"></a>
+							<div class="text text-2 pt-2 mt-3">
+								<span class="category mb-3 d-block">June 2025</span>
+	              <h3 class="mb-4"> First Patent Publication </h3>
+	              <p class="mb-4"> Pushing the boundaries of satellite communication technology at the physical layer resulted in a <a href="https://patents.google.com/patent/US20250211255A1/en" target="_blank">patent publication</a>. </p>
+	            </div>
+						</div>
+    			</div>
+
 
     			<div class="col-md-4">
     				<div class="blog-entry ftco-animate">
@@ -809,53 +1219,50 @@
     <footer class="ftco-footer ftco-bg-dark ftco-section">
         <div class="container px-md-5">
             <div class="row mb-5">
-                <div class="col-md-6">
-                    <div class="ftco-footer-widget mb-4">
-                        <div class="block-23 mb-3">
-                            <iframe
-                                width="100%"
-                                height="450"
-                                frameborder="0"
-                                style="border:0"
-                                src="https://www.google.com/maps/embed/v1/place?q=Intel%20Labs,%2077%20Reed%20Rd,%20Hudson,%20MA%2002155&key=AIzaSyAxxwPzw8LnscvMjlKSEsL8okJ6nX5tlM8"
-                                allowfullscreen
-                            ></iframe>
+                <div class="col-md-12 text-center">
+                    <div class="modern-footer">
+                        <h2 class="footer-title">Let's Connect!</h2>
+                        <p class="footer-subtitle">Interested in collaboration, research opportunities, or just want to chat about technology?</p>
+                        
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fa fa-envelope"></i>
+                                <span id="email-display"></span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fa fa-map-marker"></i>
+                                <span>Natick, MA</span>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-12 text-center text-white">
-                        <h2 class="text-white">Let's Connect!</h2>
-                        <form action="mailto:furkan.ercan@intel.com" method="post" enctype="text/plain">
-                            <div class="form-group mx-auto">
-                                <label for="name" class="text-white">Your Name:</label>
-                                <input type="text" id="name" name="name" class="form-control" style="width: 200%;" required>
-                            </div>
-                            <div class="form-group mx-auto">
-                                <label for="email" class="text-white">Your Email:</label>
-                                <input type="email" id="email" name="email" class="form-control" style="width: 200%;" required>
-                            </div>
-                            <div class="form-group mx-auto">
-                                <label for="message" class="text-white">Message:</label>
-                                <textarea id="message" name="message" class="form-control" rows="4" style="width: 200%;" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary mx-auto">Send Message</button>
-                        </form>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/furkanercan/" target="_blank" class="social-link">
+                                <i class="fa fa-linkedin-square"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://scholar.google.ca/citations?user=GICY-10AAAAJ&hl=en&oi=ao" target="_blank" class="social-link">
+                                <i class="ai ai-google-scholar"></i>
+                                <span>Google Scholar</span>
+                            </a>
+                            <a href="https://github.com/furkanercan" target="_blank" class="social-link">
+                                <i class="fa fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://twitter.com/furkanercan88" target="_blank" class="social-link">
+                                <i class="icon-twitter"></i>
+                                <span>Twitter</span>
+                            </a>
+                        </div>
+
+                        <div class="footer-divider"></div>
+                        
+                        <p class="footer-copyright">
+                            © <script>document.write(new Date().getFullYear());</script> Furkan Ercan. All rights reserved.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="row">
-          <div class="col-md-12 text-center">
-
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
-        </div>
-      </div>
     </footer>
 		</div><!-- END COLORLIB-MAIN -->
 	</div><!-- END COLORLIB-PAGE -->
@@ -863,6 +1270,18 @@
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
+  <!-- Enhanced Loading Animation -->
+  <div id="enhanced-loader" class="enhanced-loader">
+    <div class="loader-content">
+      <div class="loader-spinner"></div>
+      <p>Loading Portfolio...</p>
+    </div>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTop" class="scroll-to-top" title="Scroll to top">
+    <i class="fa fa-chevron-up"></i>
+  </button>
 
   <script src="js/jquery-3.7.1.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
@@ -881,6 +1300,74 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxxwPzw8LnscvMjlKSEsL8okJ6nX5tlM8&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+    
+  <script>
+    // Enhanced loader functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const enhancedLoader = document.getElementById('enhanced-loader');
+      
+      // Hide the enhanced loader immediately after page loads
+      setTimeout(function() {
+        enhancedLoader.classList.add('hidden');
+        // Remove from DOM after animation
+        setTimeout(function() {
+          enhancedLoader.remove();
+        }, 500);
+      }, 500); // Reduced from 1500ms to 500ms
+
+      // Scroll to top functionality
+      const scrollToTopBtn = document.getElementById('scrollToTop');
+      
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          scrollToTopBtn.classList.add('show');
+        } else {
+          scrollToTopBtn.classList.remove('show');
+        }
+      });
+      
+      scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Fallback: Hide loader if DOMContentLoaded doesn't fire
+    window.addEventListener('load', function() {
+      const enhancedLoader = document.getElementById('enhanced-loader');
+      if (enhancedLoader) {
+        enhancedLoader.classList.add('hidden');
+        setTimeout(function() {
+          enhancedLoader.remove();
+        }, 500);
+      }
+    });
+
+    // Initialize typing effect when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      const headerText = document.querySelector('.hero-title');
+      if (headerText) {
+        const originalText = headerText.textContent;
+        typeWriter(headerText, originalText, 80);
+      }
+    });
+
+    // Safely display email address to avoid bot scraping
+    function displayEmail() {
+      const emailParts = ['furkanercan88', 'gmail', 'com'];
+      const emailDisplay = document.getElementById('email-display');
+      if (emailDisplay) {
+        emailDisplay.textContent = emailParts[0] + '@' + emailParts[1] + '.' + emailParts[2];
+      }
+    }
+
+    // Initialize email display when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      displayEmail();
+    });
+  </script>
     
   </body>
 </html>

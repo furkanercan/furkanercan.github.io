@@ -12,7 +12,7 @@
 
         gtag('config', 'G-9JVS3K0YL7');
     </script>
-    <title>Activities | Furkan Ercan</title>
+    <title>Academic Activities | Furkan Ercan</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
@@ -53,6 +53,219 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             cursor: pointer;
         }
+
+        /* Modern Activities Page Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+
+        .modern-activities-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .activities-hero {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 3rem 0;
+        }
+
+        .activities-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(120, 219, 255, 0.2);
+        }
+
+        .activities-subtitle {
+            font-size: 1.2rem;
+            color: #5a6c7d;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .activities-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .activity-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .activity-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .activity-card:hover::before {
+            left: 100%;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: rgba(120, 219, 255, 0.4);
+        }
+
+        .activity-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .activity-icon i {
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .activity-card:hover .activity-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        .activity-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .activity-role {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #5c6bc0;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .activity-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #5a6c7d;
+            margin-bottom: 1.5rem;
+        }
+
+        .activity-description a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .activity-description a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        .activity-period {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .modern-activities-container {
+                padding: 1rem;
+            }
+            
+            .activities-title {
+                font-size: 2.5rem;
+            }
+            
+            .activities-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .activity-card {
+                padding: 1.5rem;
+            }
+            
+            .activity-icon {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .activity-icon i {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .activities-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .activity-card {
+                padding: 1rem;
+            }
+        }
     </style>
 
   </head>
@@ -68,8 +281,8 @@
 					<li><a href="index.html">Home</a></li>
 					<li><a href="about.html">About</a></li>
 					<li><a href="publications.html">Publications</a></li>
-					<li><a href="projects.html">Projects</a></li>
-					<li class="colorlib-active"><a href="activities.html">Activities</a></li>
+          <li><a href="projects.html">R&D Projects</a></li>
+					                <li class="colorlib-active"><a href="activities.html">Academic Activities</a></li>
 					<li><a href="awards.html">Awards</a></li>
 					<!--<li><a href="#">Contact</a></li>-->
 				</ul>
@@ -95,191 +308,419 @@
 			<section class="ftco-section-2">
 				<div class="photography">
 					<div class="yes-gutters">
-						<br/>
-						
+						<div class="modern-activities-container">
+							<div class="activities-hero">
+								<h1 class="activities-title">Academic Activities</h1>
+								<p class="activities-subtitle">Professional contributions, leadership roles, and academic service across the wireless communications community</p>
+							</div>
 
-						<h3>Editorship</h3>
-						<ul>
-						    <li>Associate Editor  | <a href="https://www.comsoc.org/publications/journals/ieee-comml/ieee-communications-letters-editorial-board" target="_blank">IEEE Communications Letters</a></li>    
-						    <li>Lead Guest Editor  | <a href="https://www.mdpi.com/journal/sensors/special_issues/4NT956M0IM" target="_blank">VLSI Architectures for Wireless Communications and Digital Signal Processing</a></li>
-						    <!-- Add your other list items here -->
-						</ul>
-						<hr/>
-						
+							<div class="activities-section">
+								<h2 class="section-title">Editorship</h2>
+								<div class="activities-grid">
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="ai ai-google-scholar"></i>
+										</div>
+										<h3 class="activity-title">IEEE Communications Letters</h3>
+										<p class="activity-role">Associate Editor</p>
+										<p class="activity-description">Overseeing peer review and evaluation of channel coding manuscripts, ensuring technical rigor, editorial quality, and impactful contributions to the communications research community</p>
+										<div class="activity-period">2023 - Present</div>
+									</div>
 
-						<h3>Journal Reviewer</h3>
-						<ul>
-						<li> IEEE Transactions on Communications </li>
-						<li> IEEE Transactions on Signal Processing </li>
-						<li> IEEE Transactions on Vehicular Technology </li>
-						<li> IEEE Transactions on Circuits and Systems I: Regular Papers </li>
-						<li> IEEE Transactions on Circuits and Systems II: Express Briefs </li>
-						<li> IEEE Transactions on Aerospace and Electronic Systems </li>
-						<li> IEEE Transactions on Cognitive Communications and Networking </li>
-						<li> IEEE Transactions on Consumer Electronics </li>
-						<li> IEEE Transactions on Reliability </li>
-						<li> IEEE Transactions on Green Communications and Networking </li>
-						<li> IEEE Transactions on VLSI </li>
-						<li> IEEE Transactions on Cognitive Communications and Networking</li>
-						<li> IEEE Access </li>
-						<li> IEEE Communications Letters </li>
-						<li> IEEE Networking Letters </li>
-						<li> IEEE Communications Magazine </li>
-						<li> IEEE Industrial Electronics Magazine </li>
-						<li> IEEE Open Journal of the Communications Society </li>
-						<li> IEEE Systems Journal </li>
-						<li> Canadian Journal of Electrical and Computer Engineering </li>
-						<li> Electronics Letters </li>
-						<li> IET Communications </li>
-						<li> IET Circuits, Devices and Systems </li>
-						<li> Elsevier Digital Signal Processing </li>
-						<li> Elsevier Physical Communication </li>
-						<li> Elsevier Microelectronics Journal </li>
-						<li> Elsevier Microprocessors and Microsystems </li>
-						<li> Wiley Transactions on Emerging Telecommunications Technologies </li>
-						<li> Wiley Journal of Electrical and Computer Engineering </li>
-						<li> IETE Journal of Research </li>
-						<li> Engineering Science and Technology, an International Journal </li>
-						<li> Journal of Communications and Networks</li>
-						<li> Science China Information Sciences</li>
-						<li> MDPI Sensors</li>
-						<li> PLOS ONE</li>
-						</ul>
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-paper"></i>
+										</div>
+										<h3 class="activity-title">Sensors Journal</h3>
+										<p class="activity-role">Lead Guest Editor</p>
+										<p class="activity-description">Lead Guest Editor for the special issue "VLSI Architectures for Wireless Communications and Digital Signal Processing"</p>
+										<div class="activity-period">2023</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="activities-section">
+								<h2 class="section-title">Journal Reviewing</h2>
+								<div class="activities-grid">
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-paper"></i>
+										</div>
+										<h3 class="activity-title">IEEE Transactions on Communications</h3>
+										<p class="activity-role">Regular Reviewer</p>
+										<p class="activity-description">Peer review of high-impact communications research papers</p>
+										<div class="activity-period">2019 - Present</div>
+									</div>
+
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-paper"></i>
+										</div>
+										<h3 class="activity-title">IEEE Communications Letters</h3>
+										<p class="activity-role">Regular Reviewer</p>
+										<p class="activity-description">Review of communications letters and short papers</p>
+										<div class="activity-period">2019 - Present</div>
+									</div>
+
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-paper"></i>
+										</div>
+										<h3 class="activity-title">IEEE Transactions on Signal Processing</h3>
+										<p class="activity-role">Regular Reviewer</p>
+										<p class="activity-description">Review of signal processing and communications papers</p>
+										<div class="activity-period">2019 - Present</div>
+									</div>
+
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-paper"></i>
+										</div>
+										<h3 class="activity-title">IEEE Transactions on Circuits and Systems</h3>
+										<p class="activity-role">Regular Reviewer</p>
+										<p class="activity-description">Review of circuits and systems papers</p>
+										<div class="activity-period">2019 - Present</div>
+									</div>
+
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-paper"></i>
+										</div>
+										<h3 class="activity-title">IEEE Journal of Solid-State Circuits</h3>
+										<p class="activity-role">Regular Reviewer</p>
+										<p class="activity-description">Review of solid-state circuits and VLSI papers</p>
+										<div class="activity-period">2019 - Present</div>
+									</div>
+
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-paper"></i>
+										</div>
+										<h3 class="activity-title">Additional Journal Reviewing</h3>
+										<p class="activity-role">Regular Reviewer</p>
+										<p class="activity-description">200+ reviews for 40+ additional high-impact journals in communications, algorithms, signal processing, and VLSI systems</p>
+										<div class="activity-period">2019 - Present</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="activities-section">
+								<h2 class="section-title">Conference Organization & Leadership</h2>
+								<div class="activities-grid">
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-presentation"></i>
+										</div>
+										<h3 class="activity-title">IEEE GLOBECOM 2025</h3>
+										<p class="activity-role">Wireless Communications Track TPC</p>
+										<p class="activity-description">Technical Program Committee member for the premier global communications conference</p>
+										<div class="activity-period">2025</div>
+									</div>
+
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-presentation"></i>
+										</div>
+										<h3 class="activity-title">IEEE GLOBECOM 2024</h3>
+										<p class="activity-role">Wireless Communications Track TPC</p>
+										<p class="activity-description">Technical Program Committee member for wireless communications</p>
+										<div class="activity-period">2024</div>
+									</div>
+
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-presentation"></i>
+										</div>
+										<h3 class="activity-title">IEEE VTC Spring 2023</h3>
+										<p class="activity-role">ML and AI for Communications Track</p>
+										<p class="activity-description">Technical Program Committee for machine learning in communications</p>
+										<div class="activity-period">2023</div>
+									</div>
+
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-presentation"></i>
+										</div>
+										<h3 class="activity-title">IEEE INFOCOM 2023</h3>
+										<p class="activity-role">5G and Beyond Wireless Security Track</p>
+										<p class="activity-description">Technical Program Committee for wireless security</p>
+										<div class="activity-period">2023</div>
+									</div>
+
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-presentation"></i>
+										</div>
+										<h3 class="activity-title">IEEE GLOBECOM 2022</h3>
+										<p class="activity-role">5G and Beyond Wireless Security Chair</p>
+										<p class="activity-description">Led the wireless security track organization and management</p>
+										<div class="activity-period">2022</div>
+									</div>
+
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-presentation"></i>
+										</div>
+										<h3 class="activity-title">IEEE Future Networks World Forum 2022</h3>
+										<p class="activity-role">Academia & Industry Demonstrations Chair</p>
+										<p class="activity-description">Coordinated industry and academic demonstrations</p>
+										<div class="activity-period">2022</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="activities-section">
+								<h2 class="section-title">Professional Volunteering & Leadership</h2>
+								<div class="activities-grid">
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-people"></i>
+										</div>
+										<h3 class="activity-title">IEEE Montreal Section</h3>
+										<p class="activity-role">Vice-Chair</p>
+										<p class="activity-description">Leadership role in the local IEEE section, organizing events and supporting the engineering community</p>
+										<div class="activity-period">2021</div>
+									</div>
+
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-people"></i>
+										</div>
+										<h3 class="activity-title">IEEE Wireless Communications Technical Committee</h3>
+										<p class="activity-role">Active Member</p>
+										<p class="activity-description">Contributing to the advancement of wireless communications technology and standards</p>
+										<div class="activity-period">2022</div>
+									</div>
+
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-people"></i>
+										</div>
+										<h3 class="activity-title">McGill IEEE Student Branch</h3>
+										<p class="activity-role">Chair</p>
+										<p class="activity-description">Led student activities and professional development initiatives</p>
+										<div class="activity-period">2017</div>
+									</div>
+
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-people"></i>
+										</div>
+										<h3 class="activity-title">IEEE Women in Engineering (WIE)</h3>
+										<p class="activity-role">Founding Member</p>
+										<p class="activity-description">Established and promoted women's participation in engineering at McGill</p>
+										<div class="activity-period">2017</div>
+									</div>
+
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-people"></i>
+										</div>
+										<h3 class="activity-title">IEEE METU NCC Student Branch</h3>
+										<p class="activity-role">Founder/Chair</p>
+										<p class="activity-description">Established the IEEE student branch and served as its first chair</p>
+										<div class="activity-period">2011</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="activities-section">
+								<h2 class="section-title">Teaching & Mentoring</h2>
+								<div class="activities-grid">
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-teach"></i>
+										</div>
+										<h3 class="activity-title">Computer Organization</h3>
+										<p class="activity-role">McGill University | ECSE 234</p>
+										<p class="activity-description">Taught computer architecture and organization principles</p>
+										<div class="activity-period">2017 - 2020</div>
+									</div>
+
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-teach"></i>
+										</div>
+										<h3 class="activity-title">Digital Logic</h3>
+										<p class="activity-role">McGill University | ECSE 222</p>
+										<p class="activity-description">Instructed digital logic design and implementation</p>
+										<div class="activity-period">2019 - 2020</div>
+									</div>
+
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-teach"></i>
+										</div>
+										<h3 class="activity-title">Digital Systems</h3>
+										<p class="activity-role">McGill University | ECSE 325</p>
+										<p class="activity-description">Led digital systems design and analysis</p>
+										<div class="activity-period">2018 - 2019</div>
+									</div>
+
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-teach"></i>
+										</div>
+										<h3 class="activity-title">VLSI Design</h3>
+										<p class="activity-role">Middle East Technical University</p>
+										<p class="activity-description">Taught very large scale integration design principles</p>
+										<div class="activity-period">2013 - 2015</div>
+									</div>
+
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-teach"></i>
+										</div>
+										<h3 class="activity-title">Computer Architecture</h3>
+										<p class="activity-role">Middle East Technical University</p>
+										<p class="activity-description">Instructed computer architecture I & II courses</p>
+										<div class="activity-period">2013 - 2015</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="activities-section">
+								<h2 class="section-title">Conference Reviewing</h2>
+								<div class="activities-grid">
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-paper"></i>
+										</div>
+										<h3 class="activity-title">IEEE ICASSP</h3>
+										<p class="activity-role">International Conference on Acoustics, Speech, and Signal Processing</p>
+										<p class="activity-description">Peer review of signal processing and communications papers</p>
+										<div class="activity-period">2024</div>
+									</div>
+
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-paper"></i>
+										</div>
+										<h3 class="activity-title">IEEE WCNC</h3>
+										<p class="activity-role">Wireless Communications and Networking Conference</p>
+										<p class="activity-description">Regular reviewer for wireless communications research</p>
+										<div class="activity-period">2017-2025</div>
+									</div>
+
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-paper"></i>
+										</div>
+										<h3 class="activity-title">IEEE ICC</h3>
+										<p class="activity-role">International Conference on Communications</p>
+										<p class="activity-description">Peer review of communications research papers</p>
+										<div class="activity-period">2019</div>
+									</div>
+
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-paper"></i>
+										</div>
+										<h3 class="activity-title">IEEE ISIT</h3>
+										<p class="activity-role">International Symposium on Information Theory</p>
+										<p class="activity-description">Review of information theory and coding papers</p>
+										<div class="activity-period">2017</div>
+									</div>
+								</div>
+							</div>
 
 
 
-						<!--</div>-->
-						<hr/>
-						<h3>Conference Reviewer</h3>
-						<ul>
-						    <li><span class="date">2024</span>  <span class="event">IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)</span></li>
-						    <li><span class="date">2017-2025</span>  <span class="event">IEEE Wireless Communications and Networking Conference (WCNC)</span></li>
-						    <li><span class="date">2022-2023</span>  <span class="event">IEEE Vehicular Technology Conference 2023 - Spring</span></li>
-						    <li><span class="date">2022</span>  <span class="event">IEEE GLOBECOM 2022</span></li>
-						    <li><span class="date">2019</span>  <span class="event">IEEE International Conference on Communications (ICC)</span></li>
-						    <li><span class="date">2019</span>  <span class="event">IEEE/CIC International Conference on Communications in China (ICCC)</span></li>
-						    <li><span class="date">2018</span>  <span class="event">International Symposium on Turbo Codes & Iterative Information Processing (ISTC)</span></li>
-						    <li><span class="date">2017</span>  <span class="event">IEEE International Symposium on Information Theory (ISIT)</span></li>
-						</ul>
+							<div class="activities-section">
+								<h2 class="section-title">Extracurricular Activities</h2>
+								<div class="activities-grid">
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-camera"></i>
+										</div>
+										<h3 class="activity-title">Nature & Nightscape Photography</h3>
+										<p class="activity-role">Creative Expression</p>
+										<p class="activity-description">Passionate photographer with work featured on <a href="https://500px.com/furkanercan" target="_blank">500px Gallery</a></p>
+										<div class="activity-period">Ongoing</div>
+									</div>
 
-						<!--</div>-->
-						<hr/>
-						<h3>TPC Duties </h3>
-						<ul>
-				    <li><span class="tpcdate">IEEE GLOBECOM</span> <span class="date">2025</span> <span class="tpcwhat">Wireless Communications Track</span></li>
-				    <li><span class="tpcdate">IEEE GLOBECOM</span> <span class="date">2024</span> <span class="tpcwhat">Wireless Communications Track</span></li>
-				    <li><span class="tpcdate">IEEE VTC Spring</span> <span class="date">2023</span> <span class="tpcwhat">ML and AI for Communications Track</span></li>
-				    <li><span class="tpcdate">IEEE VTC Spring</span> <span class="date">2023</span>  <span class="tpcwhat">Transmission and Reception Techniques</span></li>
-				    <li><span class="tpcdate">IEEE INFOCOM</span> <span class="date">2023</span>  <span class="tpcwhat">5G and Beyond Wireless Security Track</span></li>
-				    <li><span class="tpcdate">IEEE GLOBECOM</span> <span class="date">2022</span>  <span class="tpcwhat">5G and Beyond Wireless Security Track</span></li>
-				    <li><span class="tpcdate">IEEE VTC Fall</span> <span class="date">2022</span>  <span class="tpcwhat">Unmanned Aerial Vehicle Communications, Vehicular Networks, and Telematics</span></li>
-				    <li><span class="tpcdate">IEEE VTC Spring</span> <span class="date">2022</span>  <span class="tpcwhat">ML and AI for Communications Track</span></li>
-						</ul>
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-music"></i>
+										</div>
+										<h3 class="activity-title">Native American Flute</h3>
+										<p class="activity-role">Honorary Member</p>
+										<p class="activity-description">Amateur player and honorary member of <a href="http://www.cascadiaflutecircle.org/someMembers.html" target="_blank">Cascadia Flute Circle</a> in Oregon, USA</p>
+										<div class="activity-period">Ongoing</div>
+									</div>
 
-						<!--</div>-->
-						<hr/>
-						<h3> Tutoring </h3>
-						<ul>
-					    <li><span class="date">2017 - 2020</span>  <span class="activity">Computer Organization (McGill | ECSE 234)</span></li>
-					    <li><span class="date">2019 - 2020</span>  <span class="activity">Digital Logic (McGill | ECSE 222)</span></li>
-					    <li><span class="date">2018 - 2019</span>  <span class="activity">Digital Systems (McGill | ECSE 325)</span></li>
-					    <li><span class="date">2015 - 2017</span>  <span class="activity">Digital System Design (McGill | ECSE 323)</span></li>
-					    <li><span class="date">2013 - 2015</span>  <span class="activity">Computer Architecture I (METU)</span></li>
-					    <li><span class="date">2013 - 2015</span>  <span class="activity">Computer Architecture II (METU)</span></li>
-					    <li><span class="date">2013 - 2015</span>  <span class="activity">VLSI Design (METU)</span></li>
-					    <li><span class="date">2012 - 2015</span>  <span class="activity">Analog Electronics (METU)</span></li>
-					    <li><span class="date">2012 - 2015</span>  <span class="activity">Digital Electronics (METU)</span></li>
-					    <li><span class="date">2012 - 2015</span>  <span class="activity">Logic Design (METU)</span></li>
-						</ul>
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-paper"></i>
+										</div>
+										<h3 class="activity-title">Literary Writing</h3>
+										<p class="activity-role">Published Author</p>
+										<p class="activity-description">Published in <a href="https://www.lulu.com/shop/rohitash-chandra-and-ed-coet/an-anthology-of-contemporary-love-poems/paperback/product-11923128.html" target="_blank">"An Anthology of Contemporary Love Poems"</a> and The Blue Fog Journal</p>
+										<div class="activity-period">2010</div>
+									</div>
 
-						<!--</div>-->
-						<hr/>
-						<h3>Professional Volunteering & Leadership </h3>
-						<ul>
-				    <li><span class="date">2023</span>  <span class="activity">Industry Forum and Panels Co-Chair of <a href="https://fnwf2023.ieee.org/" target="_blank">Future Networks World Forum 2023</a></span></li>
-				    <li><span class="date">2022</span>  <span class="activity">5G and Beyond Wireless Security Chair of <a href="https://globecom2022.ieee-globecom.org/" target="_blank">IEEE GLOBECOM 2022</a></span></li>
-				    <li><span class="date">2022</span>  <span class="activity">Academia & Industry Demonstrations Chair of <a href="https://fnwf.ieee.org/" target="_blank">IEEE Future Networks World Forum 2022</a></span></li>
-				    <li><span class="date">2022</span>  <span class="activity">Technical Program Chair at <a href="https://events.vtsociety.org/vtc2022-fall/" target="_blank">IEEE Vehicular Technology Conference Spring/Fall 2022</a></span></li>
-				    <li><span class="date">2022</span>  <span class="activity">Active member of IEEE Wireless Communications Technical Committee</span></li>
-				    <li><span class="date">2021</span>  <span class="activity">Vice-Chair at IEEE Montreal Section</span></li>
-				    <li><span class="date">2021</span>  <span class="activity">Industry Demo/Exhibit Co-Chair of <a href="images/Furkan_5GWF2021.jpg" target="_blank">IEEE 5G World Forum 2021</a></span></li>
-				    <li><span class="date">2021</span>  <span class="activity">Lead organizer and panelist of IEEE Montreal Section Keynote Event 2021</span></li>
-				    <li><span class="date">2021</span>  <span class="activity">Technical Organization Committee at IEEE ICC 2021 Women in Engineering Panel</span></li>
-				    <li><span class="date">2018</span>  <span class="activity">Volunteer instructor at Montréal Turkish Community Center for pre-college education</span></li>
-				    <li><span class="date">2017</span>  <span class="activity">Volunteer coordinator in 5th IEEE Global Conference on Signal and Information Processing (GlobalSIP)</span></li>
-				    <li><span class="date">2017</span>  <span class="activity">Founding member of McGill IEEE Women in Engineering (WIE) Affinity Group</span></li>
-				    <li><span class="date">2017</span>  <span class="activity">Chair of McGill IEEE Student Branch</span></li>
-				    <li><span class="date">2012</span>  <span class="activity">Technical organization of 3th IEEE International Conference on Energy Aware Computing Systems (ICEAC)</span></li>
-				    <li><span class="date">2011</span>  <span class="activity">Founder/Chair of IEEE METU NCC Student Branch</span></li>
-				    <li><span class="date">2011</span>  <span class="activity">Technical organization of Mediterranean Microwave Symposium (MMS)</span></li>
-						</ul>
-
-
-						<!--</div>-->
-						<hr/>
-						<h3>Extracurricular Activities</h3>
-						<ul>
-						<li> Nature and Nightscape Photography (<a href="https://500px.com/furkanercan" target="_blank">500px Gallery</i></a>) </li>
-						<li> Amateur Native American Flute player and an honorary member of <a href="http://www.cascadiaflutecircle.org/someMembers.html" target="_blank">Cascadia Flute Circle</a> in Oregon, USA. </li>
-						<li> Literary Writing - published in <a href="https://www.lulu.com/shop/rohitash-chandra-and-ed-coet/an-anthology-of-contemporary-love-poems/paperback/product-11923128.html" target="_blank">"An Anthology of Contemporary Love Poems"</a>, The Blue Fog Journal (2010) </li>
-						<li> Hiking, jogging, yoga, swimming, meditation, skiing </li>
-						
-						</ul>
-
-						<!--</div>-->
+									<div class="activity-card">
+										<div class="activity-icon">
+											<i class="icon-users"></i>
+										</div>
+										<h3 class="activity-title">Fitness & Wellness</h3>
+										<p class="activity-role">Active Lifestyle</p>
+										<p class="activity-description">Hiking, jogging, yoga, swimming, meditation, and skiing for physical and mental well-being</p>
+										<div class="activity-period">Ongoing</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
     <footer class="ftco-footer ftco-bg-dark ftco-section">
         <div class="container px-md-5">
             <div class="row mb-5">
-                <div class="col-md-6">
-                    <div class="ftco-footer-widget mb-4">
-                        <div class="block-23 mb-3">
-                            <iframe
-                                width="100%"
-                                height="450"
-                                frameborder="0"
-                                style="border:0"
-                                src="https://www.google.com/maps/embed/v1/place?q=Intel%20Labs,%2077%20Reed%20Rd,%20Hudson,%20MA%2002155&key=AIzaSyAxxwPzw8LnscvMjlKSEsL8okJ6nX5tlM8"
-                                allowfullscreen
-                            ></iframe>
+                <div class="col-md-12 text-center">
+                    <div class="modern-footer">
+                        <h2 class="footer-title">Let's Connect!</h2>
+                        <p class="footer-subtitle">Interested in collaboration, research opportunities, or just want to chat about technology?</p>
+                        
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fa fa-envelope"></i>
+                                <span id="email-display"></span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fa fa-map-marker"></i>
+                                <span>Natick, MA</span>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-12 text-center text-white">
-                        <h2 class="text-white">Let's Connect!</h2>
-                        <form action="mailto:furkan.ercan@intel.com" method="post" enctype="text/plain">
-                            <div class="form-group mx-auto">
-                                <label for="name" class="text-white">Your Name:</label>
-                                <input type="text" id="name" name="name" class="form-control" style="width: 200%;" required>
-                            </div>
-                            <div class="form-group mx-auto">
-                                <label for="email" class="text-white">Your Email:</label>
-                                <input type="email" id="email" name="email" class="form-control" style="width: 200%;" required>
-                            </div>
-                            <div class="form-group mx-auto">
-                                <label for="message" class="text-white">Message:</label>
-                                <textarea id="message" name="message" class="form-control" rows="4" style="width: 200%;" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary mx-auto">Send Message</button>
-                        </form>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/furkanercan/" target="_blank" class="social-link">
+                                <i class="fa fa-linkedin-square"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://scholar.google.ca/citations?user=GICY-10AAAAJ&hl=en&oi=ao" target="_blank" class="social-link">
+                                <i class="ai ai-google-scholar"></i>
+                                <span>Google Scholar</span>
+                            </a>
+                            <a href="https://github.com/furkanercan" target="_blank" class="social-link">
+                                <i class="fa fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://twitter.com/furkanercan88" target="_blank" class="social-link">
+                                <i class="icon-twitter"></i>
+                                <span>Twitter</span>
+                            </a>
+                        </div>
+
+                        <div class="footer-divider"></div>
+                        
+                        <p class="footer-copyright">
+                            © <script>document.write(new Date().getFullYear());</script> Furkan Ercan. All rights reserved.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="row">
-          <div class="col-md-12 text-center">
-
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
-        </div>
-      </div>
     </footer>
 		</div><!-- END COLORLIB-MAIN -->
 	</div><!-- END COLORLIB-PAGE -->

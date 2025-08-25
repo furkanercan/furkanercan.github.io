@@ -16,6 +16,30 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="description" content="Furkan Ercan's Awards and Recognition - Intel recognition awards, IEEE awards, and academic achievements in wireless communications and research.">
+    <meta name="keywords" content="Furkan Ercan, awards, recognition, Intel, IEEE, wireless communications, research awards, academic achievements">
+    <meta name="author" content="Furkan Ercan">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Awards | Furkan Ercan">
+    <meta property="og:description" content="Awards and recognition for research excellence in wireless communications and technology.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://furkanercan.github.io/awards.html">
+    <meta property="og:image" content="https://furkanercan.github.io/images/author3.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Awards | Furkan Ercan">
+    <meta name="twitter:description" content="Awards and recognition for research excellence in wireless communications and technology.">
+    <meta name="twitter:image" content="https://furkanercan.github.io/images/author3.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://furkanercan.github.io/awards.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
 
@@ -51,7 +75,86 @@
           box-shadow: 0 5px 15px rgba(0,0,0,0.3);
           cursor: pointer;
       }
-  </style>
+
+      /* Enhanced awards styling */
+      .pubs {
+          padding: 20px;
+          background: #f8f9fa;
+          border-radius: 15px;
+          margin: 20px 0;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      }
+
+      .pubs h3 {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          font-weight: 700;
+          font-size: 2.5rem;
+          text-align: center;
+          margin-bottom: 30px;
+      }
+
+      .pubs ul {
+          list-style: none;
+          padding: 0;
+      }
+
+      .pubs li {
+          background: white;
+          padding: 20px;
+          margin: 15px 0;
+          border-radius: 10px;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+          transition: all 0.3s ease;
+          border-left: 4px solid #667eea;
+          position: relative;
+      }
+
+      .pubs li:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+          border-left-color: #764ba2;
+      }
+
+      .pubs li p {
+          color: #555;
+          line-height: 1.6;
+          margin: 0;
+          font-size: 1.1rem;
+      }
+
+      .pubs li::before {
+          content: '🏆';
+          position: absolute;
+          right: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 1.5rem;
+          opacity: 0.7;
+      }
+
+      /* Enhanced navigation styling */
+      .colorlib-main-menu ul li a {
+          transition: all 0.3s ease;
+      }
+
+      .colorlib-main-menu ul li a:hover {
+          color: #667eea;
+          transform: translateX(5px);
+      }
+
+      .colorlib-main-menu ul li.colorlib-active a {
+          color: #667eea;
+          font-weight: 700;
+      }
+
+      /* Smooth transitions */
+      * {
+          transition: all 0.3s ease;
+      }
+    </style>
   </head>
   <body>
 	<div id="colorlib-page">
@@ -64,8 +167,8 @@
 					<li><a href="index.html">Home</a></li>
 					<li><a href="about.html">About</a></li>
 					<li><a href="publications.html">Publications</a></li>
-					<li><a href="projects.html">Projects</a></li>
-					<li><a href="activities.html">Activities</a></li>
+          <li><a href="projects.html">R&D Projects</a></li>
+					                <li><a href="activities.html">Academic Activities</a></li>
 					<li class="colorlib-active"><a href="awards.html">Awards</a></li>
 					<!--<li><a href="#">Contact</a></li>-->
 				</ul>
@@ -130,53 +233,50 @@
     <footer class="ftco-footer ftco-bg-dark ftco-section">
         <div class="container px-md-5">
             <div class="row mb-5">
-                <div class="col-md-6">
-                    <div class="ftco-footer-widget mb-4">
-                        <div class="block-23 mb-3">
-                            <iframe
-                                width="100%"
-                                height="450"
-                                frameborder="0"
-                                style="border:0"
-                                src="https://www.google.com/maps/embed/v1/place?q=Intel%20Labs,%2077%20Reed%20Rd,%20Hudson,%20MA%2002155&key=AIzaSyAxxwPzw8LnscvMjlKSEsL8okJ6nX5tlM8"
-                                allowfullscreen
-                            ></iframe>
+                <div class="col-md-12 text-center">
+                    <div class="modern-footer">
+                        <h2 class="footer-title">Let's Connect!</h2>
+                        <p class="footer-subtitle">Interested in collaboration, research opportunities, or just want to chat about technology?</p>
+                        
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fa fa-envelope"></i>
+                                <span id="email-display"></span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fa fa-map-marker"></i>
+                                <span>Natick, MA</span>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-12 text-center text-white">
-                        <h2 class="text-white">Let's Connect!</h2>
-                        <form action="mailto:furkan.ercan@intel.com" method="post" enctype="text/plain">
-                            <div class="form-group mx-auto">
-                                <label for="name" class="text-white">Your Name:</label>
-                                <input type="text" id="name" name="name" class="form-control" style="width: 200%;" required>
-                            </div>
-                            <div class="form-group mx-auto">
-                                <label for="email" class="text-white">Your Email:</label>
-                                <input type="email" id="email" name="email" class="form-control" style="width: 200%;" required>
-                            </div>
-                            <div class="form-group mx-auto">
-                                <label for="message" class="text-white">Message:</label>
-                                <textarea id="message" name="message" class="form-control" rows="4" style="width: 200%;" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary mx-auto">Send Message</button>
-                        </form>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/furkanercan/" target="_blank" class="social-link">
+                                <i class="fa fa-linkedin-square"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://scholar.google.ca/citations?user=GICY-10AAAAJ&hl=en&oi=ao" target="_blank" class="social-link">
+                                <i class="ai ai-google-scholar"></i>
+                                <span>Google Scholar</span>
+                            </a>
+                            <a href="https://github.com/furkanercan" target="_blank" class="social-link">
+                                <i class="fa fa-github"></i>
+                                <span>GitHub</span>
+                            </span>
+                            <a href="https://twitter.com/furkanercan88" target="_blank" class="social-link">
+                                <i class="icon-twitter"></i>
+                                <span>Twitter</span>
+                            </a>
+                        </div>
+
+                        <div class="footer-divider"></div>
+                        
+                        <p class="footer-copyright">
+                            © <script>document.write(new Date().getFullYear());</script> Furkan Ercan. All rights reserved.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="row">
-          <div class="col-md-12 text-center">
-
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
-        </div>
-      </div>
     </footer>
 		</div><!-- END COLORLIB-MAIN -->
 	</div><!-- END COLORLIB-PAGE -->
@@ -184,6 +284,103 @@
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
+  <!-- Enhanced Loading Animation -->
+  <div id="enhanced-loader" class="enhanced-loader">
+    <div class="loader-content">
+      <div class="loader-spinner"></div>
+      <p>Loading Awards...</p>
+    </div>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTop" class="scroll-to-top" title="Scroll to top">
+    <i class="fa fa-chevron-up"></i>
+  </button>
+
+  <style>
+    .enhanced-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .enhanced-loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .loader-content {
+      text-align: center;
+      color: white;
+    }
+
+    .loader-spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-top: 3px solid white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .loader-content p {
+      font-size: 18px;
+      font-weight: 300;
+      margin: 0;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    /* Scroll to Top Button */
+    .scroll-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .scroll-to-top:hover {
+      background: #2980b9;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .scroll-to-top.show {
+      display: flex;
+    }
+  </style>
 
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
@@ -202,6 +399,51 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxxwPzw8LnscvMjlKSEsL8okJ6nX5tlM8&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+    
+  <script>
+    // Enhanced loader functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const enhancedLoader = document.getElementById('enhanced-loader');
+      
+      // Hide the enhanced loader immediately after page loads
+      setTimeout(function() {
+        enhancedLoader.classList.add('hidden');
+        // Remove from DOM after animation
+        setTimeout(function() {
+          enhancedLoader.remove();
+        }, 500);
+      }, 500); // Reduced from 1500ms to 500ms
+
+      // Scroll to top functionality
+      const scrollToTopBtn = document.getElementById('scrollToTop');
+      
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          scrollToTopBtn.classList.add('show');
+        } else {
+          scrollToTopBtn.classList.remove('show');
+        }
+      });
+      
+      scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Fallback: Hide loader if DOMContentLoaded doesn't fire
+    window.addEventListener('load', function() {
+      const enhancedLoader = document.getElementById('enhanced-loader');
+      if (enhancedLoader) {
+        enhancedLoader.classList.add('hidden');
+        setTimeout(function() {
+          enhancedLoader.remove();
+        }, 500);
+      }
+    });
+  </script>
     
   </body>
 </html>
