@@ -13,26 +13,26 @@
         gtag('js', new Date());
         gtag('config', 'YOUR_GA_ID');
     </script> -->
-    <title>Awards | Furkan Ercan</title>
+    <title>Recognition | Furkan Ercan</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <!-- Enhanced SEO Meta Tags -->
-    <meta name="description" content="Furkan Ercan's Awards and Recognition - Intel recognition awards, IEEE awards, and academic achievements in wireless communications and research.">
-    <meta name="keywords" content="Furkan Ercan, awards, recognition, Intel, IEEE, wireless communications, research awards, academic achievements">
+    <meta name="description" content="Furkan Ercan's Recognition - Intel recognition, IEEE recognition, and academic achievements in wireless communications and research.">
+    <meta name="keywords" content="Furkan Ercan, recognition, awards, Intel, IEEE, wireless communications, research recognition, academic achievements">
     <meta name="author" content="Furkan Ercan">
     
     <!-- Open Graph Meta Tags for Social Media -->
-    <meta property="og:title" content="Awards | Furkan Ercan">
-    <meta property="og:description" content="Awards and recognition for research excellence in wireless communications and technology.">
+    <meta property="og:title" content="Recognition | Furkan Ercan">
+    <meta property="og:description" content="Recognition for research excellence in wireless communications and technology.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://furkanercan.github.io/awards.html">
     <meta property="og:image" content="https://furkanercan.github.io/images/author3.png">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Awards | Furkan Ercan">
-    <meta name="twitter:description" content="Awards and recognition for research excellence in wireless communications and technology.">
+    <meta name="twitter:title" content="Recognition | Furkan Ercan">
+    <meta name="twitter:description" content="Recognition for research excellence in wireless communications and technology.">
     <meta name="twitter:image" content="https://furkanercan.github.io/images/author3.png">
     
     <!-- Canonical URL -->
@@ -43,6 +43,7 @@
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -66,6 +67,16 @@
     <!--<link rel="stylesheet" href="css/academicons.min.css"/>-->
     <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+      
+      * {
+          box-sizing: border-box;
+      }
+
+      body {
+          font-family: 'Inter', 'Poppins', sans-serif;
+      }
+
       .profile-img {
           border-radius: 50%;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -77,63 +88,483 @@
           cursor: pointer;
       }
 
-      /* Enhanced awards styling */
-      .pubs {
-          padding: 20px;
-          background: #f8f9fa;
-          border-radius: 15px;
-          margin: 20px 0;
-          box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      /* Modern Hero Section with Stats */
+      .recognition-hero {
+          background: linear-gradient(135deg, #f093fb 0%, #f5576c 25%, #4facfe 50%, #00f2fe 75%, #f093fb 100%);
+          background-size: 300% 300%;
+          padding: 80px 20px;
+          margin: -20px auto 60px auto;
+          max-width: 1200px;
+          border-radius: 0 0 40px 40px;
+          color: white;
+          text-align: center;
+          position: relative;
+          overflow: hidden;
+          animation: gradientShift 15s ease infinite;
+          box-shadow: 0 10px 50px rgba(240, 147, 251, 0.3);
       }
 
-      .pubs h3 {
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      @keyframes gradientShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+      }
+
+      .recognition-hero::before {
+          content: '';
+          position: absolute;
+          top: -50%;
+          right: -50%;
+          width: 200%;
+          height: 200%;
+          background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+          animation: pulse 20s ease-in-out infinite;
+      }
+
+      .recognition-hero::after {
+          content: '';
+          position: absolute;
+          bottom: -30%;
+          left: -30%;
+          width: 150%;
+          height: 150%;
+          background: radial-gradient(circle, rgba(79, 172, 254, 0.2) 0%, transparent 70%);
+          animation: pulse 25s ease-in-out infinite reverse;
+      }
+
+      @keyframes pulse {
+          0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.6; }
+          50% { transform: scale(1.2) rotate(180deg); opacity: 0.9; }
+      }
+
+      .recognition-hero h2 {
+          font-size: 4rem;
+          font-weight: 800;
+          margin: 0 0 25px 0;
+          text-shadow: 0 4px 30px rgba(0,0,0,0.3), 0 0 40px rgba(255,255,255,0.2);
+          position: relative;
+          z-index: 1;
+          letter-spacing: -2px;
+          animation: fadeInDown 1s ease-out;
+      }
+
+      @keyframes fadeInDown {
+          from {
+              opacity: 0;
+              transform: translateY(-30px);
+          }
+          to {
+              opacity: 1;
+              transform: translateY(0);
+          }
+      }
+
+      .recognition-hero .hero-subtitle {
+          font-size: 1.4rem;
+          opacity: 0.98;
+          margin-bottom: 50px;
+          position: relative;
+          z-index: 1;
+          font-weight: 300;
+          text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+          animation: fadeInUp 1s ease-out 0.2s both;
+      }
+
+      @keyframes fadeInUp {
+          from {
+              opacity: 0;
+              transform: translateY(30px);
+          }
+          to {
+              opacity: 1;
+              transform: translateY(0);
+          }
+      }
+
+      .stats-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          gap: 30px;
+          max-width: 900px;
+          margin: 0 auto;
+          position: relative;
+          z-index: 1;
+          animation: fadeInUp 1s ease-out 0.4s both;
+      }
+
+      .stat-card {
+          background: rgba(255, 255, 255, 0.18);
+          backdrop-filter: blur(15px) saturate(180%);
+          -webkit-backdrop-filter: blur(15px) saturate(180%);
+          border: 2px solid rgba(255, 255, 255, 0.3);
+          padding: 30px 25px;
+          border-radius: 25px;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          position: relative;
+          overflow: hidden;
+          text-align: center;
+      }
+
+      .stat-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+          transition: left 0.6s ease;
+      }
+
+      .stat-card:hover::before {
+          left: 100%;
+      }
+
+      .stat-card:hover {
+          transform: translateY(-8px) scale(1.05);
+          background: rgba(255, 255, 255, 0.28);
+          box-shadow: 0 15px 40px rgba(0,0,0,0.3), 0 0 30px rgba(255,255,255,0.2);
+          border-color: rgba(255, 255, 255, 0.5);
+      }
+
+      .stat-number {
+          font-size: 3rem;
+          font-weight: 800;
+          margin-bottom: 8px;
+          display: block;
+          background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
-          font-weight: 700;
-          font-size: 2.5rem;
+          text-shadow: 0 0 20px rgba(255,255,255,0.5);
           text-align: center;
+      }
+
+      .stat-label {
+          font-size: 0.95rem;
+          opacity: 0.95;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+          font-weight: 600;
+          text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+          text-align: center;
+          display: block;
+      }
+
+      /* Modern Recognition Container */
+      .pubs {
+          padding: 0;
+          background: transparent;
+          margin: 0;
+      }
+
+      /* Section Headers with Icons */
+      .pubs h3 {
+          color: #1a1a1a;
+          font-weight: 700;
+          font-size: 2.2rem;
+          margin: 60px 0 30px 0;
+          padding: 25px 35px;
+          background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 50%, #ffffff 100%);
+          background-size: 200% 200%;
+          border-radius: 20px;
+          cursor: pointer;
+          user-select: none;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 20px;
+          box-shadow: 0 6px 25px rgba(240, 147, 251, 0.15), 0 0 0 1px rgba(240, 147, 251, 0.1);
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          border: 2px solid transparent;
+          overflow: hidden;
+      }
+
+      .pubs h3:hover {
+          transform: translateX(8px) translateY(-2px);
+          box-shadow: 0 10px 35px rgba(240, 147, 251, 0.25), 0 0 0 1px rgba(240, 147, 251, 0.2);
+          border-color: rgba(240, 147, 251, 0.4);
+          background-position: 100% 0;
+      }
+
+      .pubs h3::after {
+          content: '';
+          width: 6px;
+          height: 45px;
+          background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+          border-radius: 12px;
+          flex-shrink: 0;
+          box-shadow: 0 0 15px rgba(240, 147, 251, 0.5);
+          position: static;
+          margin-right: 0;
+      }
+
+      .pubs h3.section-toggle {
+          position: relative;
+          padding-right: 60px;
+      }
+
+      .pubs h3.section-toggle::before {
+          content: '▼';
+          position: absolute;
+          right: 25px;
+          font-size: 1.1rem;
+          transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          color: #f5576c;
+          width: auto;
+          height: auto;
+          background: none;
+          box-shadow: none;
+          top: 50%;
+          transform: translateY(-50%);
+      }
+
+      .pubs h3.collapsed::before {
+          transform: translateY(-50%) rotate(-90deg);
+      }
+
+      /* Section Icons */
+      .section-icon {
+          font-size: 1.8rem;
+          width: 60px;
+          height: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+          border-radius: 15px;
+          color: white;
+          flex-shrink: 0;
+          box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
+          transition: all 0.3s ease;
+      }
+
+      .pubs h3:hover .section-icon {
+          transform: scale(1.1) rotate(5deg);
+          box-shadow: 0 6px 20px rgba(240, 147, 251, 0.6);
+      }
+
+      .section-content {
+          overflow: hidden;
+          transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.4s ease, padding 0.4s ease;
+          max-height: 10000px;
+          opacity: 1;
           margin-bottom: 30px;
       }
 
+      .section-content.collapsed {
+          max-height: 0;
+          opacity: 0;
+          margin: 0;
+          padding: 0;
+      }
+
+      /* Modern Recognition Cards */
       .pubs ul {
           list-style: none;
           padding: 0;
+          margin: 0;
       }
 
       .pubs li {
           background: white;
-          padding: 20px;
-          margin: 15px 0;
-          border-radius: 10px;
-          box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-          transition: all 0.3s ease;
-          border-left: 4px solid #667eea;
+          padding: 0;
+          margin: 0 0 25px 0;
+          border-radius: 18px;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.08), 0 0 0 1px rgba(240, 147, 251, 0.1);
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          border: 1px solid rgba(240, 147, 251, 0.15);
+          overflow: hidden;
           position: relative;
       }
 
+      .pubs li::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 6px;
+          height: 100%;
+          background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+          transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 0 0 20px rgba(240, 147, 251, 0.5);
+      }
+
+      .pubs li::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(135deg, rgba(240, 147, 251, 0.03) 0%, rgba(245, 87, 108, 0.03) 100%);
+          opacity: 0;
+          transition: opacity 0.4s ease;
+          pointer-events: none;
+      }
+
       .pubs li:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-          border-left-color: #764ba2;
+          transform: translateY(-8px) translateX(8px);
+          box-shadow: 0 15px 50px rgba(240, 147, 251, 0.25), 0 0 0 1px rgba(240, 147, 251, 0.3);
+          border-color: rgba(240, 147, 251, 0.4);
+      }
+
+      .pubs li:hover::before {
+          width: 10px;
+          box-shadow: 0 0 30px rgba(240, 147, 251, 0.7);
+      }
+
+      .pubs li:hover::after {
+          opacity: 1;
       }
 
       .pubs li p {
-          color: #555;
-          line-height: 1.6;
+          color: #2d3748;
+          line-height: 1.9;
           margin: 0;
-          font-size: 1.1rem;
+          font-size: 1.05rem;
+          padding: 30px 35px;
+          padding-left: 55px;
+          position: relative;
+          font-weight: 400;
       }
 
-      .pubs li::before {
+      .pubs li p::before {
           content: '🏆';
           position: absolute;
-          right: 20px;
+          left: 25px;
           top: 50%;
           transform: translateY(-50%);
           font-size: 1.5rem;
-          opacity: 0.7;
+          opacity: 0.9;
+          filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+          transition: transform 0.3s ease;
+      }
+
+      .pubs li:hover p::before {
+          transform: translateY(-50%) scale(1.2) rotate(10deg);
+      }
+
+      .pubs li a {
+          color: #f5576c;
+          text-decoration: none;
+          font-weight: 600;
+          transition: all 0.3s ease;
+          border-bottom: 2px solid transparent;
+          padding-bottom: 2px;
+          position: relative;
+      }
+
+      .pubs li a::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+          transition: width 0.3s ease;
+      }
+
+      .pubs li a:hover {
+          color: #f093fb;
+      }
+
+      .pubs li a:hover::after {
+          width: 100%;
+      }
+
+      /* Year Badges */
+      .year-badge {
+          display: inline-block;
+          background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+          color: white;
+          padding: 8px 18px;
+          border-radius: 25px;
+          font-size: 0.9rem;
+          font-weight: 700;
+          margin-right: 12px;
+          margin-bottom: 8px;
+          box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4), 0 0 0 1px rgba(255,255,255,0.2) inset;
+          transition: all 0.3s ease;
+          letter-spacing: 0.5px;
+      }
+
+      .pubs li:hover .year-badge {
+          transform: scale(1.05);
+          box-shadow: 0 6px 20px rgba(240, 147, 251, 0.5), 0 0 0 1px rgba(255,255,255,0.3) inset;
+      }
+
+      /* Certifications Section Styling */
+      .pubs.certifications h3::after {
+          background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
+          box-shadow: 0 0 15px rgba(79, 172, 254, 0.5);
+      }
+
+      .pubs.certifications h3 {
+          box-shadow: 0 6px 25px rgba(79, 172, 254, 0.15), 0 0 0 1px rgba(79, 172, 254, 0.1);
+      }
+
+      .pubs.certifications h3:hover {
+          box-shadow: 0 10px 35px rgba(79, 172, 254, 0.25), 0 0 0 1px rgba(79, 172, 254, 0.2);
+          border-color: rgba(79, 172, 254, 0.4);
+      }
+
+      .pubs.certifications .section-icon {
+          background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+          box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+      }
+
+      .pubs.certifications h3:hover .section-icon {
+          box-shadow: 0 6px 20px rgba(79, 172, 254, 0.6);
+      }
+
+      .pubs.certifications h3.section-toggle::before {
+          color: #4facfe;
+      }
+
+      .pubs.certifications li::before {
+          background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
+          box-shadow: 0 0 20px rgba(79, 172, 254, 0.5);
+      }
+
+      .pubs.certifications li:hover {
+          box-shadow: 0 15px 50px rgba(79, 172, 254, 0.25), 0 0 0 1px rgba(79, 172, 254, 0.3);
+          border-color: rgba(79, 172, 254, 0.4);
+      }
+
+      .pubs.certifications li:hover::before {
+          box-shadow: 0 0 30px rgba(79, 172, 254, 0.7);
+      }
+
+      .pubs.certifications li::after {
+          background: linear-gradient(135deg, rgba(79, 172, 254, 0.03) 0%, rgba(0, 242, 254, 0.03) 100%);
+      }
+
+      .pubs.certifications li p::before {
+          content: '🎓';
+      }
+
+      .pubs.certifications li a {
+          color: #4facfe;
+      }
+
+      .pubs.certifications li a:hover {
+          color: #00f2fe;
+      }
+
+      .pubs.certifications li a::after {
+          background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+      }
+
+      .pubs.certifications .year-badge {
+          background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+          box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4), 0 0 0 1px rgba(255,255,255,0.2) inset;
+      }
+
+      .pubs.certifications li:hover .year-badge {
+          box-shadow: 0 6px 20px rgba(79, 172, 254, 0.5), 0 0 0 1px rgba(255,255,255,0.3) inset;
       }
 
       /* Enhanced navigation styling */
@@ -151,10 +582,133 @@
           font-weight: 700;
       }
 
-      /* Smooth transitions */
-      * {
-          transition: all 0.3s ease;
+      /* Responsive Design */
+      @media (max-width: 768px) {
+          .recognition-hero {
+              padding: 50px 15px;
+              margin: -20px auto 40px auto;
+              border-radius: 0 0 30px 30px;
+          }
+
+          .recognition-hero h2 {
+              font-size: 2.5rem;
+              margin-bottom: 20px;
+          }
+          
+          .recognition-hero .hero-subtitle {
+              font-size: 1.1rem;
+              margin-bottom: 30px;
+          }
+          
+          .stats-grid {
+              grid-template-columns: repeat(2, 1fr);
+              gap: 15px;
+              max-width: 100%;
+          }
+          
+          .stat-card {
+              padding: 20px 15px;
+          }
+          
+          .stat-number {
+              font-size: 2.2rem;
+          }
+
+          .stat-label {
+              font-size: 0.8rem;
+          }
+          
+          .pubs h3 {
+              font-size: 1.6rem;
+              padding: 20px 25px;
+              margin: 40px 0 20px 0;
+              gap: 15px;
+          }
+
+          .pubs h3.section-toggle {
+              padding-right: 50px;
+          }
+
+          .pubs h3.section-toggle::before {
+              right: 20px;
+              font-size: 1rem;
+          }
+
+          .section-icon {
+              width: 50px;
+              height: 50px;
+              font-size: 1.5rem;
+          }
+          
+          .pubs li {
+              margin-bottom: 20px;
+          }
+
+          .pubs li p {
+              padding: 25px 20px;
+              padding-left: 50px;
+              font-size: 0.95rem;
+          }
+
+          .pubs li p::before {
+              left: 18px;
+              font-size: 1.3rem;
+          }
+
+          .year-badge {
+              padding: 6px 14px;
+              font-size: 0.8rem;
+              margin-right: 8px;
+          }
       }
+
+      @media (max-width: 480px) {
+          .stats-grid {
+              grid-template-columns: 1fr;
+          }
+
+          .recognition-hero h2 {
+              font-size: 2rem;
+          }
+      }
+
+      /* Smooth scroll */
+      html {
+          scroll-behavior: smooth;
+      }
+
+      /* Fade-in animation for cards */
+      @keyframes fadeInUp {
+          from {
+              opacity: 0;
+              transform: translateY(30px);
+          }
+          to {
+              opacity: 1;
+              transform: translateY(0);
+          }
+      }
+
+      .pubs li {
+          animation: fadeInUp 0.6s ease-out;
+          animation-fill-mode: both;
+      }
+
+      .pubs li:nth-child(1) { animation-delay: 0.05s; }
+      .pubs li:nth-child(2) { animation-delay: 0.1s; }
+      .pubs li:nth-child(3) { animation-delay: 0.15s; }
+      .pubs li:nth-child(4) { animation-delay: 0.2s; }
+      .pubs li:nth-child(5) { animation-delay: 0.25s; }
+      .pubs li:nth-child(6) { animation-delay: 0.3s; }
+      .pubs li:nth-child(7) { animation-delay: 0.35s; }
+      .pubs li:nth-child(8) { animation-delay: 0.4s; }
+      .pubs li:nth-child(9) { animation-delay: 0.45s; }
+      .pubs li:nth-child(10) { animation-delay: 0.5s; }
+      .pubs li:nth-child(11) { animation-delay: 0.55s; }
+      .pubs li:nth-child(12) { animation-delay: 0.6s; }
+      .pubs li:nth-child(13) { animation-delay: 0.65s; }
+      .pubs li:nth-child(14) { animation-delay: 0.7s; }
+      .pubs li:nth-child(15) { animation-delay: 0.75s; }
     </style>
   </head>
   <body>
@@ -168,9 +722,9 @@
 					<li><a href="index.html">Home</a></li>
 					<li><a href="about.html">About</a></li>
 					<li><a href="publications.html">Publications</a></li>
-          <li><a href="projects.html">R&D Projects</a></li>
-					                <li><a href="activities.html">Academic Activities</a></li>
-					<li class="colorlib-active"><a href="awards.html">Awards</a></li>
+          <li><a href="projects.html">Impact</a></li>
+					                <li><a href="activities.html">Scholarship</a></li>
+					<li class="colorlib-active"><a href="awards.html">Recognition</a></li>
 					<!--<li><a href="#">Contact</a></li>-->
 				</ul>
 			</nav>
@@ -195,39 +749,65 @@
 			<section class="ftco-section-2">
 				<div class="photograhy">
 					<div class="row yes-gutters">
+						<!-- Hero Section with Stats -->
+						<div class="recognition-hero">
+							<h2>Recognition</h2>
+							<p class="hero-subtitle">Celebrating achievements and milestones in research, innovation, and academic excellence</p>
+							<div class="stats-grid">
+								<div class="stat-card">
+									<span class="stat-number" data-count="20">0</span>
+									<span class="stat-label">Recognition Awards</span>
+								</div>
+								<div class="stat-card">
+									<span class="stat-number" data-count="3">0</span>
+									<span class="stat-label">Certifications</span>
+								</div>
+								<div class="stat-card">
+									<span class="stat-number" data-count="23">0</span>
+									<span class="stat-label">Total Achievements</span>
+								</div>
+							</div>
+						</div>
+						
 						<div class="pubs">
-						<h3>Awards</h3>
+						<h3 class="section-toggle">
+							<span class="section-icon">🏆</span>
+							<span>Recognition</span>
+						</h3>
+						<div class="section-content">
 						<ul>
-						<li><p> [2024] Intel Individual Contributor Recognition</a>. </p></li>
-                        <li><p> [2023] Intel IDP Divisional Recognition Award</a>. </p></li>
-						<li><p> [2023] Best Demo Award at the IEEE COMSNETS 2023 Conference. </p></li>
-            <li><p> [2021] Exemplary Keynote Organization Recognition Award by the IEEE Montreal Section. </p></li>
-            <li><p> [2020] IEEE Communications Society Student Grant Award for ICC 2020. </p></li>
-						<li><p> [2020] <a href="images/furkan_QECaward.jpg" target="_blank">Third place award</a> in the province at <a href="https://cqi-qec.qc.ca/2020/en/home/" target="_blank">Quebec Engineering Competition</a> Graduate Research Track. </p></li>
-						<li><p> [2019] <a href="images/furkan_MECaward.jpg" target="_blank">First place award</a> at <a href="https://mec.mcgilleus.ca/" target="_blank">McGill Engineering Competition</a> Scientific Research Presentation Track for the oral performance featuring "Energy-efficient hardware architectures for fast polar decoders". </p></li>
-						<li><p> [2019] <a href="images/furkan_IEEE_RBaward.jpg" target="_blank">Second place award</a> at <a href="https://montreal.ieee.ca/event/the-sixth-ieee-research-boost-give-your-research-an-industrial-edge-2/" target="_blank">6th IEEE Montreal Research Boost</a> for the poster presentation titled "Energy-efficient polar decoders for 5G and beyond". </p></li>
-						<li><p> [2018] <a href="images/furkan_bestTAaward.jpg" target="_blank">Best Teaching Assistant Award</a> from the Faculty of Engineering, McGill University for tutoring Digital System Design course. </p></li>
-						<li><p> [2018] Graduate Research Enhancement and Travel (G.R.E.A.T) award for conference proceeding to be presented in IEEE Wireless Communications and Networking Conference (WCNC), Barcelona, Spain. </p></li>
-						<li><p> [2017] <a href="images/furkan_IEEEaward.jpg" target="_blank">Exemplary Student Branch Award</a> for chairing McGill IEEE Student Branch. </p></li>
-						<li><p> [2015] McGill Engineering Doctoral Award. </p></li>
-						<li><p> [2015] <a href="images/iceac15_bestpaper.jpg" target="_blank">Best Student Paper Award</a> in 5th International Conference on Energy Aware Computing Systems & Applications (ICEAC) 2015, Cairo, Egypt. </p></li>
-            <li><p> [2011] Graduated with first rank in the Department of Electrical and Electronics Engineering, METU NCC. </p></li>
-						<li><p> [2007-2011] Multiple High Honour degrees for excellence throughout the undergraduate degree. </p></li>
+						<li><p><span class="year-badge">2024</span>Intel Individual Contributor Recognition.</p></li>
+                        <li><p><span class="year-badge">2023</span>Intel IDP Divisional Recognition Award.</p></li>
+						<li><p><span class="year-badge">2023</span>Best Demo Award at the IEEE COMSNETS 2023 Conference.</p></li>
+            <li><p><span class="year-badge">2021</span>Exemplary Keynote Organization Recognition Award by the IEEE Montreal Section.</p></li>
+            <li><p><span class="year-badge">2020</span>IEEE Communications Society Student Grant Award for ICC 2020.</p></li>
+						<li><p><span class="year-badge">2020</span><a href="images/furkan_QECaward.jpg" target="_blank">Third place award</a> in the province at <a href="https://cqi-qec.qc.ca/2020/en/home/" target="_blank">Quebec Engineering Competition</a> Graduate Research Track.</p></li>
+						<li><p><span class="year-badge">2019</span><a href="images/furkan_MECaward.jpg" target="_blank">First place award</a> at <a href="https://mec.mcgilleus.ca/" target="_blank">McGill Engineering Competition</a> Scientific Research Presentation Track for the oral performance featuring "Energy-efficient hardware architectures for fast polar decoders".</p></li>
+						<li><p><span class="year-badge">2019</span><a href="images/furkan_IEEE_RBaward.jpg" target="_blank">Second place award</a> at <a href="https://montreal.ieee.ca/event/the-sixth-ieee-research-boost-give-your-research-an-industrial-edge-2/" target="_blank">6th IEEE Montreal Research Boost</a> for the poster presentation titled "Energy-efficient polar decoders for 5G and beyond".</p></li>
+						<li><p><span class="year-badge">2018</span><a href="images/furkan_bestTAaward.jpg" target="_blank">Best Teaching Assistant Award</a> from the Faculty of Engineering, McGill University for tutoring Digital System Design course.</p></li>
+						<li><p><span class="year-badge">2018</span>Graduate Research Enhancement and Travel (G.R.E.A.T) award for conference proceeding to be presented in IEEE Wireless Communications and Networking Conference (WCNC), Barcelona, Spain.</p></li>
+						<li><p><span class="year-badge">2017</span><a href="images/furkan_IEEEaward.jpg" target="_blank">Exemplary Student Branch Award</a> for chairing McGill IEEE Student Branch.</p></li>
+						<li><p><span class="year-badge">2015</span>McGill Engineering Doctoral Award.</p></li>
+						<li><p><span class="year-badge">2015</span><a href="images/iceac15_bestpaper.jpg" target="_blank">Best Student Paper Award</a> in 5th International Conference on Energy Aware Computing Systems & Applications (ICEAC) 2015, Cairo, Egypt.</p></li>
+            <li><p><span class="year-badge">2011</span>Graduated with first rank in the Department of Electrical and Electronics Engineering, METU NCC.</p></li>
+						<li><p><span class="year-badge">2007-2011</span>Multiple High Honour degrees for excellence throughout the undergraduate degree.</p></li>
 						</ul>
 						</div>
+						</div>
 
-                        <div class="pubs">
-                        <h3>Certifications</h3>
+                        <div class="pubs certifications">
+                        <h3 class="section-toggle">
+							<span class="section-icon">🎓</span>
+							<span>Certifications</span>
+						</h3>
+                        <div class="section-content">
                         <ul>
-                        
-                        <li><p> [2025] University of Michigan - Successful Negotiation: Essential Strategies and Skills - Coursera</a>. </p></li>
-                        <li><p> [2024] Machine Learning Specialization - DeepLearning.AI</a>. </p></li>
-                        <li><p> [2024] Python Specialization UMich - Coursera</a>. </p></li>
+                        <li><p><span class="year-badge">2025</span>University of Michigan - Successful Negotiation: Essential Strategies and Skills - Coursera.</p></li>
+                        <li><p><span class="year-badge">2024</span>Machine Learning Specialization - DeepLearning.AI.</p></li>
+                        <li><p><span class="year-badge">2024</span>Python Specialization UMich - Coursera.</p></li>
                         </ul>
                         </div>
-
-
-						
+                        </div>
 					</div>
 				</div>
 			</section>
@@ -289,7 +869,7 @@
   <div id="enhanced-loader" class="enhanced-loader">
     <div class="loader-content">
       <div class="loader-spinner"></div>
-      <p>Loading Awards...</p>
+      <p>Loading Recognition...</p>
     </div>
   </div>
 
@@ -443,6 +1023,64 @@
         setTimeout(function() {
           enhancedLoader.remove();
         }, 500);
+      }
+    });
+
+    // Collapsible sections functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const sectionToggles = document.querySelectorAll('.section-toggle');
+      
+      sectionToggles.forEach(function(toggle) {
+        toggle.addEventListener('click', function() {
+          const content = this.nextElementSibling;
+          if (content && content.classList.contains('section-content')) {
+            content.classList.toggle('collapsed');
+            this.classList.toggle('collapsed');
+          }
+        });
+      });
+
+      // Animated counter for stats
+      function animateCounter(element) {
+        const target = parseInt(element.getAttribute('data-count'));
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        let current = 0;
+        
+        const timer = setInterval(function() {
+          current += increment;
+          if (current >= target) {
+            element.textContent = target;
+            clearInterval(timer);
+          } else {
+            element.textContent = Math.floor(current);
+          }
+        }, 16);
+      }
+
+      // Intersection Observer for stats animation
+      const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px'
+      };
+
+      const statsObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            const statNumbers = entry.target.querySelectorAll('.stat-number');
+            statNumbers.forEach(function(stat) {
+              if (stat.textContent === '0') {
+                animateCounter(stat);
+              }
+            });
+            statsObserver.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      const statsGrid = document.querySelector('.stats-grid');
+      if (statsGrid) {
+        statsObserver.observe(statsGrid);
       }
     });
   </script>

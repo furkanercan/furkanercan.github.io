@@ -68,6 +68,16 @@
     <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
 
 	<style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Poppins', sans-serif;
+        }
+
         .profile-img {
             border-radius: 50%;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -79,87 +89,289 @@
             cursor: pointer;
         }
 
-        /* Enhanced publications styling */
-        .pubs {
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 15px;
-            margin: 20px 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        /* Modern Hero Section with Stats */
+        .pubs-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            padding: 60px 20px;
+            margin: -20px auto 40px auto;
+            max-width: 1200px;
+            border-radius: 0 0 30px 30px;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .pubs h2 {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 700;
-            font-size: 2.5rem;
+        .pubs-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .pubs-hero h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 0 0 20px 0;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+            letter-spacing: -1px;
+        }
+
+        .pubs-hero .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 25px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
             text-align: center;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            display: block;
+            text-align: center;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+            text-align: center;
+            display: block;
+        }
+
+        /* Modern Publications Container */
+        .pubs {
+            padding: 0;
+            background: transparent;
+            margin: 0;
+        }
+
+        /* Section Headers with Icons */
+        .pubs h3 {
+            color: #1a1a1a;
+            font-weight: 700;
+            font-size: 2rem;
+            margin: 50px 0 25px 0;
+            padding: 20px 30px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+            border-radius: 15px;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .pubs h3:hover {
+            transform: translateX(5px);
+            box-shadow: 0 6px 25px rgba(102, 126, 234, 0.2);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+
+        .pubs h3::before {
+            content: '';
+            width: 5px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .pubs h3.section-toggle::after {
+            content: '▼';
+            margin-left: auto;
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+            color: #667eea;
+        }
+
+        .pubs h3.collapsed::after {
+            transform: rotate(-90deg);
+        }
+
+        /* Section Icons */
+        .section-icon {
+            font-size: 1.5rem;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .section-content {
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.4s ease, padding 0.4s ease;
+            max-height: 10000px;
+            opacity: 1;
             margin-bottom: 30px;
         }
 
-        .pubs h3 {
-            color: #333;
-            font-weight: 700;
-            font-size: 1.8rem;
-            margin: 30px 0 20px 0;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #667eea;
-            display: inline-block;
+        .section-content.collapsed {
+            max-height: 0;
+            opacity: 0;
+            margin: 0;
+            padding: 0;
         }
 
+        /* Modern Publication Cards */
         .conf, .journal {
             background: white;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border-left: 4px solid #667eea;
+            padding: 0;
+            margin: 0 0 20px 0;
+            border-radius: 16px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(102, 126, 234, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .conf::before, .journal::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
         }
 
         .conf:hover, .journal:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-            border-left-color: #764ba2;
+            transform: translateY(-5px) translateX(5px);
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.2);
+            border-color: rgba(102, 126, 234, 0.3);
         }
 
-        .conf h4, .journal h4 {
-            color: #667eea;
-            font-weight: 700;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
+        .conf:hover::before, .journal:hover::before {
+            width: 8px;
+        }
+
+        .conf ul, .journal ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .conf li, .journal li {
+            padding: 25px 30px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: background 0.3s ease;
+        }
+
+        .conf li:last-child, .journal li:last-child {
+            border-bottom: none;
+        }
+
+        .conf li:hover, .journal li:hover {
+            background: rgba(102, 126, 234, 0.03);
         }
 
         .conf p, .journal p {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 8px;
+            color: #2d3748;
+            line-height: 1.8;
+            margin: 0;
+            font-size: 1rem;
         }
 
         .conf a, .journal a {
             color: #667eea;
             text-decoration: none;
             font-weight: 600;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 2px;
         }
 
         .conf a:hover, .journal a:hover {
             color: #764ba2;
-            text-decoration: underline;
+            border-bottom-color: #764ba2;
         }
 
-        .year {
+        /* Year Badges */
+        .year-badge {
+            display: inline-block;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 5px 15px;
+            padding: 6px 16px;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
-            display: inline-block;
+            margin-right: 10px;
             margin-bottom: 10px;
+            box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
         }
+
+        /* Publication Type Colors */
+        .pub-type-book { border-left-color: #f093fb !important; }
+        .pub-type-book::before { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important; }
+        
+        .pub-type-journal { border-left-color: #4facfe !important; }
+        .pub-type-journal::before { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important; }
+        
+        .pub-type-conference { border-left-color: #43e97b !important; }
+        .pub-type-conference::before { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%) !important; }
+        
+        .pub-type-talk { border-left-color: #fa709a !important; }
+        .pub-type-talk::before { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%) !important; }
+        
+        .pub-type-thesis { border-left-color: #30cfd0 !important; }
+        .pub-type-thesis::before { background: linear-gradient(135deg, #30cfd0 0%, #330867 100%) !important; }
+        
+        .pub-type-demo { border-left-color: #a8edea !important; }
+        .pub-type-demo::before { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%) !important; }
 
         /* Enhanced navigation styling */
         .colorlib-main-menu ul li a {
@@ -176,9 +388,54 @@
             font-weight: 700;
         }
 
-        /* Smooth transitions */
-        * {
-            transition: all 0.3s ease;
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .pubs-hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .stat-card {
+                padding: 15px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .pubs h3 {
+                font-size: 1.5rem;
+                padding: 15px 20px;
+            }
+            
+            .conf li, .journal li {
+                padding: 20px;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Fade-in animation for cards */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .conf, .journal {
+            animation: fadeInUp 0.6s ease-out;
         }
     </style>
   </head>
@@ -193,9 +450,9 @@
 					<li><a href="index.html">Home</a></li>
 					<li><a href="about.html">About</a></li>
 					<li class="colorlib-active"><a href="publications.html">Publications</a></li>
-          <li><a href="projects.html">R&D Projects</a></li>
-					                <li><a href="activities.html">Academic Activities</a></li>
-					<li><a href="awards.html">Awards</a></li>
+          <li><a href="projects.html">Impact</a></li>
+					                <li><a href="activities.html">Scholarship</a></li>
+					<li><a href="awards.html">Recognition</a></li>
 					<!--<li><a href="#">Contact</a></li>-->
 				</ul>
 			</nav>
@@ -220,157 +477,220 @@
 			<section class="ftco-section-2">
 				<div class="photograhy">
 					<div class="row yes-gutters">
-						<h2>Publications</h2>
-						<div class="pubs">
-
-						<h3>Book Chapters</h3>
-						<div class="conf">
-						<ul>
-						<li><p>S. M. Abbas, M. Jalaleddine, <b>F. Ercan</b>, T. Tonnellier, W. J. Gross &ldquo;<a href="https://doi.org/10.1007/978-3-031-31663-0_2" target="_blank">Hardware Architecture for GRAND with ABandonment (GRANDAB)</a>&rdquo;, <i>in Guessing Random Additive Noise Decoding</i>, pp. 21-38, May 2023, Springer.</p>
-						</li> 
-						<li><p>S. M. Abbas, M. Jalaleddine, <b>F. Ercan</b>, T. Tonnellier, W. J. Gross &ldquo;<a href="https://doi.org/10.1007/978-3-031-31663-0_3" target="_blank">Hardware Architecture for Ordered Reliability Bits GRAND (ORBGRAND)</a>&rdquo;, <i>in Guessing Random Additive Noise Decoding</i>, pp. 39-71, May 2023, Springer.</p>
-						</li> 
-						</ul>
-						</div>
-
-
-						<h3>Journal Papers</h3>
-						<ul>
-						<li><p><b>F. Ercan</b>, &ldquo;<a>Syndrome Check-Aided Successive Cancellation Flip Decoding of Polar Codes</a>&rdquo;, <i>IEEE Communications Letters </i> under review.</p>
-						</li>
-						<li><p>A. Riaz, A. Yasar, <b>F. Ercan</b>, W. An, J. Ngo, K. Galligan, M. Medard, K. R. Duffy, R. T. Yazicigil, &ldquo;<a href="https://ieeexplore.ieee.org/abstract/document/10768996" target="_blank">A Sub-0.8-pJ/bit Universal Soft-Detection Decoder Using ORBGRAND</a>&rdquo;, <i>IEEE Journal of Solid-State Circuits </i> doi: 10.1109/JSSC.2024.3502240.</p>
-						</li>
-						<li><p>S. M. Abbas, T. Tonnellier, <b>F. Ercan</b>, M. Jalaleddine, W. J. Gross, &ldquo;<a href="https://ieeexplore.ieee.org/document/9732212" target="_blank">High-Throughput and Energy-Efficient VLSI Architecture for Ordered Reliability Bits GRAND</a>&rdquo;, <i>IEEE Transactions on Very Large Scale Integration (VLSI) Systems </i> doi: 10.1109/TVLSI.2022.3153605.</p>
-						</li>
-						<li><p><b>F. Ercan</b>, T. Tonnellier, N.Doan, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/TSP.2020.3023582" target="_blank">Practical Dynamic SC-Flip Decoders: Algorithm and Implementation</a>&rdquo;, <i>IEEE Transactions on Signal Processing</i>, vol. 68, pp. 5441-5456, September 2020.</p>
-						</li>
-						<li><p>N.Doan, S. A. Hashemi, <b>F. Ercan</b>, T. Tonnellier,  W. J. Gross, &ldquo;<a href="https://doi.org/10.1007/s11265-020-01599-y" target="_blank">Neural Successive Cancellation Flip Decoding of Polar Codes</a>&rdquo;, <i>Journal of Signal Processing Systems</i>, vol. 93, pp. 631–642, 2021.</p>
-						</li>
-						<li><p><b>F. Ercan</b>, T. Tonnellier, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/TCSI.2019.2942833" target="_blank">Energy-Efficient Hardware Architectures for Fast Polar Decoders</a>&rdquo;, <i>IEEE Transactions on Circuits and Systems I: Regular Papers</i>, vol. 67, no. 1, pp. 322-335, January 2020.</p>
-						</li>
-						<li><p><b>F. Ercan</b>, T. Tonnellier, C. Condo, W. J. Gross, &ldquo;<a href="https://doi.org/10.1007/s11265-018-1413-4" target="_blank">Operation Merging for Hardware Implementations of Fast Polar Decoders</a>&rdquo;, <i>Journal of Signal Processing Systems</i>, vol. 91, no. 9, pp. 995-1007, September 2019.</p>
-						</li>
-						<li><p>C. Condo, S. A. Hashemi, A. Ardakani, <b>F. Ercan</b>, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/TCSII.2018.2872653" target="_blank">Design and Implementation of a Polar Codes Blind Detection Scheme</a>&rdquo;, <i>IEEE Transactions on Circuits and Systems II: Express Briefs</i>, vol. 66, no. 6, pp. 943-947, June 2019.</p>
-						</li>
-						<li><p><b>F. Ercan</b>, C. Condo, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/TCOMM.2018.2873322" target="_blank">Improved Bit-Flipping Algorithm for Successive Cancellation Decoding of Polar Codes</a>&rdquo;, <i>IEEE Transactions on Communications</i>, vol. 67, no. 1, pp. 61-72, January 2019.</p>
-						</li>
-						<li><p>S. A. Hashemi, C. Condo, <b>F. Ercan</b>, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/JETCAS.2017.2764421" target="_blank">Memory-Efficient Polar Decoders</a>&rdquo;, <i>IEEE Journal on Emerging and Selected Topics in Circuits and Systems</i>, vol. 7, no. 4, pp. 604-615, December 2017.</p>
-						</li>
-						</ul>
-						</div>
-
-
-						<h3>Conference Papers</h3>
-						<div class="conf">
-						<ul>
-
-						<li>A. Riaz, A. Yasar, <b>F. Ercan</b>, W. An, J. Ngo, K. Galligan, M. Medard, K. R. Duffy, R. T. Yazicigil, &ldquo;<a href="https://doi.org/10.1109/ISSCC42615.2023.10067519" target="_blank">A Sub-0.8pJ/b 16.3Gbps/mm2 Universal Soft-Detection Decoder Using ORBGRAND in 40nm CMOS</a>&rdquo;, <i>IEEE International Solid-State Circuits Conference (ISSCC)</i>, 2023.</p>
-
-						<li><p><b>F. Ercan</b>, K. Galligan, D. Starobinski, M. Medard, K. R. Duffy, and R. T. Yazicigil, &ldquo;<a href="https://doi.org/10.1109/ICC45041.2023.10279273" target="_blank">GRAND-EDGE: A Universal, Jamming-resilient Algorithm with Error-and-Erasure Decoding</a>&rdquo;, <i>IEEE International Conference on Communications (ICC)</i>, 2023.</p>
-
-						<li><p>A. Riaz, A. Solomon, <b>F. Ercan</b>, M. Medard, R. T. Yazicigil, and K. R. Duffy, &ldquo;<a href="https://doi.org/10.1109/COMSNETS56262.2023.10041405" target = "blank">Noise Recycling using GRAND for Improving the Decoding Performance</a>&rdquo;, <i>15th International Conference on Communication Systems & Networks</i>, 2023.</p>
-
-						<li><p><b>F. Ercan</b>, K. Galligan, K. R. Duffy, M. Medard, D. Starobinski, and R. T. Yazicigil, &ldquo;<a href="https://ieeexplore.ieee.org/document/10008541" target="_blank">A General Security Approach for Soft-information Decoding against Smart Bursty Jammers</a>&rdquo;, <i>IEEE GLOBECOM Workshops</i>, 2022.</p>
-
-						<li><p>A. Riaz, A. Solomon, <b>F. Ercan</b>, M. Medard, K. R. Duffy, and R. T. Yazicigil, &ldquo;<a href="https://doi.org/10.1109/ICC45855.2022.9838586" target="_blank">Interleaved Noise Recycling using GRAND</a>&rdquo;, <i>IEEE International Conference on Communications (ICC)</i>, 2022.</p>
-						</li> 
-						<li><p>N. Doan, S. A. Hashemi, <b>F. Ercan</b>, and W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/ICC42927.2021.9500904" target="_blank">Fast SC-Flip Decoding of Polar Codes with Reinforcement Learning</a>&rdquo;, <i>IEEE International Conference on Communications (ICC)</i>, 2021.</p>
-						</li> 
-						<li><p>S. M. Abbas, T. Tonnellier, <b>F. Ercan</b>, M. Jalaleddine and W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/ICASSP39728.2021.9414908" target="_blank">High-Throughput VLSI Architecture for Soft-Decision Decoding with ORBGRAND</a>&rdquo;, <i>IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)</i>, 2021.</p>
-						</li> 
-						<li><p>S. M. Abbas, T. Tonnellier, <b>F. Ercan</b> and W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/SiPS50750.2020.9195254" target="_blank">High-Throughput VLSI Architecture for GRAND</a>&rdquo;, <i>IEEE International Workshop on Signal Processing Systems (SiPS)</i>, Coimbra, Portugal, 2020, pp. 1-6, doi: 10.1109/SiPS50750.2020.9195254.</p>
-						</li> 
-						<li><p><b>F. Ercan</b> and W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/ICC40277.2020.9149099" target="_blank">Fast Thresholded SC-Flip Decoding of Polar Codes</a>&rdquo;, <i>IEEE International Conference on Communications (ICC)</i>, Dublin, Ireland, June 2020.</p>
-						</li> 
-						<li><p><b>F. Ercan</b>, T. Tonnellier, N. Doan, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/ICASSP40776.2020.9052925" target="_blank">Simplified Dynamic SC-Flip Polar Decoding</a>&rdquo;, <i>IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)</i>, Barcelona, Spain,  2020, pp. 1733-1737, doi: 10.1109/ICASSP40776.2020.9052925</p>
-						</li>  
-						<li><p>N. Doan, S. A. Hashemi, <b>F. Ercan</b>, T. Tonnellier, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/SiPS47522.2019.9020513" target="_blank">Neural Dynamic Successive Cancellation Flip Decoding of Polar Codes</a>&rdquo;, <i>IEEE International Workshop on Signal Processing Systems (SiPS)</i>, Nanjing, China, pp. 272-277, October 2019.</p>
-						</li>
-
-						<li><p><b>F. Ercan</b>, C. Condo, S. A. Hashemi, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/ICC.2018.8422464" target="_blank">Partitioned Successive-Cancellation Flip Decoding of Polar Codes</a>&rdquo;, <i>IEEE International Conference on Communications (ICC)</i>, Kansas City, USA, pp. 1-6, May 2018.</p>
-						</li>
-						<li><p>C. Condo, <b>F. Ercan</b>, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/WCNCW.2018.8368991" target="_blank">Improved successive cancellation flip decoding of polar codes based on error distribution</a>&rdquo;, <i>IEEE Wireless Communications and Networking Conference Workshops (WCNCW)</i>, Barcelona, Spain, pp. 19-24, April 2018.</p>
-						</li>
-						<li><p>S. A. Hashemi, C. Condo, <b>F. Ercan</b>, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/ACSSC.2017.8335664" target="_blank">On the Performance of Polar Codes for 5G eMBB Control Channel</a>&rdquo;, <i>Asilomar Conference on Signals, Systems, and Computers (ACSSC)</i>, Pacific Grove, USA, pp. 1764-1768, October 2017.</p>
-						</li>
-						<li><p><b>F. Ercan</b>, C. Condo, S. A. Hashemi, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/ALLERTON.2017.8262771" target="_blank">On Error-Correction Performance and Implementation of Polar Code List Decoders for 5G</a>&rdquo;, <i>Annual Allerton Conference on Communication, Control, and Computing (Allerton)</i>, Monticello, USA, pp. 443-449, October 2017.</p>
-						</li>
-						<li><p><b>F. Ercan</b>, C. Condo, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/SiPS.2017.8110014" target="_blank">Reduced-memory high-throughput fast-SSC polar code decoder architecture</a>&rdquo;, <i>IEEE International Workshop on Signal Processing Systems (SiPS)</i>, Lorient, France, pp. 1-6, October 2017.</p>
-						</li>
-
-						<li><p><b>F. Ercan</b>, A. Muhtaroglu, &ldquo;<a href="https://doi.org/10.1109/ICEAC.2015.7352167" target="_blank">Power-delay analysis of an ABACUS parallel integer multiplier VLSI implementation</a>&rdquo;, <i>IEEE International Conference on Energy Aware Computing Systems & Applications (ICEAC)</i>, Cairo, Egypt, pp. 1-4, March 2015.</p>
-						</li>
-						<li><p><b>F. Ercan</b>, A. Muhtaroglu, &ldquo;<a href="https://doi.org/10.1109/ICEAC.2015.7352166" target="_blank">Comparative power-delay performance analysis of threshold logic technologies</a>&rdquo;, <i>IEEE International Conference on Energy Aware Computing Systems & Applications (ICEAC)</i>, Cairo, Egypt, pp. 1-4, March 2015.</p>
-						</li>
-						<li><p><b>F. Ercan</b>, A. Muhtaroglu, &ldquo;<a href="https://doi.org/10.1109/ICEAC.2013.6737647" target="_blank">Energy-delay performance of capacitive threshold logic (CTL) circuits for threshold detection</a>&rdquo;, <i>IEEE International Conference on Energy Aware Computing Systems and Applications (ICEAC)</i>, Istanbul, Turkey, pp. 109-114, February 2014.</p>
-						</li>
-						<li><p><b>F. Ercan</b>, M. Yenen, M. Fahrioglu, &ldquo;<a href="http://www.academia.edu/download/38966472/Method_and_Case_Study_for_Wind_Power_Assessment_in_Cyprus.pdf" target="_blank">Method and Case Study for Wind Power Assessment in Cyprus</a>&rdquo;, <i>Renewable Energy Sources Symposium</i>, TRNC, 2013.</p>
-						</li>
-						<li><p>M. Yenen, <b>F. Ercan</b>, M. Fahrioglu, &ldquo;<a href="http://www.academia.edu/download/38966439/SolarSystemAnalysis_Yenen_Ercan_Fahrioglu.pdf" target="_blank">Solar Thermal System Analysis of Northern Cyprus</a>&rdquo;, <i>Renewable Energy Sources Symposium</i>, TRNC, 2012.</p>
-						</li>
-						<li><p><b>F. Ercan</b>, N. A. Gazala, H. David, &ldquo;<a href="https://doi.org/10.1109/ICEAC.2012.6471018" target="_blank">An integrated approach to system-level CPU and memory energy efficiency on computing systems</a>&rdquo;, <i>IEEE International Conference on Energy Aware Computing (ICEAC)</i>, Morphou, Cyprus, pp. 1-6, December 2012.</p>
-						</li>
-
-						</ul>
-						</div>
-
-						<h3>Talks</h3>
-						<div class="conf">
-						<ul>
-						<li><p><b>F. Ercan</b>, &ldquo;Space Race 2.0: The Rush for Satellite Supremacy&rdquo;, <i>NETSA Business, Leadership, Innovation, Science and Society (BLISS) Summit </i>, April 2024. [<a href="talks/BLISS2024.pdf" target="_blank">Slides</a>]</p>
-						</li>
-						<li><p><b>F. Ercan</b>, &ldquo;GRAND-EDGE: A Universal, Jamming-resilient Algorithm with Error-and-Erasure Decoding&rdquo;, <i>IEEE International Conference on Communications (presented by Kevin Galligan)</i>, May 2023. [<a href="talks/ICC2023_Slides_animated.pdf" target="_blank">Slides</a>]</p>
-						</li>
-						<li><p><b>F. Ercan</b>, &ldquo;Energy-Efficient High-Performance 5G Polar Decoders: From Theory to Practice&rdquo;, <i>Invited Talk, SBU IEEE Student Branch</i>, May 2022. </p>
-						</li>
-						<li><p><b>F. Ercan</b>, &ldquo;High Throughput, Low Power, or Energy Efficiency? How to Achieve All for 5G Polar Codes, and Beyond&rdquo;, <i>Boston University Faculty Seminar, Center for Information Systems & Engineering</i>, Boston, MA, USA, April 2022. </p>
-						</li>
-						<li><p><b>F. Ercan</b>, &ldquo;New Algorithms and Implementations for 5G Polar Codes&rdquo;, <i>Bogazici University Faculty Seminar, Faculty of Engineering</i>, Istanbul, Turkey, September 2021. </p>
-						</li>
-						<li><p><b>F. Ercan</b>, &ldquo;High-Throughput does not Compromise Energy Efficiency: New Algorithms and Implementations for 5G Polar Codes&rdquo;, <i>Short Webinar Series on Selected Topics of Signal Processing (IEEE Montreal \ STARaCom)</i>, Montreal, Quebec, Canada, May 2021. [<a href="talks/IEEE_Mtl_SP_Seminar.pdf" target="_blank">Slides</a>]</p>
-						</li> 
-						<li><p><b>F. Ercan</b> and W. J. Gross, &ldquo;Fast Thresholded SC-Flip Decoding of Polar Codes&rdquo;, <i>IEEE International Conference on Communications (ICC)</i>, Dublin, Ireland, June 2020. [<a href="talks/ICC2020_Slides.pdf" target="_blank">Slides</a>] [<a href="talks/ICC2020.mp4" target="_blank">Video Presentation</a>]</p>
-						</li> 
-						<li><p><b>F. Ercan</b>, T. Tonnellier, N. Doan, W. J. Gross, &ldquo; Simplified Dynamic SC-Flip Polar Decoding &rdquo;, <i>IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)</i>, Barcelona, Spain, 2020, pp. 1733-1737. [<a href="talks/ICASSP2020_Slides.pdf" target="_blank">Slides</a>] [<a href="talks/ICASSP2020.mp4" target="_blank">Video Presentation</a>]</p>
-						</li>  
-						<li><p><b>F. Ercan</b>, &ldquo;<a href="talks/QEC2020_Slides.pdf" target="_blank">Energy-Efficient Polar Decoders for 5G and Beyond</a>&rdquo;, <i>Quebec Engineering Competition 2020</i>, Montreal, QC, January 2020.</p>
-						</li> 
-						<li><p><b>F. Ercan</b>, T. Tonnellier, W. J. Gross, &ldquo;<a href="talks/IEEE_ResearchBoost_poster.pdf" target="_blank">Energy-Efficient Polar Decoders for 5G and Beyond</a>&rdquo;, <i>IEEE Montreal Research Boost</i>, Montreal, QC, October 2019.</p>
-						</li> 
-						<li><p><b>F. Ercan</b>, C. Condo, S. A. Hashemi, W. J. Gross, &ldquo;<a href="talks/ICC2018_Slides.pdf" target="_blank">Partitioned Successive-Cancellation Flip Decoding of Polar Codes</a>&rdquo;, <i>IEEE International Conference on Communications (ICC)</i>, Kansas City, USA, pp. 1-6, May 2018.</p>		
-						</li>
-						<li><p><b>F. Ercan</b>, C. Condo, S. A. Hashemi, W. J. Gross, &ldquo;<a href="talks/Allerton17_Slides.pdf" target="_blank">On Error-Correction Performance and Implementation of Polar Code List Decoders for 5G</a>&rdquo;, <i>Annual Allerton Conference on Communication, Control, and Computing (Allerton)</i>, Monticello, USA, pp. 443-449, October 2017.</p>
-						</li>
-						<li><p><b>F. Ercan</b>, A. Muhtaroglu, &ldquo;<a href="talks/ICEAC2015_ABACUS_Slides.pdf" target="_blank">Power-delay analysis of an ABACUS parallel integer multiplier VLSI implementation</a>&rdquo;, <i>IEEE International Conference on Energy Aware Computing Systems & Applications (ICEAC)</i>, Cairo, Egypt, pp. 1-4, March 2015.</p>
-						</li>
-						<li><p><b>F. Ercan</b>, A. Muhtaroglu, &ldquo;<a href="talks/ICEAC2015_TL_Slides.pdf" target="_blank">Comparative power-delay performance analysis of threshold logic technologies</a>&rdquo;, <i>IEEE International Conference on Energy Aware Computing Systems & Applications (ICEAC)</i>, Cairo, Egypt, pp. 1-4, March 2015.</p>
-						</li>
-						<li><p><b>F. Ercan</b>, A. Muhtaroglu, &ldquo;<a href="talks/ICEAC13_Slides.pdf" target="_blank">Energy-delay performance of capacitive threshold logic (CTL) circuits for threshold detection</a>&rdquo;, <i>IEEE International Conference on Energy Aware Computing Systems and Applications (ICEAC)</i>, Istanbul, Turkey, pp. 109-114, February 2014.</p>
-						</li>
-						<li><p><b>F. Ercan</b>, M. Yenen, M. Fahrioglu, &ldquo;<a href="talks/WindAssessment.pdf" target="_blank">Method and Case Study for Wind Power Assessment in Cyprus</a>&rdquo;, <i>Renewable Energy Sources Symposium</i>, TRNC, 2013.</p>
-						</li>
-						<li><p><b>F. Ercan</b>, N. A. Gazala, H. David, &ldquo;<a href="talks/IntegratedDVFS_ICEAC12.pdf" target="_blank">An integrated approach to system-level CPU and memory energy efficiency on computing systems</a>&rdquo;, <i>IEEE International Conference on Energy Aware Computing (ICEAC)</i>, Morphou, Cyprus, pp. 1-6, December 2012.</p>
-						</li>
-						</ul>
+						<!-- Hero Section with Stats -->
+						<div class="pubs-hero">
+							<h2>Publications</h2>
+							<p class="hero-subtitle">Research contributions in wireless communications, error-correcting codes, and signal processing</p>
+							<div class="stats-grid">
+								<div class="stat-card">
+									<span class="stat-number" data-count="37">0</span>
+									<span class="stat-label">Total Publications</span>
+								</div>
+								<div class="stat-card">
+									<span class="stat-number" data-count="2">0</span>
+									<span class="stat-label">Book Chapters</span>
+								</div>
+								<div class="stat-card">
+									<span class="stat-number" data-count="10">0</span>
+									<span class="stat-label">Journal Papers</span>
+								</div>
+								<div class="stat-card">
+									<span class="stat-number" data-count="20">0</span>
+									<span class="stat-label">Conference Papers</span>
+								</div>
+								<div class="stat-card">
+									<span class="stat-number" data-count="17">0</span>
+									<span class="stat-label">Talks</span>
+								</div>
+								<div class="stat-card">
+									<span class="stat-number" data-count="2">0</span>
+									<span class="stat-label">Theses</span>
+								</div>
+								<div class="stat-card">
+									<span class="stat-number" data-count="2">0</span>
+									<span class="stat-label">Demos</span>
+								</div>
+							</div>
 						</div>
 						
-						<h3>Theses</h3>
-						<div class="conf">
+						<div class="pubs">
+
+						<h3 class="section-toggle">
+							<span class="section-icon">📚</span>
+							<span>Book Chapters</span>
+						</h3>
+						<div class="section-content">
+						<div class="conf pub-type-book">
 						<ul>
-						<li><p><b>F. Ercan</b>, &ldquo;<a href="https://escholarship.mcgill.ca/concern/theses/8336h636t" target="_blank">Algorithms and Implementations for Practical and Energy-Efficient Polar Decoders</a>&rdquo;, <i>Ph.D. Thesis</i>, McGill University, Montreal, QC, Canada, October 2020.</p>
+						<li><p><span class="year-badge">2023</span>S. M. Abbas, M. Jalaleddine, <b>F. Ercan</b>, T. Tonnellier, W. J. Gross, &ldquo;<a href="https://doi.org/10.1007/978-3-031-31663-0_2" target="_blank">Hardware Architecture for GRAND with ABandonment (GRANDAB)</a>&rdquo;, <i>in Guessing Random Additive Noise Decoding</i>, pp. 21-38, May 2023, Springer.</p>
 						</li> 
-						<li><p><b>F. Ercan</b>, &ldquo;<a href="http://etd.lib.metu.edu.tr/upload/12618834/index.pdf" target="_blank">Power-Delay Optimized VLSI Threshold Detection Circuits and Their Use in Parallel Integer Multiplication</a>&rdquo;, <i>M.Sc. Thesis</i>, Middle East Technical University Northern Cyprus Campus (METU NCC), Ankara, Turkey, June 2015.</p>
+						<li><p><span class="year-badge">2023</span>S. M. Abbas, M. Jalaleddine, <b>F. Ercan</b>, T. Tonnellier, W. J. Gross, &ldquo;<a href="https://doi.org/10.1007/978-3-031-31663-0_3" target="_blank">Hardware Architecture for Ordered Reliability Bits GRAND (ORBGRAND)</a>&rdquo;, <i>in Guessing Random Additive Noise Decoding</i>, pp. 39-71, May 2023, Springer.</p>
 						</li> 
 						</ul>
 						</div>
+						</div>
 
-						<h3>Demos</h3>
-						<div class="conf">
+
+						<h3 class="section-toggle">
+							<span class="section-icon">📄</span>
+							<span>Journal Papers</span>
+						</h3>
+						<div class="section-content">
+						<div class="conf pub-type-journal">
 						<ul>
-						<li><p>A. Riaz, <b>F. Ercan</b>, M. Medard, K. R. Duffy, and R. T. Yazicigil, &ldquo;Improving the Performance using Noise Recycling for Single Communication Channels&rdquo;, <i>IEEE 5th Future Networks World Forum (FNWF)</i>, 2022.</p>
-						<li><p>A. Riaz, Z. E. Kizilates, A. Yasar, <b>F. Ercan</b>, W. An, K. Galligan, M. Medard, K. R. Duffy, and R. T. Yazicigil, &ldquo;<a href="https://doi.org/10.1109/WoWMoM57956.2023.00056" target="_blank">Universal Soft-Detection Decoder with Ultra-Low Energy Consumption using ORBGRAND</a>&rdquo;, <i>IEEE 24th International Symposium on a World of Wireless, Mobile and Multimedia Networks (WoWMoM)</i>, 2023.</p>
-						</li> 
+						<li><p><span class="year-badge" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);">Under Review</span><b>F. Ercan</b>, &ldquo;Syndrome Check-Aided Successive Cancellation Flip Decoding of Polar Codes&rdquo;, <i>IEEE Communications Letters</i>, under review.</p>
+						</li>
+						<li><p><span class="year-badge">2024</span>A. Riaz, A. Yasar, <b>F. Ercan</b>, W. An, J. Ngo, K. Galligan, M. Medard, K. R. Duffy, R. T. Yazicigil, &ldquo;<a href="https://ieeexplore.ieee.org/abstract/document/10768996" target="_blank">A Sub-0.8-pJ/bit Universal Soft-Detection Decoder Using ORBGRAND</a>&rdquo;, <i>IEEE Journal of Solid-State Circuits</i>, doi: 10.1109/JSSC.2024.3502240, 2024.</p>
+						</li>
+						<li><p><span class="year-badge">2022</span>S. M. Abbas, T. Tonnellier, <b>F. Ercan</b>, M. Jalaleddine, W. J. Gross, &ldquo;<a href="https://ieeexplore.ieee.org/document/9732212" target="_blank">High-Throughput and Energy-Efficient VLSI Architecture for Ordered Reliability Bits GRAND</a>&rdquo;, <i>IEEE Transactions on Very Large Scale Integration (VLSI) Systems</i>, doi: 10.1109/TVLSI.2022.3153605, 2022.</p>
+						</li>
+						<li><p><span class="year-badge">2020</span><b>F. Ercan</b>, T. Tonnellier, N. Doan, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/TSP.2020.3023582" target="_blank">Practical Dynamic SC-Flip Decoders: Algorithm and Implementation</a>&rdquo;, <i>IEEE Transactions on Signal Processing</i>, vol. 68, pp. 5441-5456, September 2020.</p>
+						</li>
+						<li><p><span class="year-badge">2021</span>N. Doan, S. A. Hashemi, <b>F. Ercan</b>, T. Tonnellier, W. J. Gross, &ldquo;<a href="https://doi.org/10.1007/s11265-020-01599-y" target="_blank">Neural Successive Cancellation Flip Decoding of Polar Codes</a>&rdquo;, <i>Journal of Signal Processing Systems</i>, vol. 93, pp. 631–642, 2021.</p>
+						</li>
+						<li><p><span class="year-badge">2020</span><b>F. Ercan</b>, T. Tonnellier, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/TCSI.2019.2942833" target="_blank">Energy-Efficient Hardware Architectures for Fast Polar Decoders</a>&rdquo;, <i>IEEE Transactions on Circuits and Systems I: Regular Papers</i>, vol. 67, no. 1, pp. 322-335, January 2020.</p>
+						</li>
+						<li><p><span class="year-badge">2019</span><b>F. Ercan</b>, T. Tonnellier, C. Condo, W. J. Gross, &ldquo;<a href="https://doi.org/10.1007/s11265-018-1413-4" target="_blank">Operation Merging for Hardware Implementations of Fast Polar Decoders</a>&rdquo;, <i>Journal of Signal Processing Systems</i>, vol. 91, no. 9, pp. 995-1007, September 2019.</p>
+						</li>
+						<li><p><span class="year-badge">2019</span>C. Condo, S. A. Hashemi, A. Ardakani, <b>F. Ercan</b>, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/TCSII.2018.2872653" target="_blank">Design and Implementation of a Polar Codes Blind Detection Scheme</a>&rdquo;, <i>IEEE Transactions on Circuits and Systems II: Express Briefs</i>, vol. 66, no. 6, pp. 943-947, June 2019.</p>
+						</li>
+						<li><p><span class="year-badge">2019</span><b>F. Ercan</b>, C. Condo, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/TCOMM.2018.2873322" target="_blank">Improved Bit-Flipping Algorithm for Successive Cancellation Decoding of Polar Codes</a>&rdquo;, <i>IEEE Transactions on Communications</i>, vol. 67, no. 1, pp. 61-72, January 2019.</p>
+						</li>
+						<li><p><span class="year-badge">2017</span>S. A. Hashemi, C. Condo, <b>F. Ercan</b>, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/JETCAS.2017.2764421" target="_blank">Memory-Efficient Polar Decoders</a>&rdquo;, <i>IEEE Journal on Emerging and Selected Topics in Circuits and Systems</i>, vol. 7, no. 4, pp. 604-615, December 2017.</p>
+						</li>
 						</ul>
+						</div>
+						</div>
+
+
+						<h3 class="section-toggle">
+							<span class="section-icon">🎯</span>
+							<span>Conference Papers</span>
+						</h3>
+						<div class="section-content">
+						<div class="conf pub-type-conference">
+						<ul>
+						<li><p><span class="year-badge">2023</span>A. Riaz, A. Yasar, <b>F. Ercan</b>, W. An, J. Ngo, K. Galligan, M. Medard, K. R. Duffy, R. T. Yazicigil, &ldquo;<a href="https://doi.org/10.1109/ISSCC42615.2023.10067519" target="_blank">A Sub-0.8pJ/b 16.3Gbps/mm2 Universal Soft-Detection Decoder Using ORBGRAND in 40nm CMOS</a>&rdquo;, <i>IEEE International Solid-State Circuits Conference (ISSCC)</i>, 2023.</p>
+						</li>
+						<li><p><span class="year-badge">2023</span><b>F. Ercan</b>, K. Galligan, D. Starobinski, M. Medard, K. R. Duffy, R. T. Yazicigil, &ldquo;<a href="https://doi.org/10.1109/ICC45041.2023.10279273" target="_blank">GRAND-EDGE: A Universal, Jamming-resilient Algorithm with Error-and-Erasure Decoding</a>&rdquo;, <i>IEEE International Conference on Communications (ICC)</i>, 2023.</p>
+						</li>
+						<li><p><span class="year-badge">2023</span>A. Riaz, A. Solomon, <b>F. Ercan</b>, M. Medard, R. T. Yazicigil, K. R. Duffy, &ldquo;<a href="https://doi.org/10.1109/COMSNETS56262.2023.10041405" target="_blank">Noise Recycling using GRAND for Improving the Decoding Performance</a>&rdquo;, <i>15th International Conference on Communication Systems & Networks</i>, 2023.</p>
+						</li>
+						<li><p><span class="year-badge">2022</span><b>F. Ercan</b>, K. Galligan, K. R. Duffy, M. Medard, D. Starobinski, R. T. Yazicigil, &ldquo;<a href="https://ieeexplore.ieee.org/document/10008541" target="_blank">A General Security Approach for Soft-information Decoding against Smart Bursty Jammers</a>&rdquo;, <i>IEEE GLOBECOM Workshops</i>, 2022.</p>
+						</li>
+						<li><p><span class="year-badge">2022</span>A. Riaz, A. Solomon, <b>F. Ercan</b>, M. Medard, K. R. Duffy, R. T. Yazicigil, &ldquo;<a href="https://doi.org/10.1109/ICC45855.2022.9838586" target="_blank">Interleaved Noise Recycling using GRAND</a>&rdquo;, <i>IEEE International Conference on Communications (ICC)</i>, 2022.</p>
+						</li> 
+						<li><p><span class="year-badge">2021</span>N. Doan, S. A. Hashemi, <b>F. Ercan</b>, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/ICC42927.2021.9500904" target="_blank">Fast SC-Flip Decoding of Polar Codes with Reinforcement Learning</a>&rdquo;, <i>IEEE International Conference on Communications (ICC)</i>, 2021.</p>
+						</li>
+						<li><p><span class="year-badge">2021</span>S. M. Abbas, T. Tonnellier, <b>F. Ercan</b>, M. Jalaleddine, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/ICASSP39728.2021.9414908" target="_blank">High-Throughput VLSI Architecture for Soft-Decision Decoding with ORBGRAND</a>&rdquo;, <i>IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)</i>, 2021.</p>
+						</li>
+						<li><p><span class="year-badge">2020</span>S. M. Abbas, T. Tonnellier, <b>F. Ercan</b>, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/SiPS50750.2020.9195254" target="_blank">High-Throughput VLSI Architecture for GRAND</a>&rdquo;, <i>IEEE International Workshop on Signal Processing Systems (SiPS)</i>, Coimbra, Portugal, 2020, pp. 1-6, doi: 10.1109/SiPS50750.2020.9195254.</p>
+						</li>
+						<li><p><span class="year-badge">2020</span><b>F. Ercan</b>, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/ICC40277.2020.9149099" target="_blank">Fast Thresholded SC-Flip Decoding of Polar Codes</a>&rdquo;, <i>IEEE International Conference on Communications (ICC)</i>, Dublin, Ireland, June 2020.</p>
+						</li>
+						<li><p><span class="year-badge">2020</span><b>F. Ercan</b>, T. Tonnellier, N. Doan, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/ICASSP40776.2020.9052925" target="_blank">Simplified Dynamic SC-Flip Polar Decoding</a>&rdquo;, <i>IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)</i>, Barcelona, Spain, 2020, pp. 1733-1737, doi: 10.1109/ICASSP40776.2020.9052925.</p>
+						</li>
+						<li><p><span class="year-badge">2019</span>N. Doan, S. A. Hashemi, <b>F. Ercan</b>, T. Tonnellier, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/SiPS47522.2019.9020513" target="_blank">Neural Dynamic Successive Cancellation Flip Decoding of Polar Codes</a>&rdquo;, <i>IEEE International Workshop on Signal Processing Systems (SiPS)</i>, Nanjing, China, pp. 272-277, October 2019.</p>
+						</li>
+						<li><p><span class="year-badge">2018</span><b>F. Ercan</b>, C. Condo, S. A. Hashemi, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/ICC.2018.8422464" target="_blank">Partitioned Successive-Cancellation Flip Decoding of Polar Codes</a>&rdquo;, <i>IEEE International Conference on Communications (ICC)</i>, Kansas City, USA, pp. 1-6, May 2018.</p>
+						</li>
+						<li><p><span class="year-badge">2018</span>C. Condo, <b>F. Ercan</b>, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/WCNCW.2018.8368991" target="_blank">Improved successive cancellation flip decoding of polar codes based on error distribution</a>&rdquo;, <i>IEEE Wireless Communications and Networking Conference Workshops (WCNCW)</i>, Barcelona, Spain, pp. 19-24, April 2018.</p>
+						</li>
+						<li><p><span class="year-badge">2017</span>S. A. Hashemi, C. Condo, <b>F. Ercan</b>, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/ACSSC.2017.8335664" target="_blank">On the Performance of Polar Codes for 5G eMBB Control Channel</a>&rdquo;, <i>Asilomar Conference on Signals, Systems, and Computers (ACSSC)</i>, Pacific Grove, USA, pp. 1764-1768, October 2017.</p>
+						</li>
+						<li><p><span class="year-badge">2017</span><b>F. Ercan</b>, C. Condo, S. A. Hashemi, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/ALLERTON.2017.8262771" target="_blank">On Error-Correction Performance and Implementation of Polar Code List Decoders for 5G</a>&rdquo;, <i>Annual Allerton Conference on Communication, Control, and Computing (Allerton)</i>, Monticello, USA, pp. 443-449, October 2017.</p>
+						</li>
+						<li><p><span class="year-badge">2017</span><b>F. Ercan</b>, C. Condo, W. J. Gross, &ldquo;<a href="https://doi.org/10.1109/SiPS.2017.8110014" target="_blank">Reduced-memory high-throughput fast-SSC polar code decoder architecture</a>&rdquo;, <i>IEEE International Workshop on Signal Processing Systems (SiPS)</i>, Lorient, France, pp. 1-6, October 2017.</p>
+						</li>
+						<li><p><span class="year-badge">2015</span><b>F. Ercan</b>, A. Muhtaroglu, &ldquo;<a href="https://doi.org/10.1109/ICEAC.2015.7352167" target="_blank">Power-delay analysis of an ABACUS parallel integer multiplier VLSI implementation</a>&rdquo;, <i>IEEE International Conference on Energy Aware Computing Systems & Applications (ICEAC)</i>, Cairo, Egypt, pp. 1-4, March 2015.</p>
+						</li>
+						<li><p><span class="year-badge">2015</span><b>F. Ercan</b>, A. Muhtaroglu, &ldquo;<a href="https://doi.org/10.1109/ICEAC.2015.7352166" target="_blank">Comparative power-delay performance analysis of threshold logic technologies</a>&rdquo;, <i>IEEE International Conference on Energy Aware Computing Systems & Applications (ICEAC)</i>, Cairo, Egypt, pp. 1-4, March 2015.</p>
+						</li>
+						<li><p><span class="year-badge">2014</span><b>F. Ercan</b>, A. Muhtaroglu, &ldquo;<a href="https://doi.org/10.1109/ICEAC.2013.6737647" target="_blank">Energy-delay performance of capacitive threshold logic (CTL) circuits for threshold detection</a>&rdquo;, <i>IEEE International Conference on Energy Aware Computing Systems and Applications (ICEAC)</i>, Istanbul, Turkey, pp. 109-114, February 2014.</p>
+						</li>
+						<li><p><span class="year-badge">2013</span><b>F. Ercan</b>, M. Yenen, M. Fahrioglu, &ldquo;<a href="http://www.academia.edu/download/38966472/Method_and_Case_Study_for_Wind_Power_Assessment_in_Cyprus.pdf" target="_blank">Method and Case Study for Wind Power Assessment in Cyprus</a>&rdquo;, <i>Renewable Energy Sources Symposium</i>, TRNC, 2013.</p>
+						</li>
+						<li><p><span class="year-badge">2012</span>M. Yenen, <b>F. Ercan</b>, M. Fahrioglu, &ldquo;<a href="http://www.academia.edu/download/38966439/SolarSystemAnalysis_Yenen_Ercan_Fahrioglu.pdf" target="_blank">Solar Thermal System Analysis of Northern Cyprus</a>&rdquo;, <i>Renewable Energy Sources Symposium</i>, TRNC, 2012.</p>
+						</li>
+						<li><p><span class="year-badge">2012</span><b>F. Ercan</b>, N. A. Gazala, H. David, &ldquo;<a href="https://doi.org/10.1109/ICEAC.2012.6471018" target="_blank">An integrated approach to system-level CPU and memory energy efficiency on computing systems</a>&rdquo;, <i>IEEE International Conference on Energy Aware Computing (ICEAC)</i>, Morphou, Cyprus, pp. 1-6, December 2012.</p>
+						</li>
+						</ul>
+						</div>
+						</div>
+
+						<h3 class="section-toggle">
+							<span class="section-icon">🎤</span>
+							<span>Talks</span>
+						</h3>
+						<div class="section-content">
+						<div class="conf pub-type-talk">
+						<ul>
+						<li><p><span class="year-badge">2024</span><b>F. Ercan</b>, &ldquo;Space Race 2.0: The Rush for Satellite Supremacy&rdquo;, <i>NETSA Business, Leadership, Innovation, Science and Society (BLISS) Summit</i>, April 2024. [<a href="talks/BLISS2024.pdf" target="_blank">Slides</a>]</p>
+						</li>
+						<li><p><span class="year-badge">2023</span><b>F. Ercan</b>, &ldquo;GRAND-EDGE: A Universal, Jamming-resilient Algorithm with Error-and-Erasure Decoding&rdquo;, <i>IEEE International Conference on Communications (presented by Kevin Galligan)</i>, May 2023. [<a href="talks/ICC2023_Slides_animated.pdf" target="_blank">Slides</a>]</p>
+						</li>
+						<li><p><span class="year-badge">2022</span><b>F. Ercan</b>, &ldquo;Energy-Efficient High-Performance 5G Polar Decoders: From Theory to Practice&rdquo;, <i>Invited Talk, SBU IEEE Student Branch</i>, May 2022.</p>
+						</li>
+						<li><p><span class="year-badge">2022</span><b>F. Ercan</b>, &ldquo;High Throughput, Low Power, or Energy Efficiency? How to Achieve All for 5G Polar Codes, and Beyond&rdquo;, <i>Boston University Faculty Seminar, Center for Information Systems & Engineering</i>, Boston, MA, USA, April 2022.</p>
+						</li>
+						<li><p><span class="year-badge">2021</span><b>F. Ercan</b>, &ldquo;New Algorithms and Implementations for 5G Polar Codes&rdquo;, <i>Bogazici University Faculty Seminar, Faculty of Engineering</i>, Istanbul, Turkey, September 2021.</p>
+						</li>
+						<li><p><span class="year-badge">2021</span><b>F. Ercan</b>, &ldquo;High-Throughput does not Compromise Energy Efficiency: New Algorithms and Implementations for 5G Polar Codes&rdquo;, <i>Short Webinar Series on Selected Topics of Signal Processing (IEEE Montreal \ STARaCom)</i>, Montreal, Quebec, Canada, May 2021. [<a href="talks/IEEE_Mtl_SP_Seminar.pdf" target="_blank">Slides</a>]</p>
+						</li>
+						<li><p><span class="year-badge">2020</span><b>F. Ercan</b>, W. J. Gross, &ldquo;Fast Thresholded SC-Flip Decoding of Polar Codes&rdquo;, <i>IEEE International Conference on Communications (ICC)</i>, Dublin, Ireland, June 2020. [<a href="talks/ICC2020_Slides.pdf" target="_blank">Slides</a>] [<a href="talks/ICC2020.mp4" target="_blank">Video Presentation</a>]</p>
+						</li>
+						<li><p><span class="year-badge">2020</span><b>F. Ercan</b>, T. Tonnellier, N. Doan, W. J. Gross, &ldquo;Simplified Dynamic SC-Flip Polar Decoding&rdquo;, <i>IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)</i>, Barcelona, Spain, 2020, pp. 1733-1737. [<a href="talks/ICASSP2020_Slides.pdf" target="_blank">Slides</a>] [<a href="talks/ICASSP2020.mp4" target="_blank">Video Presentation</a>]</p>
+						</li>
+						<li><p><span class="year-badge">2020</span><b>F. Ercan</b>, &ldquo;<a href="talks/QEC2020_Slides.pdf" target="_blank">Energy-Efficient Polar Decoders for 5G and Beyond</a>&rdquo;, <i>Quebec Engineering Competition 2020</i>, Montreal, QC, January 2020.</p>
+						</li>
+						<li><p><span class="year-badge">2019</span><b>F. Ercan</b>, T. Tonnellier, W. J. Gross, &ldquo;<a href="talks/IEEE_ResearchBoost_poster.pdf" target="_blank">Energy-Efficient Polar Decoders for 5G and Beyond</a>&rdquo;, <i>IEEE Montreal Research Boost</i>, Montreal, QC, October 2019.</p>
+						</li>
+						<li><p><span class="year-badge">2018</span><b>F. Ercan</b>, C. Condo, S. A. Hashemi, W. J. Gross, &ldquo;<a href="talks/ICC2018_Slides.pdf" target="_blank">Partitioned Successive-Cancellation Flip Decoding of Polar Codes</a>&rdquo;, <i>IEEE International Conference on Communications (ICC)</i>, Kansas City, USA, pp. 1-6, May 2018.</p>
+						</li>
+						<li><p><span class="year-badge">2017</span><b>F. Ercan</b>, C. Condo, S. A. Hashemi, W. J. Gross, &ldquo;<a href="talks/Allerton17_Slides.pdf" target="_blank">On Error-Correction Performance and Implementation of Polar Code List Decoders for 5G</a>&rdquo;, <i>Annual Allerton Conference on Communication, Control, and Computing (Allerton)</i>, Monticello, USA, pp. 443-449, October 2017.</p>
+						</li>
+						<li><p><span class="year-badge">2015</span><b>F. Ercan</b>, A. Muhtaroglu, &ldquo;<a href="talks/ICEAC2015_ABACUS_Slides.pdf" target="_blank">Power-delay analysis of an ABACUS parallel integer multiplier VLSI implementation</a>&rdquo;, <i>IEEE International Conference on Energy Aware Computing Systems & Applications (ICEAC)</i>, Cairo, Egypt, pp. 1-4, March 2015.</p>
+						</li>
+						<li><p><span class="year-badge">2015</span><b>F. Ercan</b>, A. Muhtaroglu, &ldquo;<a href="talks/ICEAC2015_TL_Slides.pdf" target="_blank">Comparative power-delay performance analysis of threshold logic technologies</a>&rdquo;, <i>IEEE International Conference on Energy Aware Computing Systems & Applications (ICEAC)</i>, Cairo, Egypt, pp. 1-4, March 2015.</p>
+						</li>
+						<li><p><span class="year-badge">2014</span><b>F. Ercan</b>, A. Muhtaroglu, &ldquo;<a href="talks/ICEAC13_Slides.pdf" target="_blank">Energy-delay performance of capacitive threshold logic (CTL) circuits for threshold detection</a>&rdquo;, <i>IEEE International Conference on Energy Aware Computing Systems and Applications (ICEAC)</i>, Istanbul, Turkey, pp. 109-114, February 2014.</p>
+						</li>
+						<li><p><span class="year-badge">2013</span><b>F. Ercan</b>, M. Yenen, M. Fahrioglu, &ldquo;<a href="talks/WindAssessment.pdf" target="_blank">Method and Case Study for Wind Power Assessment in Cyprus</a>&rdquo;, <i>Renewable Energy Sources Symposium</i>, TRNC, 2013.</p>
+						</li>
+						<li><p><span class="year-badge">2012</span><b>F. Ercan</b>, N. A. Gazala, H. David, &ldquo;<a href="talks/IntegratedDVFS_ICEAC12.pdf" target="_blank">An integrated approach to system-level CPU and memory energy efficiency on computing systems</a>&rdquo;, <i>IEEE International Conference on Energy Aware Computing (ICEAC)</i>, Morphou, Cyprus, pp. 1-6, December 2012.</p>
+						</li>
+						</ul>
+						</div>
+						</div>
+						
+						<h3 class="section-toggle">
+							<span class="section-icon">🎓</span>
+							<span>Theses</span>
+						</h3>
+						<div class="section-content">
+						<div class="conf pub-type-thesis">
+						<ul>
+						<li><p><span class="year-badge">2020</span><b>F. Ercan</b>, &ldquo;<a href="https://escholarship.mcgill.ca/concern/theses/8336h636t" target="_blank">Algorithms and Implementations for Practical and Energy-Efficient Polar Decoders</a>&rdquo;, <i>Ph.D. Thesis</i>, McGill University, Montreal, QC, Canada, October 2020.</p>
+						</li>
+						<li><p><span class="year-badge">2015</span><b>F. Ercan</b>, &ldquo;<a href="http://etd.lib.metu.edu.tr/upload/12618834/index.pdf" target="_blank">Power-Delay Optimized VLSI Threshold Detection Circuits and Their Use in Parallel Integer Multiplication</a>&rdquo;, <i>M.Sc. Thesis</i>, Middle East Technical University Northern Cyprus Campus (METU NCC), Ankara, Turkey, June 2015.</p>
+						</li>
+						</ul>
+						</div>
+						</div>
+
+						<h3 class="section-toggle">
+							<span class="section-icon">💻</span>
+							<span>Demos</span>
+						</h3>
+						<div class="section-content">
+						<div class="conf pub-type-demo">
+						<ul>
+						<li><p><span class="year-badge">2022</span>A. Riaz, <b>F. Ercan</b>, M. Medard, K. R. Duffy, R. T. Yazicigil, &ldquo;Improving the Performance using Noise Recycling for Single Communication Channels&rdquo;, <i>IEEE 5th Future Networks World Forum (FNWF)</i>, 2022.</p>
+						</li>
+						<li><p><span class="year-badge">2023</span>A. Riaz, Z. E. Kizilates, A. Yasar, <b>F. Ercan</b>, W. An, K. Galligan, M. Medard, K. R. Duffy, R. T. Yazicigil, &ldquo;<a href="https://doi.org/10.1109/WoWMoM57956.2023.00056" target="_blank">Universal Soft-Detection Decoder with Ultra-Low Energy Consumption using ORBGRAND</a>&rdquo;, <i>IEEE 24th International Symposium on a World of Wireless, Mobile and Multimedia Networks (WoWMoM)</i>, 2023.</p>
+						</li>
+						</ul>
+						</div>
 						</div>
 
 					</div>
@@ -588,6 +908,64 @@
         setTimeout(function() {
           enhancedLoader.remove();
         }, 500);
+      }
+    });
+
+    // Collapsible sections functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const sectionToggles = document.querySelectorAll('.section-toggle');
+      
+      sectionToggles.forEach(function(toggle) {
+        toggle.addEventListener('click', function() {
+          const content = this.nextElementSibling;
+          if (content && content.classList.contains('section-content')) {
+            content.classList.toggle('collapsed');
+            this.classList.toggle('collapsed');
+          }
+        });
+      });
+
+      // Animated counter for stats
+      function animateCounter(element) {
+        const target = parseInt(element.getAttribute('data-count'));
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        let current = 0;
+        
+        const timer = setInterval(function() {
+          current += increment;
+          if (current >= target) {
+            element.textContent = target;
+            clearInterval(timer);
+          } else {
+            element.textContent = Math.floor(current);
+          }
+        }, 16);
+      }
+
+      // Intersection Observer for stats animation
+      const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px'
+      };
+
+      const statsObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            const statNumbers = entry.target.querySelectorAll('.stat-number');
+            statNumbers.forEach(function(stat) {
+              if (stat.textContent === '0') {
+                animateCounter(stat);
+              }
+            });
+            statsObserver.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      const statsGrid = document.querySelector('.stats-grid');
+      if (statsGrid) {
+        statsObserver.observe(statsGrid);
       }
     });
   </script>
