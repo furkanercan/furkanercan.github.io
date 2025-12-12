@@ -235,6 +235,10 @@
                         background: linear-gradient(135deg, #fa709a 0%, #fee140 100%) !important;
                     }
 
+                    .category-ai .category-title {
+                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+                    }
+
                     /* Modern Project Cards */
                     .card {
                         border: none;
@@ -407,7 +411,7 @@
                     <p class="hero-subtitle">At the intersection of communications, security, and artificial intelligence</p>
                     <div class="stats-grid">
                         <div class="stat-card">
-                            <span class="stat-number" data-count="8">0</span>
+                            <span class="stat-number" data-count="11">0</span>
                             <span class="stat-label">Active Initiatives</span>
                         </div>
                         <div class="stat-card">
@@ -421,39 +425,85 @@
                     </div>
                 </div>
 
-                <!-- Satellite Communications Category -->
-                <div class="category category-satellite mb-5 animate-on-scroll">
+                <!-- AI/ML Category -->
+                <div class="category category-ai mb-5 animate-on-scroll">
                     <h2 class="category-title">
-                        <i class="fa fa-globe"></i> <span>Reconfigurable Satellite Communications</span>
+                        <i class="fa fa-brain"></i> <span>AI / ML Projects</span>
                     </h2>
                     <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <!-- Space-BACN Project -->
-                        <div class="col-12 col-md-6 project-item">
+                        <!-- Clinical Simulation Environment -->
+                        <div class="col-12 col-md-6 col-lg-4 project-item">
                             <div class="card h-100">
-                                <img src="images/space-bacn.avif" class="card-img-top" alt="Space-BACN" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#spaceBacnModal">
+                                <div class="card-img-top" style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                                    <i class="fa fa-hospital-o"></i>
+                                </div>
                                 <div class="card-body">
-                                    <h5 class="card-title">Space-BACN: Space-Based Adaptive Communications Node</h5>
-                                    <p class="card-text">Development of reconfigurable optical communications terminals for low Earth orbit (LEO) satellite constellations, enabling seamless inter-satellite and ground-to-satellite communications.</p>
+                                    <h5 class="card-title">Clinical Simulation Environment</h5>
+                                    <p class="card-text">AI-powered simulation platform delivering immersive scenario-driven training for clinical excellence.</p>
                                     <div class="tech-stack">
-                                        <span class="badge bg-primary">FPGA</span>
-                                        <span class="badge bg-secondary">ASIC</span>
-                                        <span class="badge bg-info">SystemVerilog</span>
-                                        <span class="badge bg-warning">Optical Communications</span>
-                                        <span class="badge bg-success">System Architecture</span>
-                                        <span class="badge bg-danger">MATLAB</span>
-                                        <span class="badge bg-primary">Simulink</span>
+                                        <span class="badge bg-primary">AI</span>
+                                        <span class="badge bg-secondary">Web Technologies</span>
+                                        <span class="badge bg-success">Simulation</span>
+                                        <span class="badge bg-info">Analytics</span>
                                     </div>
-                                    <a href="#" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#spaceBacnModal">Learn More</a>
+                                    <div class="mt-3 d-flex gap-2">
+                                        <a href="https://tomris.vercel.app" target="_blank" class="btn btn-primary flex-fill" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none;">Visit Project</a>
+                                        <a href="#" class="btn btn-primary flex-fill" data-bs-toggle="modal" data-bs-target="#clinicalSimModal">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RAG-Enhanced Conversational Model -->
+                        <div class="col-12 col-md-6 col-lg-4 project-item">
+                            <div class="card h-100">
+                                <div class="card-img-top" style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                                    <i class="fa fa-comments-o"></i>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">RAG-Enhanced Conversational Model</h5>
+                                    <p class="card-text">Intelligent GPT-3.5 Turbo model with RAG technology, delivering expert-level feedback for accelerated learning.</p>
+                                    <div class="tech-stack">
+                                        <span class="badge bg-primary">GPT-3.5</span>
+                                        <span class="badge bg-secondary">RAG</span>
+                                        <span class="badge bg-success">LLM</span>
+                                        <span class="badge bg-info">Fine-tuning</span>
+                                    </div>
+                                    <div class="mt-3 d-flex gap-2">
+                                        <a href="https://nurse-chat.streamlit.app/" target="_blank" class="btn btn-primary flex-fill" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none;">Visit Project</a>
+                                        <a href="#" class="btn btn-primary flex-fill" data-bs-toggle="modal" data-bs-target="#ragModelModal">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ML Competition Project -->
+                        <div class="col-12 col-md-6 col-lg-4 project-item">
+                            <div class="card h-100">
+                                <img src="images/foxy.gif" class="card-img-top" alt="ML Competition">
+                                <div class="card-body">
+                                    <h5 class="card-title">Machine Learning Competition for 5G</h5>
+                                    <p class="card-text">A competition focused on 5G control channel transmission challenges, providing researchers with real-world data for ML applications in wireless communications.</p>
+                                    <div class="tech-stack">
+                                        <span class="badge bg-primary">PyTorch</span>
+                                        <span class="badge bg-secondary">TensorFlow</span>
+                                        <span class="badge bg-success">Keras</span>
+                                        <span class="badge bg-info">Kaggle</span>
+                                    </div>
+                                    <div class="mt-3 d-flex gap-2">
+                                        <a href="https://www.kaggle.com/datasets/furkanercan88/5g-control-channel-transmission-dataset" target="_blank" class="btn btn-primary flex-fill" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none;">Visit Project</a>
+                                        <a href="#" class="btn btn-primary flex-fill" data-bs-toggle="modal" data-bs-target="#mlCompModal">Learn More</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 5G Communications Category -->
+                <!-- Algorithms Category -->
                 <div class="category category-5g mb-5 animate-on-scroll">
                     <h2 class="category-title">
-                        <i class="fa fa-signal"></i> <span>5G and Beyond Communications</span>
+                        <i class="fa fa-signal"></i> <span>Algorithms</span>
                     </h2>
                     <div class="row row-cols-1 row-cols-md-3 g-4">
                         <!-- Communications Project -->
@@ -469,21 +519,6 @@
                                         <span class="badge bg-success">OOP</span>
                                     </div>
                                     <a href="#" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#communicationsProjectModal">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Polar Codes Project -->
-                        <div class="col-12 col-md-6 project-item">
-                            <div class="card h-100">
-                                <img src="images/polarbear.gif" class="card-img-top" alt="Polar Codes">
-                                <div class="card-body">
-                                    <h5 class="card-title">POCO: A Fast SC Polar Decoder</h5>
-                                    <p class="card-text">Open-source implementation of efficient decoding algorithms for 5G NR polar codes, including SC, SSC, and various Fast-SSC flavors with configurable parameters.</p>
-                                    <div class="tech-stack">
-                                        <span class="badge bg-primary">Python</span>
-                                    </div>
-                                    <a href="#" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#polarCodesModal">Learn More</a>
                                 </div>
                             </div>
                         </div>
@@ -506,33 +541,55 @@
                             </div>
                         </div>
 
-                        <!-- ML Competition Project -->
+                        <!-- Physical Layer Security Project -->
                         <div class="col-12 col-md-6 project-item">
                             <div class="card h-100">
-                                <img src="images/foxy.gif" class="card-img-top" alt="ML Competition">
+                                <img src="images/phy-security.jpg" class="card-img-top" alt="Physical Layer Security">
                                 <div class="card-body">
-                                    <h5 class="card-title">Machine Learning Competition for 5G</h5>
-                                    <p class="card-text">Created and hosted a Kaggle competition focused on 5G control channel transmission challenges, providing researchers with real-world data for ML applications in wireless communications.</p>
+                                    <h5 class="card-title">Physical Layer Security as a FEC feature</h5>
+                                    <p class="card-text">Novel approaches to integrate security features directly into the Forward Error Correction layer, developed during research at Boston University/MIT to combat jamming attacks.</p>
                                     <div class="tech-stack">
-                                        <span class="badge bg-primary">PyTorch</span>
-                                        <span class="badge bg-secondary">TensorFlow</span>
-                                        <span class="badge bg-success">Keras</span>
-                                        <span class="badge bg-info">Kaggle</span>
-                                        <span class="badge bg-warning">5G NR</span>
+                                        <span class="badge bg-primary">C++</span>
+                                        <span class="badge bg-secondary">Python</span>
+                                        <span class="badge bg-success">MATLAB</span>
+                                        <span class="badge bg-info">FEC</span>
+                                        <span class="badge bg-warning">Security</span>
                                     </div>
-                                    <a href="#" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#mlCompModal">Learn More</a>
+                                    <a href="#" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#securityModal">Learn More</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Universal Decoding Category -->
+                <!-- Hardware Category -->
                 <div class="category category-decoding mb-5 animate-on-scroll">
                     <h2 class="category-title">
-                        <i class="fa fa-microchip"></i> <span>Universal Decoding Research</span>
+                        <i class="fa fa-microchip"></i> <span>Hardware</span>
                     </h2>
-                    <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <!-- Space-BACN Project -->
+                        <div class="col-12 col-md-6 project-item">
+                            <div class="card h-100">
+                                <img src="images/space-bacn.avif" class="card-img-top" alt="Space-BACN" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#spaceBacnModal">
+                                <div class="card-body">
+                                    <h5 class="card-title">Space-BACN: Space-Based Adaptive Communications Node</h5>
+                                    <p class="card-text">Development of reconfigurable optical communications terminals for low Earth orbit (LEO) satellite constellations, enabling seamless inter-satellite and ground-to-satellite communications.</p>
+                                    <div class="tech-stack">
+                                        <span class="badge bg-primary">FPGA</span>
+                                        <span class="badge bg-secondary">ASIC</span>
+                                        <span class="badge bg-info">SystemVerilog</span>
+                                        <span class="badge bg-warning">Optical Communications</span>
+                                        <span class="badge bg-success">System Architecture</span>
+                                        <span class="badge bg-danger">MATLAB</span>
+                                        <span class="badge bg-primary">Simulink</span>
+                                    </div>
+                                    <a href="#" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#spaceBacnModal">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Universal Decoding Project -->
                         <div class="col-12 col-md-6 project-item">
                             <div class="card h-100">
                                 <img src="images/tech2.gif" class="card-img-top" alt="Universal Decoding">
@@ -551,31 +608,12 @@
                     </div>
                 </div>
 
-                <!-- Security & AI Category -->
+                <!-- Software Category -->
                 <div class="category category-security mb-5 animate-on-scroll">
                     <h2 class="category-title">
-                        <i class="fa fa-shield"></i> <span>Security & AI Applications</span>
+                        <i class="fa fa-code"></i> <span>Software</span>
                     </h2>
                     <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <!-- Security Project -->
-                        <div class="col-12 col-md-6 project-item">
-                            <div class="card h-100">
-                                <img src="images/phy-security.jpg" class="card-img-top" alt="Physical Layer Security">
-                                <div class="card-body">
-                                    <h5 class="card-title">Physical Layer Security as a FEC feature</h5>
-                                    <p class="card-text">Novel approaches to integrate security features directly into the Forward Error Correction layer, developed during research at Boston University/MIT to combat jamming attacks.</p>
-                                    <div class="tech-stack">
-                                        <span class="badge bg-primary">C++</span>
-                                        <span class="badge bg-secondary">Python</span>
-                                        <span class="badge bg-success">MATLAB</span>
-                                        <span class="badge bg-info">FEC</span>
-                                        <span class="badge bg-warning">Security</span>
-                                    </div>
-                                    <a href="#" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#securityModal">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-
                         <!-- LLM Project -->
                         <div class="col-12 col-md-6 project-item">
                             <div class="card h-100">
@@ -591,6 +629,41 @@
                                         <span class="badge bg-warning">RAG</span>
                                     </div>
                                     <a href="#" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#llmModal">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- POCO Project -->
+                        <div class="col-12 col-md-6 project-item">
+                            <div class="card h-100">
+                                <img src="images/polarbear.gif" class="card-img-top" alt="Polar Codes">
+                                <div class="card-body">
+                                    <h5 class="card-title">POCO: A Fast SC Polar Decoder</h5>
+                                    <p class="card-text">Open-source implementation of efficient decoding algorithms for 5G NR polar codes, including SC, SSC, and various Fast-SSC flavors with configurable parameters.</p>
+                                    <div class="tech-stack">
+                                        <span class="badge bg-primary">Python</span>
+                                    </div>
+                                    <a href="#" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#polarCodesModal">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Smart Curriculum Architect -->
+                        <div class="col-12 col-md-6 project-item">
+                            <div class="card h-100">
+                                <div class="card-img-top" style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                                    <i class="fa fa-graduation-cap"></i>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Smart Curriculum Architect</h5>
+                                    <p class="card-text">AI-driven TypeScript platform that transforms ideas into structured, adaptive lesson plans with intelligent flow design.</p>
+                                    <div class="tech-stack">
+                                        <span class="badge bg-primary">TypeScript</span>
+                                        <span class="badge bg-secondary">AI</span>
+                                        <span class="badge bg-success">Education</span>
+                                        <span class="badge bg-info">Curriculum Design</span>
+                                    </div>
+                                    <a href="#" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#curriculumArchitectModal">Learn More</a>
                                 </div>
                             </div>
                         </div>
@@ -778,15 +851,10 @@
                         </div>
                         <div class="col-md-6">
                             <h6 class="text-primary">Project Overview</h6>
-                            <p>Created and hosted a Kaggle competition focused on 5G control channel transmission challenges, providing researchers with real-world data for ML applications in wireless communications.</p>
+                            <p>Enter an exciting exploration of cutting-edge communication technologies powered by 5G! With the advent of the fifth generation (5G) of mobile networks, the world has witnessed a revolutionary leap in wireless communication. 5G promises ultra-reliable low-latency communication, enhanced data rates, and massive connectivity—transforming how we interact, work, and innovate.</p>
                             
-                            <h6 class="text-primary mt-4">Dataset Features</h6>
-                            <ul>
-                                <li>Comprehensive 5G control channel transmission data</li>
-                                <li>Real-world scenarios and challenges</li>
-                                <li>Structured for ML model development</li>
-                                <li>Suitable for various ML approaches</li>
-                            </ul>
+                            <h6 class="text-primary mt-4">Why 5G is Exciting</h6>
+                            <p>5G is more than just faster download speeds. It's the backbone of modern innovations - Smart Cities, Autonomous Vehicles, AR/VR, Healthcare, and many more. To deliver on these promises, 5G networks rely on robust error correction mechanisms that ensure data integrity across noisy and unpredictable channels. Among these mechanisms, polar codes, invented by Prof. Erdal Arıkan, have emerged as a game-changer.</p>
 
                             <h6 class="text-primary mt-4">Technologies Used</h6>
                             <div class="tech-stack">
@@ -795,35 +863,44 @@
                                 <span class="badge bg-success">Keras</span>
                                 <span class="badge bg-info">Kaggle</span>
                                 <span class="badge bg-warning">5G NR</span>
+                                <span class="badge bg-danger">C++</span>
                             </div>
                         </div>
                     </div>
                     
                     <div class="mt-4">
-                        <h6 class="text-primary">Competition Details</h6>
-                        <p>The competition challenges participants to:</p>
+                        <h6 class="text-primary">Advancements in Error Correction for 5G</h6>
+                        <p>Error correction coding in 5G has undergone significant transformation. Unlike previous generations that relied on LDPC or Turbo codes for different layers of transmission, 5G employs polar codes for control channel transmissions due to their capacity-achieving performance and flexible design.</p>
+                    </div>
+
+                    <div class="mt-4">
+                        <h6 class="text-primary">About This Dataset</h6>
+                        <p>This dataset contains features extracted from the LLR (Log-Likelihood Ratio) values of received polar-coded frames. It serves as a powerful resource for building machine learning models to predict decoding outcomes.</p>
                         <ul>
-                            <li>Develop ML models for 5G control channel optimization</li>
-                            <li>Improve transmission efficiency and reliability</li>
-                            <li>Address real-world wireless communication challenges</li>
-                            <li>Benchmark different ML approaches</li>
+                            <li><strong>Features (llr_X):</strong> Derived from Log-Likelihood Ratios received over a simulated AWGN channel, these numerical values represent key characteristics of the received frame, capturing insights into channel conditions and potential decoding challenges.</li>
+                            <li><strong>Target (num_errors):</strong> The number of flips required during SC-Flip decoding, a metric critical for understanding decoding complexity and reliability.</li>
+                        </ul>
+                        <p>The data is generated using a custom-built C++ polar decoder, refined during years of academic research, and is now made publicly available to foster innovation and collaboration in the 5G era.</p>
+                    </div>
+
+                    <div class="mt-4">
+                        <h6 class="text-primary">Use Cases</h6>
+                        <ul>
+                            <li>Develop machine learning models for polar code error prediction</li>
+                            <li>Analyze decoding complexity under varying channel conditions</li>
+                            <li>Explore feature engineering techniques for decoding algorithms</li>
+                            <li>Compare decoding strategies and evaluate their performance</li>
                         </ul>
                     </div>
 
                     <div class="mt-4">
-                        <h6 class="text-primary">Resources</h6>
-                        <p>Available resources include:</p>
-                        <ul>
-                            <li>Complete dataset on Kaggle</li>
-                            <li>Detailed documentation and guidelines</li>
-                            <li>Baseline models and examples</li>
-                            <li>Performance evaluation metrics</li>
-                        </ul>
-                        <p class="mt-3">
-                            <a href="https://www.kaggle.com/datasets/furkanercan88/5g-control-channel-transmission-dataset" target="_blank" class="btn btn-primary">
-                                View on Kaggle <i class="fa fa-external-link"></i>
-                            </a>
-                        </p>
+                        <h6 class="text-primary">Acknowledgments</h6>
+                        <p>This dataset builds on my doctoral research in polar codes and aims to inspire further advancements in 5G communication technologies. The dataset reflects real-world challenges and provides a unique opportunity to push the boundaries of decoding algorithms with machine learning.</p>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h6 class="text-primary">Live Project</h6>
+                        <p><a href="https://www.kaggle.com/datasets/furkanercan88/5g-control-channel-transmission-dataset" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none;">Visit Project <i class="fa fa-external-link"></i></a></p>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -1099,6 +1176,166 @@
         </div>
     </div>
 
+    <!-- Clinical Simulation Environment Modal -->
+    <div class="modal fade" id="clinicalSimModal" tabindex="-1" aria-labelledby="clinicalSimModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="clinicalSimModalLabel">Clinical Simulation Environment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div style="height: 300px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 5rem; border-radius: 10px;">
+                                <i class="fa fa-hospital-o"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-primary">Project Overview</h6>
+                            <p>A modern simulation environment with AI support, built with cutting‑edge web technologies, delivering scenario‑driven training for clinical assessment and risk management.</p>
+                            
+                            <h6 class="text-primary mt-4">Key Features</h6>
+                            <ul>
+                                <li>AI-powered adaptive guidance system</li>
+                                <li>Performance analytics and tracking</li>
+                                <li>Structured evaluation framework</li>
+                                <li>Scenario-driven training modules</li>
+                                <li>Real-time competency assessment</li>
+                            </ul>
+
+                            <h6 class="text-primary mt-4">Technologies Used</h6>
+                            <div class="tech-stack">
+                                <span class="badge bg-primary">AI</span>
+                                <span class="badge bg-secondary">Web Technologies</span>
+                                <span class="badge bg-success">Simulation</span>
+                                <span class="badge bg-info">Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h6 class="text-primary">Impact</h6>
+                        <p>The platform integrates adaptive guidance, performance analytics, and structured evaluation to elevate competency development in clinical settings, providing healthcare professionals with immersive training experiences that bridge theory and practice.</p>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h6 class="text-primary">Live Project</h6>
+                        <p><a href="https://tomris.vercel.app" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none;">Visit Project <i class="fa fa-external-link"></i></a></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RAG-Enhanced Conversational Model Modal -->
+    <div class="modal fade" id="ragModelModal" tabindex="-1" aria-labelledby="ragModelModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ragModelModalLabel">RAG-Enhanced Conversational Model</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div style="height: 300px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 5rem; border-radius: 10px;">
+                                <i class="fa fa-comments-o"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-primary">Project Overview</h6>
+                            <p>A fine‑tuned conversational model based on GPT 3.5 Turbo, enhanced with retrieval‑based knowledge (RAG), delivering precise, scenario‑aware feedback to accelerate skill development.</p>
+                            
+                            <h6 class="text-primary mt-4">Key Features</h6>
+                            <ul>
+                                <li>GPT-3.5 Turbo fine-tuning</li>
+                                <li>Retrieval-Augmented Generation (RAG)</li>
+                                <li>Scenario-aware intelligent responses</li>
+                                <li>Expert-level reasoning capabilities</li>
+                                <li>Adaptive learning flow</li>
+                            </ul>
+
+                            <h6 class="text-primary mt-4">Technologies Used</h6>
+                            <div class="tech-stack">
+                                <span class="badge bg-primary">GPT-3.5</span>
+                                <span class="badge bg-secondary">RAG</span>
+                                <span class="badge bg-success">LLM</span>
+                                <span class="badge bg-info">Fine-tuning</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h6 class="text-primary">Impact</h6>
+                        <p>The model bridges expert‑level reasoning with an intuitive learning flow that responds intelligently to every user action, providing personalized feedback that accelerates skill development and enhances learning outcomes.</p>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h6 class="text-primary">Live Project</h6>
+                        <p><a href="https://nurse-chat.streamlit.app/" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none;">Visit Project <i class="fa fa-external-link"></i></a></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Smart Curriculum Architect Modal -->
+    <div class="modal fade" id="curriculumArchitectModal" tabindex="-1" aria-labelledby="curriculumArchitectModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="curriculumArchitectModalLabel">Smart Curriculum Architect</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div style="height: 300px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 5rem; border-radius: 10px;">
+                                <i class="fa fa-graduation-cap"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-primary">Project Overview</h6>
+                            <p>A TypeScript‑powered smart curriculum architect that turns raw ideas into cohesive, high‑impact lesson plans.</p>
+                            
+                            <h6 class="text-primary mt-4">Key Features</h6>
+                            <ul>
+                                <li>Adaptive to teaching styles</li>
+                                <li>Anticipates learner needs</li>
+                                <li>Builds instructional flow with precision</li>
+                                <li>Transforms ideas into structured plans</li>
+                                <li>AI-driven curriculum design</li>
+                            </ul>
+
+                            <h6 class="text-primary mt-4">Technologies Used</h6>
+                            <div class="tech-stack">
+                                <span class="badge bg-primary">TypeScript</span>
+                                <span class="badge bg-secondary">AI</span>
+                                <span class="badge bg-success">Education</span>
+                                <span class="badge bg-info">Curriculum Design</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h6 class="text-primary">Impact</h6>
+                        <p>The platform adapts to teaching styles, anticipates learner needs, and builds instructional flow with precision, enabling educators to create high-impact lesson plans that maximize learning effectiveness.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
@@ -1225,4 +1462,5 @@
   <script src="js/main.js"></script>
     
   </body>
+</html>
 </html>
