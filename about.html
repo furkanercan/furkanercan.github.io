@@ -67,8 +67,16 @@
     <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
 
     <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Inter', 'Poppins', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
       background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
       margin: 0;
       padding: 0;
@@ -120,7 +128,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 2rem 4rem;
-      max-width: 1400px;
+      max-width: 1200px;
       margin: 0 auto;
       gap: 3rem;
     }
@@ -224,8 +232,8 @@
       text-shadow: 0 0 30px rgba(120, 219, 255, 0.2);
       position: relative;
       letter-spacing: -1px;
-      line-height: 0.9;
-      font-family: 'Poppins', 'Montserrat', sans-serif;
+      line-height: 1.1;
+      font-family: 'Inter', 'Poppins', 'Montserrat', sans-serif;
     }
 
     .hero-title::before {
@@ -312,8 +320,7 @@
       margin-bottom: 2rem;
       color: #546e7a;
       max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      line-height: 1.6;
     }
 
     .hero-tagline {
@@ -406,11 +413,13 @@
       font-weight: 600;
       margin-bottom: 0.5rem;
       color: #2c3e50;
+      line-height: 1.3;
     }
 
     .skill-description {
       color: #546e7a;
-      line-height: 1.6;
+      line-height: 1.7;
+      font-size: 1rem;
     }
 
     /* Journey Section */
@@ -476,6 +485,7 @@
       font-weight: 700;
       margin-bottom: 0.5rem;
       color: #2c3e50;
+      line-height: 1.3;
     }
 
     .journey-company {
@@ -483,11 +493,13 @@
       color: #5c6bc0;
       margin-bottom: 1rem;
       font-weight: 600;
+      line-height: 1.4;
     }
 
     .journey-description {
       color: #546e7a;
-      line-height: 1.6;
+      line-height: 1.7;
+      font-size: 1rem;
     }
 
     /* Fun Facts Section */
@@ -733,57 +745,113 @@
     }
 
     /* Modern Footer Styling */
+    .ftco-footer {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .ftco-footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+      animation: footerPulse 8s ease-in-out infinite;
+    }
+
+    @keyframes footerPulse {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+
     .modern-footer {
-      padding: 3rem 0;
-      color: #2c3e50;
+      padding: 4rem 2rem 2rem;
+      color: white;
+      position: relative;
+      z-index: 1;
     }
 
     .footer-title {
-      font-size: 2.5rem;
-      font-weight: 700;
+      font-size: 3rem;
+      font-weight: 800;
       margin-bottom: 1rem;
-      background: linear-gradient(135deg, #5c6bc0 0%, #8e24aa 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: white;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      letter-spacing: -1px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .footer-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: white;
+      border-radius: 2px;
+      box-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
     }
 
     .footer-subtitle {
-      font-size: 1.1rem;
-      color: #546e7a;
-      margin-bottom: 2rem;
-      max-width: 600px;
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 3rem;
+      max-width: 700px;
       margin-left: auto;
       margin-right: auto;
-      line-height: 1.6;
+      line-height: 1.7;
+      font-weight: 300;
     }
 
     .contact-info {
       display: flex;
       justify-content: center;
-      gap: 3rem;
-      margin-bottom: 2rem;
+      gap: 4rem;
+      margin-bottom: 3rem;
       flex-wrap: wrap;
     }
 
     .contact-item {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      color: #5c6bc0;
+      gap: 0.8rem;
+      color: white;
       font-weight: 500;
+      font-size: 1.1rem;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 1rem 1.5rem;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-item:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     }
 
     .contact-item i {
-      font-size: 1.2rem;
-      color: #8e24aa;
+      font-size: 1.3rem;
+      color: white;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
     }
 
     .social-links {
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      margin-bottom: 2rem;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
       flex-wrap: wrap;
     }
 
@@ -791,67 +859,145 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.5rem;
-      color: #546e7a;
+      gap: 0.8rem;
+      color: white;
       text-decoration: none;
-      padding: 1rem;
-      border-radius: 15px;
-      transition: all 0.3s ease;
-      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem 1.8rem;
+      border-radius: 20px;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.2);
-      min-width: 100px;
+      min-width: 120px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .social-link::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease;
+    }
+
+    .social-link:hover::before {
+      width: 300px;
+      height: 300px;
     }
 
     .social-link:hover {
-      transform: translateY(-5px);
-      background: rgba(255, 255, 255, 0.2);
-      border-color: rgba(120, 219, 255, 0.3);
-      color: #5c6bc0;
+      transform: translateY(-8px) scale(1.05);
+      background: rgba(255, 255, 255, 0.25);
+      border-color: rgba(255, 255, 255, 0.4);
+      color: white;
       text-decoration: none;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     }
 
     .social-link i {
-      font-size: 1.5rem;
-      color: #8e24aa;
+      font-size: 2rem;
+      color: white;
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+      transition: transform 0.3s ease;
+    }
+
+    .social-link:hover i {
+      transform: scale(1.2) rotate(5deg);
     }
 
     .social-link span {
-      font-size: 0.9rem;
-      font-weight: 500;
+      font-size: 0.95rem;
+      font-weight: 600;
+      position: relative;
+      z-index: 1;
+      letter-spacing: 0.5px;
     }
 
     .footer-divider {
-      width: 100px;
-      height: 2px;
-      background: linear-gradient(135deg, #5c6bc0 0%, #8e24aa 100%);
-      margin: 2rem auto;
-      border-radius: 1px;
+      width: 200px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+      margin: 3rem auto;
+      border-radius: 2px;
+      position: relative;
+    }
+
+    .footer-divider::before,
+    .footer-divider::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      background: white;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .footer-divider::before {
+      left: -5px;
+    }
+
+    .footer-divider::after {
+      right: -5px;
     }
 
     .footer-copyright {
-      color: #7f8c8d;
-      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1rem;
       margin: 0;
+      font-weight: 400;
+      letter-spacing: 0.5px;
     }
 
     /* Responsive footer */
     @media (max-width: 768px) {
+      .modern-footer {
+        padding: 3rem 1.5rem 1.5rem;
+      }
+
+      .footer-title {
+        font-size: 2.2rem;
+      }
+
+      .footer-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+      }
+
       .contact-info {
         flex-direction: column;
         gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .contact-item {
+        font-size: 1rem;
+        padding: 0.8rem 1.2rem;
       }
       
       .social-links {
         gap: 1rem;
+        margin-bottom: 2rem;
       }
       
       .social-link {
-        min-width: 80px;
-        padding: 0.8rem;
+        min-width: 100px;
+        padding: 1.2rem 1.5rem;
       }
-      
-      .footer-title {
-        font-size: 2rem;
+
+      .social-link i {
+        font-size: 1.8rem;
       }
     }
 
@@ -1066,6 +1212,16 @@
                       <h3 class="skill-name">System Architecture</h3>
                       <p class="skill-description">Understanding and designing complex communication systems.</p>
                     </div>
+                    <div class="skill-card">
+                      <div class="skill-icon"><i class="fa fa-graduation-cap"></i></div>
+                      <h3 class="skill-name">Teaching</h3>
+                      <p class="skill-description">Instructing courses in computer organization, digital systems, VLSI design, and electronics at leading universities, mentoring 2000+ students.</p>
+                    </div>
+                    <div class="skill-card">
+                      <div class="skill-icon"><i class="fa fa-handshake-o"></i></div>
+                      <h3 class="skill-name">Consulting</h3>
+                      <p class="skill-description">Providing expert guidance and technical consultation on wireless communications, error correction, and system design to industry partners and organizations.</p>
+                    </div>
                   </div>
                 </div>
 
@@ -1210,12 +1366,17 @@
                     <div class="fact-card">
                       <div class="fact-icon"><i class="icon-camera"></i></div>
                       <div class="fact-number">Photography</div>
-                      <div class="fact-label">Passionate Creator</div>
+                      <div class="fact-label">Passionate photographer with work featured on <a href="https://500px.com/furkanercan" target="_blank" style="color: #5c6bc0; text-decoration: none;">500px Gallery</a></div>
                     </div>
                     <div class="fact-card">
                       <div class="fact-icon"><i class="icon-music"></i></div>
                       <div class="fact-number">Native American</div>
                       <div class="fact-label">Flute Player</div>
+                    </div>
+                    <div class="fact-card">
+                      <div class="fact-icon"><i class="fa fa-pencil"></i></div>
+                      <div class="fact-number">Published Author</div>
+                      <div class="fact-label">Literary Writing in <a href="https://www.lulu.com/shop/rohitash-chandra-and-ed-coet/an-anthology-of-contemporary-love-poems/paperback/product-11923128.html" target="_blank" style="color: #5c6bc0; text-decoration: none;">An Anthology of Contemporary Love Poems</a></div>
                     </div>
                   </div>
                 </div>
@@ -1455,12 +1616,40 @@
       }
     });
 
-    // Safely display email address to avoid bot scraping
+    // Advanced email protection with multiple obfuscation layers
     function displayEmail() {
-      const emailParts = ['furkanercan88', 'gmail', 'com'];
+      // Multi-layer obfuscation: split, reverse, and character codes
+      const part1 = String.fromCharCode(102, 117, 114, 107, 97, 110, 101, 114, 99, 97, 110, 56, 56); // furkanercan88
+      const part2 = String.fromCharCode(103, 109, 97, 105, 108); // gmail
+      const part3 = String.fromCharCode(99, 111, 109); // com
+      const atSymbol = String.fromCharCode(64); // @
+      const dotSymbol = String.fromCharCode(46); // .
+      
+      const email = part1 + atSymbol + part2 + dotSymbol + part3;
       const emailDisplay = document.getElementById('email-display');
+      
       if (emailDisplay) {
-        emailDisplay.textContent = emailParts[0] + '@' + emailParts[1] + '.' + emailParts[2];
+        // Create clickable mailto link dynamically
+        const mailtoLink = document.createElement('a');
+        mailtoLink.href = 'mailto:' + email;
+        mailtoLink.textContent = email;
+        mailtoLink.style.color = 'white';
+        mailtoLink.style.textDecoration = 'none';
+        mailtoLink.style.borderBottom = '1px solid rgba(255, 255, 255, 0.5)';
+        mailtoLink.style.transition = 'all 0.3s ease';
+        
+        mailtoLink.addEventListener('mouseenter', function() {
+          this.style.borderBottomColor = 'white';
+          this.style.opacity = '0.9';
+        });
+        
+        mailtoLink.addEventListener('mouseleave', function() {
+          this.style.borderBottomColor = 'rgba(255, 255, 255, 0.5)';
+          this.style.opacity = '1';
+        });
+        
+        emailDisplay.innerHTML = '';
+        emailDisplay.appendChild(mailtoLink);
       }
     }
 

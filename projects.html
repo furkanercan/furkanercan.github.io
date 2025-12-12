@@ -403,6 +403,262 @@
                     html {
                         scroll-behavior: smooth;
                     }
+
+                    /* Modern Footer Styling */
+                    .ftco-footer {
+                        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+                        position: relative;
+                        overflow: hidden;
+                        padding: 0;
+                    }
+
+                    .ftco-footer::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                                    radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+                        animation: footerPulse 8s ease-in-out infinite;
+                    }
+
+                    @keyframes footerPulse {
+                        0%, 100% { opacity: 0.5; transform: scale(1); }
+                        50% { opacity: 0.8; transform: scale(1.05); }
+                    }
+
+                    .modern-footer {
+                        padding: 4rem 2rem 2rem;
+                        color: white;
+                        position: relative;
+                        z-index: 1;
+                    }
+
+                    .footer-title {
+                        font-size: 3rem;
+                        font-weight: 800;
+                        margin-bottom: 1rem;
+                        color: white;
+                        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+                        letter-spacing: -1px;
+                        position: relative;
+                        display: inline-block;
+                    }
+
+                    .footer-title::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -10px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 80px;
+                        height: 4px;
+                        background: white;
+                        border-radius: 2px;
+                        box-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
+                    }
+
+                    .footer-subtitle {
+                        font-size: 1.2rem;
+                        color: rgba(255, 255, 255, 0.9);
+                        margin-bottom: 3rem;
+                        max-width: 700px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        line-height: 1.7;
+                        font-weight: 300;
+                    }
+
+                    .contact-info {
+                        display: flex;
+                        justify-content: center;
+                        gap: 4rem;
+                        margin-bottom: 3rem;
+                        flex-wrap: wrap;
+                    }
+
+                    .contact-item {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.8rem;
+                        color: white;
+                        font-weight: 500;
+                        font-size: 1.1rem;
+                        background: rgba(255, 255, 255, 0.15);
+                        backdrop-filter: blur(10px);
+                        padding: 1rem 1.5rem;
+                        border-radius: 50px;
+                        border: 1px solid rgba(255, 255, 255, 0.2);
+                        transition: all 0.3s ease;
+                        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .contact-item:hover {
+                        transform: translateY(-3px);
+                        background: rgba(255, 255, 255, 0.25);
+                        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+                    }
+
+                    .contact-item i {
+                        font-size: 1.3rem;
+                        color: white;
+                        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+                    }
+
+                    .social-links {
+                        display: flex;
+                        justify-content: center;
+                        gap: 1.5rem;
+                        margin-bottom: 3rem;
+                        flex-wrap: wrap;
+                    }
+
+                    .social-link {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 0.8rem;
+                        color: white;
+                        text-decoration: none;
+                        padding: 1.5rem 1.8rem;
+                        border-radius: 20px;
+                        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                        background: rgba(255, 255, 255, 0.15);
+                        backdrop-filter: blur(10px);
+                        border: 1px solid rgba(255, 255, 255, 0.2);
+                        min-width: 120px;
+                        position: relative;
+                        overflow: hidden;
+                        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .social-link::before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        width: 0;
+                        height: 0;
+                        border-radius: 50%;
+                        background: rgba(255, 255, 255, 0.2);
+                        transform: translate(-50%, -50%);
+                        transition: width 0.6s ease, height 0.6s ease;
+                    }
+
+                    .social-link:hover::before {
+                        width: 300px;
+                        height: 300px;
+                    }
+
+                    .social-link:hover {
+                        transform: translateY(-8px) scale(1.05);
+                        background: rgba(255, 255, 255, 0.25);
+                        border-color: rgba(255, 255, 255, 0.4);
+                        color: white;
+                        text-decoration: none;
+                        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+                    }
+
+                    .social-link i {
+                        font-size: 2rem;
+                        color: white;
+                        position: relative;
+                        z-index: 1;
+                        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+                        transition: transform 0.3s ease;
+                    }
+
+                    .social-link:hover i {
+                        transform: scale(1.2) rotate(5deg);
+                    }
+
+                    .social-link span {
+                        font-size: 0.95rem;
+                        font-weight: 600;
+                        position: relative;
+                        z-index: 1;
+                        letter-spacing: 0.5px;
+                    }
+
+                    .footer-divider {
+                        width: 200px;
+                        height: 3px;
+                        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+                        margin: 3rem auto;
+                        border-radius: 2px;
+                        position: relative;
+                    }
+
+                    .footer-divider::before,
+                    .footer-divider::after {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        width: 10px;
+                        height: 10px;
+                        background: white;
+                        border-radius: 50%;
+                        transform: translateY(-50%);
+                        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+                    }
+
+                    .footer-divider::before {
+                        left: -5px;
+                    }
+
+                    .footer-divider::after {
+                        right: -5px;
+                    }
+
+                    .footer-copyright {
+                        color: rgba(255, 255, 255, 0.9);
+                        font-size: 1rem;
+                        margin: 0;
+                        font-weight: 400;
+                        letter-spacing: 0.5px;
+                    }
+
+                    @media (max-width: 768px) {
+                        .modern-footer {
+                            padding: 3rem 1.5rem 1.5rem;
+                        }
+
+                        .footer-title {
+                            font-size: 2.2rem;
+                        }
+
+                        .footer-subtitle {
+                            font-size: 1rem;
+                            margin-bottom: 2rem;
+                        }
+
+                        .contact-info {
+                            flex-direction: column;
+                            gap: 1rem;
+                            margin-bottom: 2rem;
+                        }
+
+                        .contact-item {
+                            font-size: 1rem;
+                            padding: 0.8rem 1.2rem;
+                        }
+                        
+                        .social-links {
+                            gap: 1rem;
+                            margin-bottom: 2rem;
+                        }
+                        
+                        .social-link {
+                            min-width: 100px;
+                            padding: 1.2rem 1.5rem;
+                        }
+
+                        .social-link i {
+                            font-size: 1.8rem;
+                        }
+                    }
                 </style>
 
                 <!-- Hero Section with Stats -->
@@ -1475,7 +1731,50 @@
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&sensor=false"></script> -->
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+  
+  <script>
+    // Advanced email protection with multiple obfuscation layers
+    function displayEmail() {
+        // Multi-layer obfuscation: split, reverse, and character codes
+        const part1 = String.fromCharCode(102, 117, 114, 107, 97, 110, 101, 114, 99, 97, 110, 56, 56); // furkanercan88
+        const part2 = String.fromCharCode(103, 109, 97, 105, 108); // gmail
+        const part3 = String.fromCharCode(99, 111, 109); // com
+        const atSymbol = String.fromCharCode(64); // @
+        const dotSymbol = String.fromCharCode(46); // .
+        
+        const email = part1 + atSymbol + part2 + dotSymbol + part3;
+        const emailDisplay = document.getElementById('email-display');
+        
+        if (emailDisplay) {
+            // Create clickable mailto link dynamically
+            const mailtoLink = document.createElement('a');
+            mailtoLink.href = 'mailto:' + email;
+            mailtoLink.textContent = email;
+            mailtoLink.style.color = 'white';
+            mailtoLink.style.textDecoration = 'none';
+            mailtoLink.style.borderBottom = '1px solid rgba(255, 255, 255, 0.5)';
+            mailtoLink.style.transition = 'all 0.3s ease';
+            
+            mailtoLink.addEventListener('mouseenter', function() {
+                this.style.borderBottomColor = 'white';
+                this.style.opacity = '0.9';
+            });
+            
+            mailtoLink.addEventListener('mouseleave', function() {
+                this.style.borderBottomColor = 'rgba(255, 255, 255, 0.5)';
+                this.style.opacity = '1';
+            });
+            
+            emailDisplay.innerHTML = '';
+            emailDisplay.appendChild(mailtoLink);
+        }
+    }
+
+    // Initialize email display when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        displayEmail();
+    });
+  </script>
     
   </body>
-</html>
 </html>

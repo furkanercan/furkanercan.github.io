@@ -15,10 +15,11 @@
     </script> -->
     <title>Scholarship | Furkan Ercan</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=1">
 	
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -44,6 +45,16 @@
     <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Poppins', sans-serif;
+        }
+
         .profile-img {
             border-radius: 50%;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -55,101 +66,188 @@
             cursor: pointer;
         }
 
-        /* Modern Activities Page Styling */
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            color: #2c3e50;
-            overflow-x: hidden;
-        }
-
-        .modern-activities-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
+        /* Modern Hero Section with Stats */
         .activities-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            padding: 60px 20px;
+            margin: -20px auto 50px auto;
+            max-width: 1200px;
+            border-radius: 0 0 30px 30px;
+            color: white;
             text-align: center;
-            margin-bottom: 4rem;
-            padding: 3rem 0;
+            position: relative;
+            overflow: hidden;
         }
 
-        .activities-title {
+        .activities-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .activities-hero h2 {
             font-size: 3.5rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-            text-shadow: 0 0 30px rgba(120, 219, 255, 0.2);
+            font-weight: 800;
+            margin: 0 0 20px 0;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+            letter-spacing: -1px;
         }
 
-        .activities-subtitle {
-            font-size: 1.2rem;
-            color: #5a6c7d;
-            max-width: 600px;
+        .activities-hero .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            max-width: 900px;
             margin: 0 auto;
-            line-height: 1.6;
+            position: relative;
+            z-index: 1;
         }
 
-        .activities-section {
-            margin-bottom: 4rem;
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 25px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
-        .section-title {
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Modern Section Styling */
+        .activities-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.3s ease;
+        }
+
+        .section-header:hover {
+            transform: translateX(5px);
+        }
+
+        .section-header h3 {
             font-size: 2.2rem;
             font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 2rem;
-            text-align: center;
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-icon {
+            font-size: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-toggle {
+            font-size: 1.5rem;
+            color: #667eea;
+            transition: transform 0.3s ease;
+        }
+
+        .section-toggle.collapsed {
+            transform: rotate(-90deg);
         }
 
         .activities-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
         }
 
         .activity-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: white;
             border-radius: 20px;
-            padding: 2rem;
-            transition: all 0.4s ease;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-left: 4px solid transparent;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
         .activity-card::before {
             content: '';
             position: absolute;
             top: 0;
-            left: -100%;
-            width: 100%;
+            left: 0;
+            width: 4px;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .activity-card:hover::before {
-            left: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
         }
 
         .activity-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            border-color: rgba(120, 219, 255, 0.4);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .activity-card:hover::before {
+            width: 100%;
+            opacity: 0.05;
         }
 
         .activity-icon {
@@ -160,8 +258,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
         }
 
         .activity-icon i {
@@ -171,34 +270,31 @@
 
         .activity-card:hover .activity-icon {
             transform: scale(1.1) rotate(5deg);
-            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
         }
 
         .activity-title {
             font-size: 1.4rem;
             font-weight: 700;
             color: #2c3e50;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            margin-bottom: 10px;
+            line-height: 1.3;
         }
 
         .activity-role {
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
-            color: #5c6bc0;
-            margin-bottom: 1rem;
+            color: #667eea;
+            margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .activity-description {
             font-size: 0.95rem;
-            line-height: 1.6;
+            line-height: 1.7;
             color: #5a6c7d;
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
         }
 
         .activity-description a {
@@ -206,65 +302,386 @@
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
+            border-bottom: 1px solid transparent;
         }
 
         .activity-description a:hover {
             color: #764ba2;
-            text-decoration: underline;
+            border-bottom-color: #764ba2;
         }
 
         .activity-period {
             display: inline-block;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 0.5rem 1rem;
+            padding: 8px 16px;
             border-radius: 25px;
             font-size: 0.85rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Compact List Style for Long Lists */
+        .compact-list {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+
+        .compact-list-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .compact-list-item:last-child {
+            border-bottom: none;
+        }
+
+        .compact-list-item:hover {
+            background: linear-gradient(90deg, rgba(102, 126, 234, 0.05) 0%, transparent 100%);
+            padding-left: 30px;
+        }
+
+        .compact-list-item::before {
+            content: '▸';
+            color: #667eea;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .compact-list-item:hover::before {
+            transform: translateX(5px);
+        }
+
+        .compact-list-title {
+            font-weight: 600;
+            color: #2c3e50;
+            flex: 1;
+        }
+
+        .compact-list-period {
+            color: #667eea;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Collapsible Content */
+        .collapse-content {
+            margin-top: 20px;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .modern-activities-container {
-                padding: 1rem;
-            }
-            
-            .activities-title {
+            .activities-hero h2 {
                 font-size: 2.5rem;
             }
-            
+
+            .activities-hero .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
             .activities-grid {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
+                gap: 20px;
             }
-            
-            .activity-card {
-                padding: 1.5rem;
+
+            .section-header h3 {
+                font-size: 1.8rem;
             }
-            
-            .activity-icon {
-                width: 50px;
-                height: 50px;
-            }
-            
-            .activity-icon i {
-                font-size: 1.5rem;
+
+            .activities-container {
+                padding: 0 15px 40px;
             }
         }
 
         @media (max-width: 480px) {
-            .activities-title {
+            .activities-hero {
+                padding: 40px 15px;
+            }
+
+            .activities-hero h2 {
                 font-size: 2rem;
             }
-            
-            .section-title {
-                font-size: 1.8rem;
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        /* Modern Footer Styling */
+        .ftco-footer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .ftco-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+            animation: footerPulse 8s ease-in-out infinite;
+        }
+
+        @keyframes footerPulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+
+        .modern-footer {
+            padding: 4rem 2rem 2rem;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            letter-spacing: -1px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: white;
+            border-radius: 2px;
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .footer-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: white;
+            font-weight: 500;
+            font-size: 1.1rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-item i {
+            font-size: 1.3rem;
+            color: white;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+            color: white;
+            text-decoration: none;
+            padding: 1.5rem 1.8rem;
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            min-width: 120px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .social-link:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .social-link:hover {
+            transform: translateY(-8px) scale(1.05);
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.4);
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-link i {
+            font-size: 2rem;
+            color: white;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover i {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .social-link span {
+            font-size: 0.95rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-divider {
+            width: 200px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            margin: 3rem auto;
+            border-radius: 2px;
+            position: relative;
+        }
+
+        .footer-divider::before,
+        .footer-divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .footer-divider::before {
+            left: -5px;
+        }
+
+        .footer-divider::after {
+            right: -5px;
+        }
+
+        .footer-copyright {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            margin: 0;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 768px) {
+            .modern-footer {
+                padding: 3rem 1.5rem 1.5rem;
+            }
+
+            .footer-title {
+                font-size: 2.2rem;
+            }
+
+            .footer-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .contact-item {
+                font-size: 1rem;
+                padding: 0.8rem 1.2rem;
             }
             
-            .activity-card {
-                padding: 1rem;
+            .social-links {
+                gap: 1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .social-link {
+                min-width: 100px;
+                padding: 1.2rem 1.5rem;
+            }
+
+            .social-link i {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -283,7 +700,7 @@
 					<li><a href="about.html">About</a></li>
 					<li><a href="publications.html">Publications</a></li>
           <li><a href="projects.html">Impact</a></li>
-					                <li class="colorlib-active"><a href="activities.html">Scholarship</a></li>
+					<li class="colorlib-active"><a href="activities.html">Scholarship</a></li>
 					<li><a href="awards.html">Recognition</a></li>
 					<!--<li><a href="#">Contact</a></li>-->
 				</ul>
@@ -309,368 +726,646 @@
 			<section class="ftco-section-2">
 				<div class="photography">
 					<div class="yes-gutters">
-						<div class="modern-activities-container">
+						<div class="activities-container">
+							<!-- Hero Section with Stats -->
 							<div class="activities-hero">
-								<h1 class="activities-title">Scholarship</h1>
-								<p class="activities-subtitle">Professional contributions, leadership roles, and academic service across the wireless communications community</p>
-							</div>
-
-							<div class="activities-section">
-								<h2 class="section-title">Editorship</h2>
-								<div class="activities-grid">
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="ai ai-google-scholar"></i>
-										</div>
-										<h3 class="activity-title">IEEE Communications Letters</h3>
-										<p class="activity-role">Associate Editor</p>
-										<p class="activity-description">Overseeing peer review and evaluation of channel coding manuscripts, ensuring technical rigor, editorial quality, and impactful contributions to the communications research community</p>
-										<div class="activity-period">2023 - Present</div>
+								<h2>Scholarship</h2>
+								<p class="hero-subtitle">Professional contributions, leadership roles, and academic service across the wireless communications community</p>
+								<div class="stats-grid">
+									<div class="stat-card">
+										<span class="stat-number" data-count="2">0</span>
+										<span class="stat-label">Editorial Roles</span>
 									</div>
-
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-paper"></i>
-										</div>
-										<h3 class="activity-title">Sensors Journal</h3>
-										<p class="activity-role">Lead Guest Editor</p>
-										<p class="activity-description">Lead Guest Editor for the special issue "VLSI Architectures for Wireless Communications and Digital Signal Processing"</p>
-										<div class="activity-period">2023</div>
+									<div class="stat-card">
+										<span class="stat-label">More than</span>
+										<span class="stat-number" data-count="250">0</span>
+										<span class="stat-label">Reviewed Papers</span>
 									</div>
-								</div>
-							</div>
-
-							<div class="activities-section">
-								<h2 class="section-title">Journal Reviewing</h2>
-								<div class="activities-grid">
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-paper"></i>
-										</div>
-										<h3 class="activity-title">IEEE Transactions on Communications</h3>
-										<p class="activity-role">Regular Reviewer</p>
-										<p class="activity-description">Peer review of high-impact communications research papers</p>
-										<div class="activity-period">2019 - Present</div>
+									<div class="stat-card">
+										<span class="stat-number" data-count="40">0</span>
+										<span class="stat-label">Disctinct Journals Reviewed</span>
 									</div>
-
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-paper"></i>
-										</div>
-										<h3 class="activity-title">IEEE Communications Letters</h3>
-										<p class="activity-role">Regular Reviewer</p>
-										<p class="activity-description">Review of communications letters and short papers</p>
-										<div class="activity-period">2019 - Present</div>
+									<div class="stat-card">
+										<span class="stat-number" data-count="15">0</span>
+										<span class="stat-label">Distinct Conferences Reviewed</span>
 									</div>
-
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-paper"></i>
-										</div>
-										<h3 class="activity-title">IEEE Transactions on Signal Processing</h3>
-										<p class="activity-role">Regular Reviewer</p>
-										<p class="activity-description">Review of signal processing and communications papers</p>
-										<div class="activity-period">2019 - Present</div>
+									<div class="stat-card">
+										<span class="stat-number" data-count="8">0</span>
+										<span class="stat-label">TPC Duties</span>
 									</div>
-
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-paper"></i>
-										</div>
-										<h3 class="activity-title">IEEE Transactions on Circuits and Systems</h3>
-										<p class="activity-role">Regular Reviewer</p>
-										<p class="activity-description">Review of circuits and systems papers</p>
-										<div class="activity-period">2019 - Present</div>
+									<div class="stat-card">
+										<span class="stat-number" data-count="10">0</span>
+										<span class="stat-label">Courses Taught</span>
 									</div>
-
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-paper"></i>
-										</div>
-										<h3 class="activity-title">IEEE Journal of Solid-State Circuits</h3>
-										<p class="activity-role">Regular Reviewer</p>
-										<p class="activity-description">Review of solid-state circuits and VLSI papers</p>
-										<div class="activity-period">2019 - Present</div>
-									</div>
-
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-paper"></i>
-										</div>
-										<h3 class="activity-title">... and many others</h3>
-										<p class="activity-role">Regular Reviewer</p>
-										<p class="activity-description">200+ reviews for 40+ additional high-impact journals in communications, algorithms, signal processing, and VLSI systems</p>
-										<div class="activity-period">2019 - Present</div>
+									<div class="stat-card">
+										<span class="stat-number" data-count="15">0</span>
+										<span class="stat-label">Leadership Roles</span>
 									</div>
 								</div>
 							</div>
 
+							<!-- Editorship Section -->
 							<div class="activities-section">
-								<h2 class="section-title">Conference Organization & Leadership</h2>
-								<div class="activities-grid">
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-presentation"></i>
+								<div class="section-header" data-bs-toggle="collapse" data-bs-target="#editorshipCollapse" aria-expanded="true">
+									<span class="section-icon">📝</span>
+									<h3>Editorship</h3>
+									<span class="section-toggle">▼</span>
+								</div>
+								<div class="collapse show" id="editorshipCollapse">
+									<div class="activities-grid">
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="ai ai-google-scholar"></i>
+											</div>
+											<h3 class="activity-title">IEEE Communications Letters</h3>
+											<p class="activity-role">Associate Editor</p>
+											<p class="activity-description">Overseeing peer review and evaluation of channel coding manuscripts, ensuring technical rigor, editorial quality, and impactful contributions to the communications research community</p>
+											<div class="activity-period">2023 - Present</div>
 										</div>
-										<h3 class="activity-title">IEEE GLOBECOM 2025</h3>
-										<p class="activity-role">Wireless Communications Track TPC</p>
-										<p class="activity-description">Technical Program Committee member for the premier global communications conference</p>
-										<div class="activity-period">2025</div>
-									</div>
 
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-presentation"></i>
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-file-text"></i>
+											</div>
+											<h3 class="activity-title">Sensors Journal</h3>
+											<p class="activity-role">Lead Guest Editor</p>
+											<p class="activity-description">Lead Guest Editor for the special issue "VLSI Architectures for Wireless Communications and Digital Signal Processing"</p>
+											<div class="activity-period">2023</div>
 										</div>
-										<h3 class="activity-title">IEEE GLOBECOM 2024</h3>
-										<p class="activity-role">Wireless Communications Track TPC</p>
-										<p class="activity-description">Technical Program Committee member for wireless communications</p>
-										<div class="activity-period">2024</div>
-									</div>
-
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-presentation"></i>
-										</div>
-										<h3 class="activity-title">IEEE VTC Spring 2023</h3>
-										<p class="activity-role">ML and AI for Communications Track</p>
-										<p class="activity-description">Technical Program Committee for machine learning in communications</p>
-										<div class="activity-period">2023</div>
-									</div>
-
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-presentation"></i>
-										</div>
-										<h3 class="activity-title">IEEE INFOCOM 2023</h3>
-										<p class="activity-role">5G and Beyond Wireless Security Track</p>
-										<p class="activity-description">Technical Program Committee for wireless security</p>
-										<div class="activity-period">2023</div>
-									</div>
-
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-presentation"></i>
-										</div>
-										<h3 class="activity-title">IEEE GLOBECOM 2022</h3>
-										<p class="activity-role">5G and Beyond Wireless Security Chair</p>
-										<p class="activity-description">Led the wireless security track organization and management</p>
-										<div class="activity-period">2022</div>
-									</div>
-
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-presentation"></i>
-										</div>
-										<h3 class="activity-title">IEEE Future Networks World Forum 2022</h3>
-										<p class="activity-role">Academia & Industry Demonstrations Chair</p>
-										<p class="activity-description">Coordinated industry and academic demonstrations</p>
-										<div class="activity-period">2022</div>
 									</div>
 								</div>
 							</div>
 
+							<!-- Journal Reviewing Section -->
 							<div class="activities-section">
-								<h2 class="section-title">Professional Volunteering & Leadership</h2>
-								<div class="activities-grid">
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-people"></i>
+								<div class="section-header" data-bs-toggle="collapse" data-bs-target="#journalReviewingCollapse" aria-expanded="true">
+									<span class="section-icon">📚</span>
+									<h3>Journal Reviewing</h3>
+									<span class="section-toggle">▼</span>
+								</div>
+								<div class="collapse show" id="journalReviewingCollapse">
+									<div class="compact-list">
+										<div class="compact-list-item">
+											<span class="compact-list-title">IEEE Transactions on Communications</span>
+											<span class="compact-list-period">2019 - Present</span>
 										</div>
-										<h3 class="activity-title">IEEE Montreal Section</h3>
-										<p class="activity-role">Vice-Chair</p>
-										<p class="activity-description">Leadership role in the local IEEE section, organizing events and supporting the engineering community</p>
-										<div class="activity-period">2021</div>
-									</div>
-
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-people"></i>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IEEE Transactions on Signal Processing</span>
+											<span class="compact-list-period">2019 - Present</span>
 										</div>
-										<h3 class="activity-title">IEEE Wireless Communications Technical Committee</h3>
-										<p class="activity-role">Active Member</p>
-										<p class="activity-description">Contributing to the advancement of wireless communications technology and standards</p>
-										<div class="activity-period">2022</div>
-									</div>
-
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-people"></i>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IEEE Transactions on Vehicular Technology</span>
+											<span class="compact-list-period">2019 - Present</span>
 										</div>
-										<h3 class="activity-title">McGill IEEE Student Branch</h3>
-										<p class="activity-role">Chair</p>
-										<p class="activity-description">Led student activities and professional development initiatives</p>
-										<div class="activity-period">2017</div>
-									</div>
-
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-people"></i>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IEEE Transactions on Circuits and Systems I: Regular Papers</span>
+											<span class="compact-list-period">2019 - Present</span>
 										</div>
-										<h3 class="activity-title">IEEE Women in Engineering (WIE)</h3>
-										<p class="activity-role">Founding Member</p>
-										<p class="activity-description">Established and promoted women's participation in engineering at McGill</p>
-										<div class="activity-period">2017</div>
-									</div>
-
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-people"></i>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IEEE Transactions on Circuits and Systems II: Express Briefs</span>
+											<span class="compact-list-period">2019 - Present</span>
 										</div>
-										<h3 class="activity-title">IEEE METU NCC Student Branch</h3>
-										<p class="activity-role">Founder/Chair</p>
-										<p class="activity-description">Established the IEEE student branch and served as its first chair</p>
-										<div class="activity-period">2011</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IEEE Transactions on Aerospace and Electronic Systems</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IEEE Transactions on Cognitive Communications and Networking</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IEEE Transactions on Consumer Electronics</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IEEE Transactions on Reliability</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IEEE Transactions on Green Communications and Networking</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IEEE Transactions on VLSI</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IEEE Access</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IEEE Communications Letters</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IEEE Networking Letters</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IEEE Communications Magazine</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IEEE Industrial Electronics Magazine</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IEEE Open Journal of the Communications Society</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IEEE Systems Journal</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">Canadian Journal of Electrical and Computer Engineering</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">Electronics Letters</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IET Communications</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IET Circuits, Devices and Systems</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">Elsevier Digital Signal Processing</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">Elsevier Physical Communication</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">Elsevier Microelectronics Journal</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">Elsevier Microprocessors and Microsystems</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">Wiley Transactions on Emerging Telecommunications Technologies</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">Wiley Journal of Electrical and Computer Engineering</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IETE Journal of Research</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">Engineering Science and Technology, an International Journal</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">Journal of Communications and Networks</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">Science China Information Sciences</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">MDPI Sensors</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">PLOS ONE</span>
+											<span class="compact-list-period">2019 - Present</span>
+										</div>
 									</div>
 								</div>
 							</div>
 
+							<!-- Conference Reviewing Section -->
 							<div class="activities-section">
-								<h2 class="section-title">Teaching & Mentoring</h2>
-								<div class="activities-grid">
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-teach"></i>
+								<div class="section-header" data-bs-toggle="collapse" data-bs-target="#conferenceReviewingCollapse" aria-expanded="true">
+									<span class="section-icon">🎯</span>
+									<h3>Conference Reviewing</h3>
+									<span class="section-toggle">▼</span>
+								</div>
+								<div class="collapse show" id="conferenceReviewingCollapse">
+									<div class="compact-list">
+										<div class="compact-list-item">
+											<span class="compact-list-title">IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)</span>
+											<span class="compact-list-period">2024-2026</span>
 										</div>
-										<h3 class="activity-title">Computer Organization</h3>
-										<p class="activity-role">McGill University | ECSE 234</p>
-										<p class="activity-description">Taught computer architecture and organization principles</p>
-										<div class="activity-period">2017 - 2020</div>
-									</div>
-
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-teach"></i>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IEEE Wireless Communications and Networking Conference (WCNC)</span>
+											<span class="compact-list-period">2017-2025</span>
 										</div>
-										<h3 class="activity-title">Digital Logic</h3>
-										<p class="activity-role">McGill University | ECSE 222</p>
-										<p class="activity-description">Instructed digital logic design and implementation</p>
-										<div class="activity-period">2019 - 2020</div>
-									</div>
-
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-teach"></i>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IEEE Vehicular Technology Conference - Spring</span>
+											<span class="compact-list-period">2022-2023</span>
 										</div>
-										<h3 class="activity-title">Digital Systems</h3>
-										<p class="activity-role">McGill University | ECSE 325</p>
-										<p class="activity-description">Led digital systems design and analysis</p>
-										<div class="activity-period">2018 - 2019</div>
-									</div>
-
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-teach"></i>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IEEE GLOBECOM</span>
+											<span class="compact-list-period">2022</span>
 										</div>
-										<h3 class="activity-title">VLSI Design</h3>
-										<p class="activity-role">Middle East Technical University</p>
-										<p class="activity-description">Taught very large scale integration design principles</p>
-										<div class="activity-period">2013 - 2015</div>
-									</div>
-
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-teach"></i>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IEEE International Conference on Communications (ICC)</span>
+											<span class="compact-list-period">2019</span>
 										</div>
-										<h3 class="activity-title">Computer Architecture</h3>
-										<p class="activity-role">Middle East Technical University</p>
-										<p class="activity-description">Instructed computer architecture I & II courses</p>
-										<div class="activity-period">2013 - 2015</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IEEE/CIC International Conference on Communications in China (ICCC)</span>
+											<span class="compact-list-period">2019</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">International Symposium on Turbo Codes & Iterative Information Processing (ISTC)</span>
+											<span class="compact-list-period">2018</span>
+										</div>
+										<div class="compact-list-item">
+											<span class="compact-list-title">IEEE International Symposium on Information Theory (ISIT)</span>
+											<span class="compact-list-period">2017</span>
+										</div>
 									</div>
 								</div>
 							</div>
 
+							<!-- TPC Duties Section -->
 							<div class="activities-section">
-								<h2 class="section-title">Conference Reviewing</h2>
-								<div class="activities-grid">
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-paper"></i>
+								<div class="section-header" data-bs-toggle="collapse" data-bs-target="#tpcDutiesCollapse" aria-expanded="true">
+									<span class="section-icon">🎤</span>
+									<h3>TPC Duties</h3>
+									<span class="section-toggle">▼</span>
+								</div>
+								<div class="collapse show" id="tpcDutiesCollapse">
+									<div class="activities-grid">
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-microphone"></i>
+											</div>
+											<h3 class="activity-title">IEEE GLOBECOM 2025</h3>
+											<p class="activity-role">Wireless Communications Track TPC</p>
+											<p class="activity-description">Technical Program Committee member for the premier global communications conference</p>
+											<div class="activity-period">2025</div>
 										</div>
-										<h3 class="activity-title">IEEE ICASSP</h3>
-										<p class="activity-role">International Conference on Acoustics, Speech, and Signal Processing</p>
-										<p class="activity-description">Peer review of signal processing and communications papers</p>
-										<div class="activity-period">2024</div>
-									</div>
 
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-paper"></i>
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-microphone"></i>
+											</div>
+											<h3 class="activity-title">IEEE GLOBECOM 2024</h3>
+											<p class="activity-role">Wireless Communications Track TPC</p>
+											<p class="activity-description">Technical Program Committee member for wireless communications</p>
+											<div class="activity-period">2024</div>
 										</div>
-										<h3 class="activity-title">IEEE WCNC</h3>
-										<p class="activity-role">Wireless Communications and Networking Conference</p>
-										<p class="activity-description">Regular reviewer for wireless communications research</p>
-										<div class="activity-period">2017-2025</div>
-									</div>
 
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-paper"></i>
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-microphone"></i>
+											</div>
+											<h3 class="activity-title">IEEE VTC Spring 2023</h3>
+											<p class="activity-role">ML and AI for Communications Track</p>
+											<p class="activity-description">Technical Program Committee for machine learning in communications</p>
+											<div class="activity-period">2023</div>
 										</div>
-										<h3 class="activity-title">IEEE ICC</h3>
-										<p class="activity-role">International Conference on Communications</p>
-										<p class="activity-description">Peer review of communications research papers</p>
-										<div class="activity-period">2019</div>
-									</div>
 
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-paper"></i>
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-microphone"></i>
+											</div>
+											<h3 class="activity-title">IEEE VTC Spring 2023</h3>
+											<p class="activity-role">Transmission and Reception Techniques</p>
+											<p class="activity-description">Technical Program Committee for transmission and reception techniques</p>
+											<div class="activity-period">2023</div>
 										</div>
-										<h3 class="activity-title">IEEE ISIT</h3>
-										<p class="activity-role">International Symposium on Information Theory</p>
-										<p class="activity-description">Review of information theory and coding papers</p>
-										<div class="activity-period">2017</div>
+
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-microphone"></i>
+											</div>
+											<h3 class="activity-title">IEEE INFOCOM 2023</h3>
+											<p class="activity-role">5G and Beyond Wireless Security Track</p>
+											<p class="activity-description">Technical Program Committee for wireless security</p>
+											<div class="activity-period">2023</div>
+										</div>
+
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-microphone"></i>
+											</div>
+											<h3 class="activity-title">IEEE GLOBECOM 2022</h3>
+											<p class="activity-role">5G and Beyond Wireless Security Chair</p>
+											<p class="activity-description">Led the wireless security track organization and management</p>
+											<div class="activity-period">2022</div>
+										</div>
+
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-microphone"></i>
+											</div>
+											<h3 class="activity-title">IEEE VTC Fall 2022</h3>
+											<p class="activity-role">Unmanned Aerial Vehicle Communications, Vehicular Networks, and Telematics</p>
+											<p class="activity-description">Technical Program Committee for UAV communications and vehicular networks</p>
+											<div class="activity-period">2022</div>
+										</div>
+
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-microphone"></i>
+											</div>
+											<h3 class="activity-title">IEEE VTC Spring 2022</h3>
+											<p class="activity-role">ML and AI for Communications Track</p>
+											<p class="activity-description">Technical Program Committee for machine learning in communications</p>
+											<div class="activity-period">2022</div>
+										</div>
 									</div>
 								</div>
 							</div>
 
-
-
+							<!-- Tutoring Section -->
 							<div class="activities-section">
-								<h2 class="section-title">Extracurricular Activities</h2>
-								<div class="activities-grid">
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-camera"></i>
+								<div class="section-header" data-bs-toggle="collapse" data-bs-target="#tutoringCollapse" aria-expanded="true">
+									<span class="section-icon">🎓</span>
+									<h3>Teaching & Mentoring</h3>
+									<span class="section-toggle">▼</span>
+								</div>
+								<div class="collapse show" id="tutoringCollapse">
+									<div class="activities-grid">
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-graduation-cap"></i>
+											</div>
+											<h3 class="activity-title">Computer Organization</h3>
+											<p class="activity-role">McGill University | ECSE 234</p>
+											<p class="activity-description">Taught computer architecture and organization principles</p>
+											<div class="activity-period">2017 - 2020</div>
 										</div>
-										<h3 class="activity-title">Nature & Nightscape Photography</h3>
-										<p class="activity-role">Creative Expression</p>
-										<p class="activity-description">Passionate photographer with work featured on <a href="https://500px.com/furkanercan" target="_blank">500px Gallery</a></p>
-										<div class="activity-period">Ongoing</div>
-									</div>
 
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-music"></i>
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-graduation-cap"></i>
+											</div>
+											<h3 class="activity-title">Digital Logic</h3>
+											<p class="activity-role">McGill University | ECSE 222</p>
+											<p class="activity-description">Instructed digital logic design and implementation</p>
+											<div class="activity-period">2019 - 2020</div>
 										</div>
-										<h3 class="activity-title">Native American Flute</h3>
-										<p class="activity-role">Honorary Member</p>
-										<p class="activity-description">Amateur player and honorary member of <a href="http://www.cascadiaflutecircle.org/someMembers.html" target="_blank">Cascadia Flute Circle</a> in Oregon, USA</p>
-										<div class="activity-period">Ongoing</div>
-									</div>
 
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-paper"></i>
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-graduation-cap"></i>
+											</div>
+											<h3 class="activity-title">Digital Systems</h3>
+											<p class="activity-role">McGill University | ECSE 325</p>
+											<p class="activity-description">Led digital systems design and analysis</p>
+											<div class="activity-period">2018 - 2019</div>
 										</div>
-										<h3 class="activity-title">Literary Writing</h3>
-										<p class="activity-role">Published Author</p>
-										<p class="activity-description">Published in <a href="https://www.lulu.com/shop/rohitash-chandra-and-ed-coet/an-anthology-of-contemporary-love-poems/paperback/product-11923128.html" target="_blank">"An Anthology of Contemporary Love Poems"</a> and The Blue Fog Journal</p>
-										<div class="activity-period">2010</div>
-									</div>
 
-									<div class="activity-card">
-										<div class="activity-icon">
-											<i class="icon-users"></i>
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-graduation-cap"></i>
+											</div>
+											<h3 class="activity-title">Digital System Design</h3>
+											<p class="activity-role">McGill University | ECSE 323</p>
+											<p class="activity-description">Taught digital system design principles and practices</p>
+											<div class="activity-period">2015 - 2017</div>
 										</div>
-										<h3 class="activity-title">Fitness & Wellness</h3>
-										<p class="activity-role">Active Lifestyle</p>
-										<p class="activity-description">Hiking, jogging, yoga, swimming, meditation, and skiing for physical and mental well-being</p>
-										<div class="activity-period">Ongoing</div>
+
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-graduation-cap"></i>
+											</div>
+											<h3 class="activity-title">Computer Architecture I</h3>
+											<p class="activity-role">Middle East Technical University</p>
+											<p class="activity-description">Instructed computer architecture fundamentals</p>
+											<div class="activity-period">2013 - 2015</div>
+										</div>
+
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-graduation-cap"></i>
+											</div>
+											<h3 class="activity-title">Computer Architecture II</h3>
+											<p class="activity-role">Middle East Technical University</p>
+											<p class="activity-description">Advanced computer architecture concepts and design</p>
+											<div class="activity-period">2013 - 2015</div>
+										</div>
+
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-graduation-cap"></i>
+											</div>
+											<h3 class="activity-title">VLSI Design</h3>
+											<p class="activity-role">Middle East Technical University</p>
+											<p class="activity-description">Taught very large scale integration design principles</p>
+											<div class="activity-period">2013 - 2015</div>
+										</div>
+
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-graduation-cap"></i>
+											</div>
+											<h3 class="activity-title">Analog Electronics</h3>
+											<p class="activity-role">Middle East Technical University</p>
+											<p class="activity-description">Instructed analog electronics design and analysis</p>
+											<div class="activity-period">2012 - 2015</div>
+										</div>
+
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-graduation-cap"></i>
+											</div>
+											<h3 class="activity-title">Digital Electronics</h3>
+											<p class="activity-role">Middle East Technical University</p>
+											<p class="activity-description">Taught digital electronics principles and circuit design</p>
+											<div class="activity-period">2012 - 2015</div>
+										</div>
+
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-graduation-cap"></i>
+											</div>
+											<h3 class="activity-title">Logic Design</h3>
+											<p class="activity-role">Middle East Technical University</p>
+											<p class="activity-description">Instructed logic design fundamentals and applications</p>
+											<div class="activity-period">2012 - 2015</div>
+										</div>
 									</div>
 								</div>
 							</div>
+
+							<!-- Professional Volunteering & Leadership Section -->
+							<div class="activities-section">
+								<div class="section-header" data-bs-toggle="collapse" data-bs-target="#leadershipCollapse" aria-expanded="true">
+									<span class="section-icon">👥</span>
+									<h3>Leadership</h3>
+									<span class="section-toggle">▼</span>
+								</div>
+								<div class="collapse show" id="leadershipCollapse">
+									<div class="activities-grid">
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-users"></i>
+											</div>
+											<h3 class="activity-title">Future Networks World Forum 2023</h3>
+											<p class="activity-role">Industry Forum and Panels Co-Chair</p>
+											<p class="activity-description">Co-chaired industry forums and panels at <a href="https://fnwf2023.ieee.org/" target="_blank">IEEE Future Networks World Forum 2023</a></p>
+											<div class="activity-period">2023</div>
+										</div>
+
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-users"></i>
+											</div>
+											<h3 class="activity-title">IEEE GLOBECOM 2022</h3>
+											<p class="activity-role">5G and Beyond Wireless Security Chair</p>
+											<p class="activity-description">Led the wireless security track organization and management at <a href="https://globecom2022.ieee-globecom.org/" target="_blank">IEEE GLOBECOM 2022</a></p>
+											<div class="activity-period">2022</div>
+										</div>
+
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-users"></i>
+											</div>
+											<h3 class="activity-title">IEEE Future Networks World Forum 2022</h3>
+											<p class="activity-role">Academia & Industry Demonstrations Chair</p>
+											<p class="activity-description">Coordinated industry and academic demonstrations at <a href="https://fnwf.ieee.org/" target="_blank">IEEE Future Networks World Forum 2022</a></p>
+											<div class="activity-period">2022</div>
+										</div>
+
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-users"></i>
+											</div>
+											<h3 class="activity-title">IEEE Vehicular Technology Conference Spring/Fall 2022</h3>
+											<p class="activity-role">Technical Program Chair</p>
+											<p class="activity-description">Led technical program organization at <a href="https://events.vtsociety.org/vtc2022-fall/" target="_blank">IEEE VTC 2022</a></p>
+											<div class="activity-period">2022</div>
+										</div>
+
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-users"></i>
+											</div>
+											<h3 class="activity-title">IEEE Wireless Communications Technical Committee</h3>
+											<p class="activity-role">Active Member</p>
+											<p class="activity-description">Contributing to the advancement of wireless communications technology and standards</p>
+											<div class="activity-period">2022</div>
+										</div>
+
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-users"></i>
+											</div>
+											<h3 class="activity-title">IEEE Montreal Section</h3>
+											<p class="activity-role">Vice-Chair</p>
+											<p class="activity-description">Leadership role in the local IEEE section, organizing events and supporting the engineering community</p>
+											<div class="activity-period">2021</div>
+										</div>
+
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-users"></i>
+											</div>
+											<h3 class="activity-title">IEEE 5G World Forum 2021</h3>
+											<p class="activity-role">Industry Demo/Exhibit Co-Chair</p>
+											<p class="activity-description">Co-chaired industry demonstrations and exhibits at <a href="https://furkanercan.github.io/images/Furkan_5GWF2021.jpg" target="_blank">IEEE 5G World Forum 2021</a></p>
+											<div class="activity-period">2021</div>
+										</div>
+
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-users"></i>
+											</div>
+											<h3 class="activity-title">IEEE Montreal Section Keynote Event 2021</h3>
+											<p class="activity-role">Lead Organizer & Panelist</p>
+											<p class="activity-description">Led organization and served as panelist for the IEEE Montreal Section Keynote Event</p>
+											<div class="activity-period">2021</div>
+										</div>
+
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-users"></i>
+											</div>
+											<h3 class="activity-title">IEEE ICC 2021 Women in Engineering Panel</h3>
+											<p class="activity-role">Technical Organization Committee</p>
+											<p class="activity-description">Organized and supported the Women in Engineering panel at IEEE ICC 2021</p>
+											<div class="activity-period">2021</div>
+										</div>
+
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-users"></i>
+											</div>
+											<h3 class="activity-title">Montréal Turkish Community Center</h3>
+											<p class="activity-role">Volunteer Instructor</p>
+											<p class="activity-description">Volunteer instructor for pre-college education programs</p>
+											<div class="activity-period">2018</div>
+										</div>
+
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-users"></i>
+											</div>
+											<h3 class="activity-title">IEEE Global Conference on Signal and Information Processing (GlobalSIP)</h3>
+											<p class="activity-role">Volunteer Coordinator</p>
+											<p class="activity-description">Coordinated volunteer activities at the 5th IEEE Global Conference on Signal and Information Processing</p>
+											<div class="activity-period">2017</div>
+										</div>
+
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-users"></i>
+											</div>
+											<h3 class="activity-title">McGill IEEE Women in Engineering (WIE)</h3>
+											<p class="activity-role">Founding Member</p>
+											<p class="activity-description">Established and promoted women's participation in engineering at McGill</p>
+											<div class="activity-period">2017</div>
+										</div>
+
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-users"></i>
+											</div>
+											<h3 class="activity-title">McGill IEEE Student Branch</h3>
+											<p class="activity-role">Chair</p>
+											<p class="activity-description">Led student activities and professional development initiatives</p>
+											<div class="activity-period">2017</div>
+										</div>
+
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-users"></i>
+											</div>
+											<h3 class="activity-title">3rd IEEE International Conference on Energy Aware Computing Systems (ICEAC)</h3>
+											<p class="activity-role">Technical Organization</p>
+											<p class="activity-description">Organized technical aspects of the conference</p>
+											<div class="activity-period">2012</div>
+										</div>
+
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-users"></i>
+											</div>
+											<h3 class="activity-title">IEEE METU NCC Student Branch</h3>
+											<p class="activity-role">Founder/Chair</p>
+											<p class="activity-description">Established the IEEE student branch and served as its first chair</p>
+											<div class="activity-period">2011</div>
+										</div>
+
+										<div class="activity-card">
+											<div class="activity-icon">
+												<i class="fa fa-users"></i>
+											</div>
+											<h3 class="activity-title">Mediterranean Microwave Symposium (MMS)</h3>
+											<p class="activity-role">Technical Organization</p>
+											<p class="activity-description">Organized technical aspects of the symposium</p>
+											<div class="activity-period">2011</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
 						</div>
 					</div>
 				</div>
@@ -733,6 +1428,7 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/jquery.easing.1.3.js"></script>
   <script src="js/jquery.waypoints.min.js"></script>
@@ -748,8 +1444,103 @@
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&sensor=false"></script> -->
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+  
+  <script>
+    // Animated counter for stats
+    function animateCounter(element) {
+        const target = parseInt(element.getAttribute('data-count'));
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        let current = 0;
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                element.textContent = target;
+                clearInterval(timer);
+            } else {
+                element.textContent = Math.floor(current);
+            }
+        }, 16);
+    }
+
+    // Trigger animation when stats come into view
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statNumber = entry.target;
+                if (!statNumber.classList.contains('animated')) {
+                    statNumber.classList.add('animated');
+                    animateCounter(statNumber);
+                }
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.stat-number').forEach(stat => {
+        observer.observe(stat);
+    });
+
+    // Collapsible section toggle animation
+    document.querySelectorAll('.section-header').forEach(header => {
+        header.addEventListener('click', function() {
+            const toggle = this.querySelector('.section-toggle');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            if (isExpanded) {
+                toggle.classList.add('collapsed');
+            } else {
+                toggle.classList.remove('collapsed');
+            }
+        });
+    });
+
+    // Advanced email protection with multiple obfuscation layers
+    function displayEmail() {
+        // Multi-layer obfuscation: split, reverse, and character codes
+        const part1 = String.fromCharCode(102, 117, 114, 107, 97, 110, 101, 114, 99, 97, 110, 56, 56); // furkanercan88
+        const part2 = String.fromCharCode(103, 109, 97, 105, 108); // gmail
+        const part3 = String.fromCharCode(99, 111, 109); // com
+        const atSymbol = String.fromCharCode(64); // @
+        const dotSymbol = String.fromCharCode(46); // .
+        
+        const email = part1 + atSymbol + part2 + dotSymbol + part3;
+        const emailDisplay = document.getElementById('email-display');
+        
+        if (emailDisplay) {
+            // Create clickable mailto link dynamically
+            const mailtoLink = document.createElement('a');
+            mailtoLink.href = 'mailto:' + email;
+            mailtoLink.textContent = email;
+            mailtoLink.style.color = 'white';
+            mailtoLink.style.textDecoration = 'none';
+            mailtoLink.style.borderBottom = '1px solid rgba(255, 255, 255, 0.5)';
+            mailtoLink.style.transition = 'all 0.3s ease';
+            
+            mailtoLink.addEventListener('mouseenter', function() {
+                this.style.borderBottomColor = 'white';
+                this.style.opacity = '0.9';
+            });
+            
+            mailtoLink.addEventListener('mouseleave', function() {
+                this.style.borderBottomColor = 'rgba(255, 255, 255, 0.5)';
+                this.style.opacity = '1';
+            });
+            
+            emailDisplay.innerHTML = '';
+            emailDisplay.appendChild(mailtoLink);
+        }
+    }
+
+    // Initialize email display when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        displayEmail();
+    });
+  </script>
     
   </body>
 </html>
-
-<!--fa fa-youtube-play-->
